@@ -1,0 +1,61 @@
+@import "../../assets/style/global";
+
+.who-we-are-container {
+  width: 100%;
+  height: 100%;
+  background-color: $lightGray;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  padding: 20px;
+  .header-container {
+    .logo-container {
+      color: $primary;
+    }
+  }
+  .left-wrapper {
+    background: url("../../assets/img/home-bg-opacity.png") no-repeat;
+    height: 100%;
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-wrapper {
+    flex: 5;
+    position: relative;
+    background-color: $lightGray;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 140px;
+    .whoweare-big {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      span {
+        display: block;
+        font-size: 120px;
+        text-align: right;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: $primary;
+        font-family: "Libre Franklin", sans-serif;
+        color: transparent;
+      }
+    }
+    .vertical-content {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      transform: scale(-1);
+      margin-bottom: 30px;
+      & > div {
+        font-family: Cairo;
+        font-weight: 500;
+      }
+    }
+  }
+}

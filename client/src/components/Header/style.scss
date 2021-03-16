@@ -1,0 +1,89 @@
+@import "../../assets/style/global";
+
+.header-container {
+  position: absolute;
+  z-index: 4;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  max-width: 100%;
+  transition: 0.3s ease;
+  margin: auto;
+  .logo-container {
+    font-family: Zero;
+    color: $white;
+    letter-spacing: 10px;
+    font-size: 24px;
+  }
+
+  .burger-menu {
+    width: 65px;
+    cursor: pointer;
+    &:hover {
+      span {
+        z-index: 1;
+        transform: scale(1.1);
+        background-color: $primary;
+        border-color: $white;
+        border-width: 3px;
+        &:nth-child(1) {
+          transform: scale(1.1) rotateY(5deg);
+          width: calc(100% + 10px);
+        }
+        &:nth-child(2) {
+          transform: scale(1.1) rotateZ(-75deg) translate(-3px, -16px)
+            rotateY(10deg);
+          width: calc(100% + 16px);
+        }
+        &:nth-child(3) {
+          transform: scale(1.1) rotateZ(-75deg) translate(12px, 8px)
+            rotateX(-10deg);
+          width: calc(100% + 16px);
+        }
+        &:nth-child(4) {
+          transform: scale(1.1) translate(-2px, -8px) rotateY(5deg);
+          width: calc(100% + 8px);
+        }
+      }
+    }
+    span {
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      height: 12px;
+      border-radius: 12px;
+      border: 2px solid rgba($color: $primary, $alpha: 0.8);
+      transition: 0.3s ease;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+    }
+  }
+
+  .get-quote-btn {
+    position: absolute;
+    right: 0px;
+    top: calc(200px + 40px);
+    transform: rotate(-90deg) translateY(180px);
+    transform-origin: 50% 100%;
+    border: 2px solid rgba($color: $primary, $alpha: 0.8);
+    border-radius: 12px 12px 0 0;
+    padding: 10px 25px 90px;
+    text-transform: uppercase;
+    width: max-content;
+    font-size: 30px;
+    line-height: 39px;
+    font-family: Cairo;
+    font-weight: 500;
+    color: $primary;
+    cursor: pointer;
+    transition: 0.2s ease;
+    user-select: none;
+    &:hover {
+      background-color: $primary;
+      color: $white;
+      transform: rotate(-90deg) translateY(150px);
+    }
+  }
+}
