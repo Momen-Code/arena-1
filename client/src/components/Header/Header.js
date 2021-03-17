@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 //Style
@@ -7,6 +8,8 @@ import "./style.scss";
 import Logo from "../../assets/img/logo.png";
 
 const Header = () => {
+  const [quoteActive, setQuoteActive] = useState(false);
+
   return (
     <div className="header-container">
       <Link to="/" className="logo-container">
@@ -18,7 +21,15 @@ const Header = () => {
         <span></span>
         <span></span>
       </div>
-      <div className="get-quote-btn">Get a Quote</div>
+      <div className={`get-quote-container ${quoteActive ? " active" : ""}`}>
+        <div
+          className={`get-quote-btn${quoteActive ? " active" : ""}`}
+          onClick={() => setQuoteActive(!quoteActive)}
+        >
+          Get a Quote
+        </div>
+        <div className="get-quote-wrapper"></div>
+      </div>
     </div>
   );
 };

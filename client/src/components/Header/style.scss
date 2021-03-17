@@ -66,28 +66,58 @@
     }
   }
 
-  .get-quote-btn {
+  .get-quote-container {
     position: absolute;
-    right: 0px;
-    top: calc(200px + 40px);
-    transform: rotate(-90deg) translateY(180px);
-    transform-origin: 50% 100%;
-    border: 2px solid rgba($color: $primary, $alpha: 0.8);
-    border-radius: 12px 12px 0 0;
-    padding: 10px 25px 90px;
-    text-transform: uppercase;
-    width: max-content;
-    font-size: 30px;
-    line-height: 39px;
-    font-weight: 500;
-    color: $primary;
-    cursor: pointer;
-    transition: 0.2s ease;
-    user-select: none;
-    &:hover {
-      background-color: $primary;
-      color: $white;
-      transform: rotate(-90deg) translateY(150px);
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 15;
+    transition: 1s ease;
+    right: -80vw;
+    &.active {
+      right: 0;
+    }
+    .get-quote-btn {
+      position: absolute;
+      z-index: 1;
+      top: calc(200px + 40px);
+      transform: rotate(-90deg);
+      right: 70vw;
+      transform-origin: 50% 100%;
+      border: 2px solid rgba($color: $primary, $alpha: 0.8);
+      border-radius: 12px 12px 0 0;
+      padding: 10px 25px 90px;
+      text-transform: uppercase;
+      width: max-content;
+      font-size: 30px;
+      line-height: 39px;
+      font-weight: 500;
+      color: $primary;
+      cursor: pointer;
+      user-select: none;
+      transition: 0.2s ease;
+      &:hover {
+        background-color: $primary;
+        color: $white;
+        transform: rotate(-90deg);
+        right: calc(70vw + 30px);
+      }
+      &.active {
+        transition: 1s ease;
+        background-color: $primary;
+        color: $white;
+        right: calc(70vw + 30px);
+      }
+    }
+    .get-quote-wrapper {
+      background-color: $lightGray;
+      width: 80vw;
+      height: 95vh;
+      position: relative;
+      z-index: 2;
+      transition: 0.2s ease;
+      box-shadow: -10px 0px 20px rgba($color: $black, $alpha: 0.1);
+      border-radius: 12px 0 0 12px;
     }
   }
 }
