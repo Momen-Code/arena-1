@@ -1,3 +1,4 @@
+
 //Components
 import { Header } from "../../components";
 
@@ -15,7 +16,11 @@ const WhoWeAre = () => {
           <span>disempowered</span>, cynical, fatalistic, pessimistic
         </div>
       </div>
-      <div className="right-wrapper"></div>
+      <div className="right-wrapper">
+        <div className="circle-shape">
+          + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - +
+        </div>
+      </div>
       <div className="circle-shape"></div>
     </div>
   );
