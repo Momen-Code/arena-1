@@ -4,37 +4,36 @@ import { Header } from "../../components";
 //Style
 import "./style.scss";
 
-//Assets
-// @ts-ignore
-import CircleShape from "../../assets/img/circle-shape-primary.png";
-
-const Services = () => {
+const Portfolio = () => {
   return (
     <div className="services-container">
       <Header />
       <div className="left-wrapper">
-        <div className="our-services-txt">Our Services</div>
-        <img className="circle-img" src={CircleShape} alt="" />
+        <div className="our-services-txt">
+          Our
+          <br />
+          Portfolio
+        </div>
       </div>
       <div className="right-wrapper">
         <div className="services-grid">
           <div className="service-box">
-            <h1 className="service-title">Printing</h1>
+            <h1 className="title">Printing</h1>
           </div>
           <div className="service-box">
-            <h1 className="service-title">Marketing</h1>
+            <h1 className="title">Marketing</h1>
           </div>
           <div className="service-box">
-            <h1 className="service-title">Interior</h1>
+            <h1 className="title">Interior</h1>
           </div>
           <div className="service-box">
-            <h1 className="service-title">Branding</h1>
+            <h1 className="title">Branding</h1>
           </div>
           <div className="service-box">
-            <h1 className="service-title">Exterior</h1>
+            <h1 className="title">Exterior</h1>
           </div>
           <div className="service-box">
-            <h1 className="service-title">Other..</h1>
+            <h1 className="title">Other..</h1>
           </div>
         </div>
 
@@ -49,4 +48,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Portfolio;

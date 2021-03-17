@@ -1,6 +1,6 @@
 @import "../../assets/style/global";
 
-.services-container {
+.portfolio-container {
   width: 100%;
   height: 100%;
   background-color: $lightGray;
@@ -9,33 +9,25 @@
   overflow: hidden;
   padding: 20px;
 
+  .header-container {
+    .logo-container {
+      color: $primary;
+    }
+  }
+
   .left-wrapper {
-    background: url("../../assets/img/home-bg.png") no-repeat;
-    background-color: $gray;
     height: 100%;
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
-    .circle-img {
-      color: $gray;
-      width: 300px;
-      height: 300px;
-      object-fit: contain;
-      position: absolute;
-      z-index: 1;
-      bottom: -200px;
-      right: -150px;
-      animation: roll 140s infinite;
-    }
-    .our-services-txt {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      height: 500px;
-      color: $white;
+    padding-top: 110px;
+    padding-left: 30px;
+    .our-portfolio-txt {
+      color: $primary;
       font-size: 80px;
-      line-height: 80px;
+      line-height: 100px;
       transition: 0.5s ease;
       text-transform: uppercase;
       white-space: nowrap;
@@ -55,17 +47,41 @@
     display: flex;
     justify-content: space-evenly;
     padding-right: 60px;
-    .services-grid {
+    .circle-img {
+      color: $gray;
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      position: absolute;
+      z-index: 1;
+      top: calc(-190px);
+      right: 18%;
+      animation: roll 140s infinite;
+    }
+    .portfolio-grid {
       display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
       grid-template-columns: 1fr 1fr;
-      grid-auto-flow: column;
       justify-items: center;
       align-content: center;
       column-gap: 20px;
       row-gap: 20px;
-      .service-box {
+      position: relative;
+      .portfolio-box {
         @include serviceBox;
+        max-height: 280px;
+      }
+      .triangle-shape {
+        position: absolute;
+        bottom: 0;
+        cursor: pointer;
+        transition: 0.2s ease;
+        transform: rotateX(60deg);
+        border: 50px solid transparent;
+        border-top: 80px solid $primary;
+        &:hover {
+          border-top-color: $gray;
+        }
       }
     }
     .vertical-content {
