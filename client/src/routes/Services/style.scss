@@ -1,0 +1,104 @@
+@import "../../assets/style/global";
+
+.services-container {
+  width: 100%;
+  height: 100%;
+  background-color: $lightGray;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  padding: 20px;
+
+  .left-wrapper {
+    background: url("../../assets/img/home-bg.png") no-repeat;
+    background-color: $gray;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .circle-img {
+      color: $gray;
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      position: absolute;
+      z-index: 1;
+      bottom: -200px;
+      right: -150px;
+      animation: roll 200s infinite;
+    }
+    .our-services-txt {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      height: 500px;
+      color: $white;
+      font-size: 80px;
+      line-height: 80px;
+      transition: 0.5s ease;
+      text-transform: uppercase;
+      white-space: nowrap;
+      & > span {
+        color: $primary;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: 500;
+        text-shadow: 0px 0px 5px rgba($color: $white, $alpha: 0.2);
+      }
+    }
+  }
+  .right-wrapper {
+    flex: 6;
+    position: relative;
+    background-color: $lightGray;
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 60px;
+    .services-grid {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-flow: column;
+      justify-items: center;
+      align-content: center;
+      column-gap: 20px;
+      row-gap: 20px;
+      .service-box {
+        cursor: pointer;
+        width: 100%;
+        min-width: 280px;
+        height: 100%;
+        background-color: $gray;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .service-title {
+          font-weight: 400;
+          color: $white;
+          font-size: 26px;
+          line-height: 26px;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .vertical-content {
+      padding-bottom: 140px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 22px;
+      line-height: 33px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      transform: scale(-1);
+      display: inline;
+      margin-bottom: 30px;
+      & > span {
+        font-weight: 500;
+        color: $primary;
+      }
+    }
+  }
+}

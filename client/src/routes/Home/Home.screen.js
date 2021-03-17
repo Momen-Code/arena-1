@@ -1,11 +1,14 @@
-
 //Components
 import { Header } from "../../components";
 
 //Style
 import "./style.scss";
 
-const WhoWeAre = () => {
+//Assets
+// @ts-ignore
+import CircleShape from "../../assets/img/circle-shape-primary.png";
+
+const Home = () => {
   return (
     <div className="home-container">
       <Header />
@@ -17,13 +20,10 @@ const WhoWeAre = () => {
         </div>
       </div>
       <div className="right-wrapper">
-        <div className="circle-shape">
-          + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - + - +
-        </div>
+        <img className="circle-img" src={CircleShape} alt="" />
       </div>
-      <div className="circle-shape"></div>
     </div>
   );
 };
 
-export default WhoWeAre;
+export default Home;

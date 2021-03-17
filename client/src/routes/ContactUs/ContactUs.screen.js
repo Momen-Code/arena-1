@@ -5,7 +5,7 @@ import "./style.scss";
 
 //Assets
 // @ts-ignore
-import CircleShape from "../../assets/img/circle-shape.png";
+import CircleShape from "../../assets/img/circle-shape-gray.png";
 
 const ContactUs = () => {
   return (

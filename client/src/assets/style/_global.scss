@@ -39,7 +39,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Tajawal", sans-serif;
+  font-family: Cairo, sans-serif;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: "Tajawal", sans-serif;
+  font-family: Cairo, sans-serif;
   box-sizing: border-box;
   text-decoration: none;
 }
@@ -73,4 +73,19 @@ body {
   background-color: $lightGray;
 }
 
+
+
 /********************************************************/
+
+//Animations
+@keyframes roll {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
