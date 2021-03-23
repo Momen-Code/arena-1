@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   background-color: $lightGray;
-  position: relative;
+  position: absolute;
   display: flex;
   overflow: hidden;
   padding: 20px;
@@ -35,12 +35,13 @@
       justify-content: flex-end;
       span {
         display: block;
-        font-size: 10px;
-        text-align: right;
+        font-size: 150px;
+        text-align: left;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: $primary;
         font-family: "Libre Franklin", sans-serif;
         color: transparent;
+        line-height: 150px;
       }
     }
     .vertical-content {
