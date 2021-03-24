@@ -6,7 +6,7 @@
   position: absolute;
 
   .page-container {
-    min-height: 95vh;
+    min-height: 100vh;
     display: flex;
     padding: 20px;
   }
@@ -28,8 +28,10 @@
     background-color: $lightGray;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    height: 500px;
+    align-self: center;
     .whoweare-big {
+      margin-right: 50px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -52,18 +54,8 @@
             width: 100%;
           }
         }
-        &:nth-child(2) {
-          &::before {
-            content: "We";
-          }
-        }
-        &:nth-child(3) {
-          &::before {
-            content: "Are";
-          }
-        }
         &::before {
-          content: "Who";
+          content: attr(data-text);
           position: absolute;
           left: 0;
           top: 0;
@@ -91,10 +83,10 @@
     .vertical-content {
       writing-mode: vertical-rl;
       text-orientation: mixed;
-      font-size: 20px;
+      font-size: 30px;
+      font-weight: 400;
       display: flex;
       flex-direction: column;
-      gap: 30px;
       transform: scale(-1);
       margin-bottom: 30px;
       & > div {

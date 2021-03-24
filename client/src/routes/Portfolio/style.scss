@@ -6,10 +6,23 @@
   position: relative;
 
   .page-container {
-    min-height: 95vh;
+    min-height: 100vh;
     display: flex;
     padding: 20px;
+    align-items: center;
+    .circle-img {
+      color: $gray;
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      position: absolute;
+      z-index: 1;
+      top: calc(-190px);
+      right: 18%;
+      animation: roll 140s ease infinite;
+    }
   }
+
   .header-container {
     .logo-container {
       color: $primary;
@@ -22,6 +35,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    align-self: flex-start;
     position: relative;
     padding-top: 110px;
     padding-left: 30px;
@@ -48,17 +62,8 @@
     display: flex;
     justify-content: space-evenly;
     padding-right: 60px;
-    .circle-img {
-      color: $gray;
-      width: 300px;
-      height: 300px;
-      object-fit: contain;
-      position: absolute;
-      z-index: 1;
-      top: calc(-190px);
-      right: 18%;
-      animation: roll 140s infinite;
-    }
+    height: 580px;
+
     .portfolio-grid {
       display: grid;
       grid-template-rows: 280px 280px;
@@ -89,7 +94,7 @@
       }
       .triangle-shape {
         position: absolute;
-        bottom: 0;
+        bottom: -150px;
         cursor: pointer;
         transition: 0.2s ease;
         transform: rotateX(60deg);
@@ -101,17 +106,14 @@
       }
     }
     .vertical-content {
-      padding-bottom: 140px;
       writing-mode: vertical-rl;
       text-orientation: mixed;
-      font-size: 22px;
-      line-height: 33px;
+      font-size: 30px;
+      line-height: 46px;
       display: flex;
       flex-direction: column;
-      gap: 30px;
       transform: scale(-1);
       display: inline;
-      margin-bottom: 30px;
       & > span {
         font-weight: 500;
         color: $primary;

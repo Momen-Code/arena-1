@@ -3,9 +3,10 @@
 .header-container {
   position: fixed;
   z-index: 10;
-  padding: 30px;
+  padding: 30px 50px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: calc(100% - 40px);
   max-width: 100%;
   transition: 0.3s ease;
@@ -72,17 +73,16 @@
     bottom: 0;
     top: 0;
     z-index: 15;
-    right: -80vw;
+    transform: translateX(100%) !important;
     transition: 1.5s ease;
     &.active {
-      right: 0;
+      transform: translateX(50px) !important;
     }
     .get-quote-btn {
       position: absolute;
       z-index: 1;
       top: calc(200px + 40px);
-      transform: rotate(-90deg);
-      right: 70vw;
+      transform: rotate(-90deg) translateY(-50px);
       transform-origin: 50% 100%;
       border: 2px solid rgba($color: $primary, $alpha: 0.8);
       border-radius: 12px 12px 0 0;
@@ -95,23 +95,22 @@
       color: $primary;
       cursor: pointer;
       user-select: none;
-      transition: 0.2s ease;
+      transition: 1s ease;
       &:hover {
         background-color: $primary;
         color: $white;
-        transform: rotate(-90deg);
-        right: calc(70vw + 30px);
+        transform: rotate(-90deg) translateY(-70%);
       }
       &.active {
         transition: 1s ease;
         background-color: $primary;
         color: $white;
-        right: calc(70vw + 30px);
+        transform: rotate(-90deg) translateY(-70%);
       }
     }
     .get-quote-wrapper {
       background-color: $lightGray;
-      width: 80vw;
+      width: max-content;
       height: 95vh;
       position: relative;
       z-index: 2;
@@ -134,7 +133,6 @@
   }
   /********************************/
   @include media(desktop-md) {
-    
   }
   /********************************/
   @include media(desktop-sm) {

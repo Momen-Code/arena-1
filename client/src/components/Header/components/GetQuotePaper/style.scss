@@ -8,6 +8,7 @@
   width: 100%;
 
   .left-container {
+    padding-left: 90px;
     h1 {
       font-size: 150px;
       font-weight: 400;
@@ -24,10 +25,11 @@
       height: 240px;
       position: absolute;
       left: calc(50% - 120px);
-      animation: roll 140s infinite;
+      animation: roll 140s ease infinite;
     }
   }
   .right-container {
+    margin: 0px 80px;
     .input-items {
       .input-item {
         display: flex;
@@ -43,9 +45,11 @@
           border: none;
           outline: none;
           font-size: 20px;
-          padding-left: 10px;
+          margin-left: 10px;
           color: $primary;
           text-transform: uppercase;
+          border-bottom: 1px solid $primary;
+          flex: 1;
         }
         textarea {
           border: 2px solid $primary;

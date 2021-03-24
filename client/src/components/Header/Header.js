@@ -155,12 +155,12 @@ const Header = ({ getquote = true, menuOpen = false }) => {
         variants={quoteVariants}
         transition={quoteTransition}
       >
-        <motion.div
-          className="get-quote-btn"
+        <div
+          className={`get-quote-btn ${quoteActive ? " active" : ""}`}
           onClick={() => setQuoteActive(!quoteActive)}
         >
           Get a Quote
-        </motion.div>
+        </div>
         <div className={`get-quote-wrapper ${quoteActive ? " active" : ""}`}>
           <GetQuotePaper />
         </div>

@@ -10,28 +10,25 @@
   .home-flex {
     padding: 0px 20px 20px;
     display: flex;
-    min-height: 95vh;
+    min-height: calc(100vh - 20px);
   }
   .left-wrapper {
-    background: url("../../assets/img/home-bg.png") no-repeat;
+    background-image: url("../../assets/img/home-bg.png");
+    background-repeat: no-repeat;
     background-color: $gray;
     flex: 4;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 0% 0%);
     overflow: hidden;
-    animation: bgClip 2s linear 0.5s 1;
-    animation-fill-mode: forwards;
+    // animation: bgClip 2s linear1 0s 1;
+    // animation-fill-mode: forwards;
     @keyframes bgClip {
       0% {
-        clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 0% 0%);
-      }
-      50% {
-        clip-path: polygon(0% 0%, 100% 200%, 200% 100%, 0% 0%);
+        opacity: 0;
       }
       100% {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        opacity: 1;
       }
     }
     .info-text {
@@ -65,12 +62,11 @@
       z-index: 1;
       bottom: -150px;
       left: -150px;
-      animation: roll 140s infinite;
+      animation: roll 140s ease infinite;
     }
   }
 
   @include media(desktop-lg) {
-
   }
   @include media(desktop-md) {
   }

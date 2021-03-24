@@ -83,16 +83,61 @@ const WhoWeAre = () => {
               usability to evoke trust, joy and brand loyalty. Since 2003 we've
               been honing our craft as UX and UI specialists.
             </VerticalText>
+          </div>
+        </div>
+        <div className="circle-shape"></div>
+      </div>
+      <div className="page-container">
+        <div className="right-wrapper">
+          <div className="whoweare-big" style={{ alignSelf: "center" }}>
+            {["Our", "Mission"].map((word, i) => (
+              <motion.span
+                data-text={word}
+                initial="initial"
+                animate="in"
+                exit="out"
+                custom={i}
+                variants={bigTxtVariants}
+                transition={{ type: "spring", stiffness: 100 }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </div>
+          <div className="vertical-content">
             <VerticalText>
-              Sennep means mustard. Our secret sauce is adding a kick to the
-              bland sandwiches of the digital world – raising smiles as well as
-              the bottom line.
+              We design digital products that go beyond pure functionality and
+              usability to evoke trust, joy and brand loyalty. Since 2003 we've
+              been honing our craft as UX and UI specialists.
             </VerticalText>
+          </div>
+        </div>
+        <div className="left-wrapper"></div>
+        <div className="circle-shape"></div>
+      </div>
+      <div className="page-container">
+        <div className="left-wrapper"></div>
+        <div className="right-wrapper">
+          <div className="whoweare-big">
+            {["We", "Aim", "For"].map((word, i) => (
+              <motion.span
+                data-text={word}
+                initial="initial"
+                animate="in"
+                exit="out"
+                custom={i}
+                variants={bigTxtVariants}
+                transition={{ type: "spring", stiffness: 100 }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </div>
+          <div className="vertical-content">
             <VerticalText>
-              Everything we make must meet our three experience principles:
-              smart, simple and human. While these never budge, we are proudly
-              flexible in our process; continually adapting our methods to meet
-              the specific challenges of each project.
+              We design digital products that go beyond pure functionality and
+              usability to evoke trust, joy and brand loyalty. Since 2003 we've
+              been honing our craft as UX and UI specialists.
             </VerticalText>
           </div>
         </div>

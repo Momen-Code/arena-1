@@ -13,8 +13,8 @@ import CircleShape from "../../assets/img/circle-shape-primary.png";
 const SideMenu = () => {
   const links = [
     {
-      url: "/",
-      label: "Home",
+      url: "/who-we-are",
+      label: "About us",
     },
     {
       url: "/our-services",
@@ -22,15 +22,11 @@ const SideMenu = () => {
     },
     {
       url: "/portfolio",
-      label: "Portfolio",
+      label: "Projects",
     },
     {
       url: "/careers",
       label: "Careers",
-    },
-    {
-      url: "/who-we-are",
-      label: "About us",
     },
   ];
   const circleImgVariants = {
@@ -98,6 +94,15 @@ const SideMenu = () => {
           <img src={CircleShape} alt="" />
         </motion.div>
         <div className="centered-content">
+          <motion.button
+            className="contactus-btn"
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={leftImageVariants}
+          >
+            Contact Us
+          </motion.button>
           <motion.div
             className="left-wrapper"
             initial="initial"

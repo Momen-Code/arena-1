@@ -30,7 +30,9 @@
     h3 {
       color: $primary;
       text-align: right;
-      font-weight: 400;
+      font-weight: 500;
+      font-size: 30px;
+      text-shadow: 0px 1px 5px rgba($color: $lightGray, $alpha: 0.3);
     }
     .circle-img {
       color: $gray;
@@ -41,7 +43,7 @@
       z-index: 1;
       bottom: calc(50% - 150px);
       left: -100px;
-      animation: roll 140s infinite;
+      animation: roll 140s ease infinite;
     }
   }
   .all-jobs-btn {
@@ -57,7 +59,7 @@
     cursor: pointer;
     outline: none;
     position: absolute;
-    right: -120px;
+    left: -120px;
     bottom: 55px;
     transition: 0.3s ease;
     &:after {

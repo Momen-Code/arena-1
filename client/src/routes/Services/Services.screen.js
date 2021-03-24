@@ -134,12 +134,7 @@ const Portfolio = () => {
             <div className="service-box">
               <h1 className="title">Branding</h1>
             </div>
-            <div className="service-box">
-              <h1 className="title">Exterior</h1>
-            </div>
-            <div className="service-box">
-              <h1 className="title">Other..</h1>
-            </div>
+            <div className="triangle-shape" />
           </div>
 
           <div className="vertical-content">

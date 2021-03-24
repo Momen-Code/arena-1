@@ -38,6 +38,8 @@ const Services = () => {
     <div className="portfolio-container">
       <Header />
       <div className="page-container">
+        <img className="circle-img" src={CircleShape} alt="" />
+
         <div className="left-wrapper">
           <div className="our-portfolio-txt">
             {["O", "U", "R"].map((letter, i) => (
@@ -55,7 +57,7 @@ const Services = () => {
               </motion.span>
             ))}
             <br />
-            {["P", "O", "R", "T", "F", "O", "L", "I", "O"].map((letter, i) => (
+            {["P", "R", "O", "J", "E", "C", "T", "S"].map((letter, i) => (
               <motion.span
                 initial="initial"
                 animate="in"
@@ -72,8 +74,6 @@ const Services = () => {
           </div>
         </div>
         <div className="right-wrapper">
-          <img className="circle-img" src={CircleShape} alt="" />
-
           <div className="portfolio-grid">
             <div className="portfolio-box">
               <h1 className="title">Project 01</h1>

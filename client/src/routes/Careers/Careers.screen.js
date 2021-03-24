@@ -20,7 +20,7 @@ const Careers = () => {
             <br /> that is revolutionizing the mobile ecosystem
           </h3>
           <img className="circle-img" src={CircleShape} alt="" />
-          <button className="all-jobs-btn">All Jobs</button>
+          <button className="all-jobs-btn">Join Us</button>
         </div>
       </div>
       <Footer />
