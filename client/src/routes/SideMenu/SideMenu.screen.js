@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 //Components
-import { Header } from "../../components";
+import { Header, Footer } from "../../components";
 
 //Style
 import "./style.scss";
@@ -83,44 +83,47 @@ const SideMenu = () => {
     },
   };
 
-  
   return (
     <div className="sidemenu-container">
       <Header getquote={false} menuOpen={true} />
-      <motion.div
-        className="circle-img-container"
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={circleImgVariants}
-        transition={circleImgTransition}
-      >
-        <img src={CircleShape} alt="" />
-      </motion.div>
-      <div className="centered-content">
+      <div className="menu-container">
         <motion.div
-          className="left-wrapper"
+          className="circle-img-container"
           initial="initial"
           animate="in"
           exit="out"
-          variants={leftImageVariants}
-          transition={{ duration: 1, type: "spring" }}
-        ></motion.div>
-        <div className="right-wrapper">
-          {links.map((link, i) => (
-            <motion.div
-              initial="initial"
-              animate="in"
-              exit="out"
-              custom={i}
-              variants={linkVariants}
-              transition={{ type: "spring", duration: 1 }}
-            >
-              <Link to={link.url}>{link.label}</Link>
-            </motion.div>
-          ))}
+          variants={circleImgVariants}
+          transition={circleImgTransition}
+        >
+          <img src={CircleShape} alt="" />
+        </motion.div>
+        <div className="centered-content">
+          <motion.div
+            className="left-wrapper"
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={leftImageVariants}
+            transition={{ duration: 1, type: "spring" }}
+          ></motion.div>
+          <div className="right-wrapper">
+            {links.map((link, i) => (
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                custom={i}
+                variants={linkVariants}
+                transition={{ type: "spring", duration: 1 }}
+              >
+                <Link to={link.url}>{link.label}</Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

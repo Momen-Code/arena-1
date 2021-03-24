@@ -12,7 +12,7 @@ import {
 } from "./routes";
 
 //Components
-import { Header } from "./components";
+import { Header, Footer } from "./components";
 //Style
 import "./assets/style/_global.scss";
 
@@ -31,6 +31,7 @@ const App = () => {
           <Route exact path="/menu" component={SideMenu} />
         </Switch>
       </AnimatePresence>
+      {/* <Footer /> */}
     </div>
   );
 };

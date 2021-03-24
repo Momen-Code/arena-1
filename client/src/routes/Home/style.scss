@@ -2,21 +2,38 @@
 
 .home-container {
   width: 100%;
-  height: 100%;
   background-color: $lightGray;
   position: absolute;
-  display: flex;
-  overflow: hidden;
-  padding: 20px;
+  padding-top: 20px;
+  height: 95%;
 
+  .home-flex {
+    padding: 0px 20px 20px;
+    display: flex;
+    min-height: 95vh;
+  }
   .left-wrapper {
     background: url("../../assets/img/home-bg.png") no-repeat;
     background-color: $gray;
-    height: 100%;
     flex: 4;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 0% 0%);
+    overflow: hidden;
+    animation: bgClip 2s ease 0.5s 1;
+    animation-fill-mode: forwards;
+    @keyframes bgClip {
+      0% {
+        clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 0% 0%);
+      }
+      50% {
+        clip-path: polygon(0% 0%, 100% 200%, 200% 100%, 0% 0%);
+      }
+      100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
     .info-text {
       writing-mode: vertical-rl;
       text-orientation: mixed;

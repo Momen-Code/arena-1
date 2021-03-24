@@ -1,5 +1,5 @@
 //Components
-import { Header } from "../../components";
+import { Header, Footer } from "../../components";
 //Style
 import "./style.scss";
 
@@ -26,6 +26,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

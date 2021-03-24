@@ -3,7 +3,7 @@ import { motion, useViewportScroll } from "framer-motion";
 import { useHistory } from "react-router-dom";
 
 //Components
-import { Header } from "../../components";
+import { Header, Footer } from "../../components";
 
 //Style
 import "./style.scss";
@@ -72,9 +72,20 @@ const Home = () => {
       transition={{ duration: 2 }}
     >
       <Header />
-      <div className="left-wrapper">
-        <motion.div className="info-text">
-          <div>
+      <div className="home-flex">
+        <div className="left-wrapper">
+          <motion.div className="info-text">
+            <div>
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={lineVariants}
+                transition={lineTransitions}
+              >
+                Cynicism is something that is part of the media
+              </motion.div>
+            </div>
             <motion.div
               initial="initial"
               animate="in"
@@ -82,42 +93,35 @@ const Home = () => {
               variants={lineVariants}
               transition={lineTransitions}
             >
-              Cynicism is something that is part of the media
+              production of a certain type of subjectivity or
             </motion.div>
-          </div>
-          <motion.div
-            initial="initial"
-            animate="in"
-            exit="out"
-            variants={lineVariants}
-            transition={lineTransitions}
-          >
-            production of a certain type of subjectivity or
+            <motion.div
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={lineVariants}
+              transition={lineTransitions}
+            >
+              consciousness that is passive and
+              <span>disempowered</span>,
+            </motion.div>
+            <motion.div
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={lineVariants}
+              transition={lineTransitions}
+            >
+              cynical, fatalistic, pessimistic
+            </motion.div>
           </motion.div>
-          <motion.div
-            initial="initial"
-            animate="in"
-            exit="out"
-            variants={lineVariants}
-            transition={lineTransitions}
-          >
-            consciousness that is passive and
-            <span>disempowered</span>,
-          </motion.div>
-          <motion.div
-            initial="initial"
-            animate="in"
-            exit="out"
-            variants={lineVariants}
-            transition={lineTransitions}
-          >
-            cynical, fatalistic, pessimistic
-          </motion.div>
-        </motion.div>
+        </div>
+        <div className="right-wrapper">
+          <img className="circle-img" src={CircleShape} alt="" />
+        </div>
       </div>
-      <div className="right-wrapper">
-        <img className="circle-img" src={CircleShape} alt="" />
-      </div>
+
+      <Footer />
     </motion.div>
   );
 };

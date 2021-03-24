@@ -43,6 +43,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: $lightGray;
+
 }
 * {
   margin: 0;
@@ -70,7 +72,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: $lightGray;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
 

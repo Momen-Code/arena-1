@@ -3,7 +3,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 //Components
-import { Header } from "../../components";
+import { Header, Footer } from "../../components";
 
 //Style
 import "./style.scss";
@@ -86,68 +86,72 @@ const Portfolio = () => {
       transition={{ duration: 2 }}
     >
       <Header />
-      <div className="left-wrapper">
-        <div className="our-services-txt">
-          {["O", "U", "R"].map((letter, i) => (
-            <motion.span
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={letterVariants}
-              custom={i}
-              transition={{
-                duration: 2,
-              }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-          <br />
-          {["S", "E", "R", "V", "I", "C", "E", "S"].map((letter, i) => (
-            <motion.span
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={letterVariants}
-              custom={i}
-              transition={{
-                duration: 2,
-              }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </div>
-      </div>
-      <div className="right-wrapper">
-        <div className="services-grid">
-          <div className="service-box">
-            <h1 className="title">Printing</h1>
-          </div>
-          <div className="service-box">
-            <h1 className="title">Marketing</h1>
-          </div>
-          <div className="service-box">
-            <h1 className="title">Interior</h1>
-          </div>
-          <div className="service-box">
-            <h1 className="title">Branding</h1>
-          </div>
-          <div className="service-box">
-            <h1 className="title">Exterior</h1>
-          </div>
-          <div className="service-box">
-            <h1 className="title">Other..</h1>
+      <div className="page-container">
+        <div className="left-wrapper">
+          <div className="our-services-txt">
+            {["O", "U", "R"].map((letter, i) => (
+              <motion.span
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={letterVariants}
+                custom={i}
+                transition={{
+                  duration: 2,
+                }}
+              >
+                {letter}
+              </motion.span>
+            ))}
+            <br />
+            {["S", "E", "R", "V", "I", "C", "E", "S"].map((letter, i) => (
+              <motion.span
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={letterVariants}
+                custom={i}
+                transition={{
+                  duration: 2,
+                }}
+              >
+                {letter}
+              </motion.span>
+            ))}
           </div>
         </div>
+        <div className="right-wrapper">
+          <div className="services-grid">
+            <div className="service-box">
+              <h1 className="title">Printing</h1>
+            </div>
+            <div className="service-box">
+              <h1 className="title">Marketing</h1>
+            </div>
+            <div className="service-box">
+              <h1 className="title">Interior</h1>
+            </div>
+            <div className="service-box">
+              <h1 className="title">Branding</h1>
+            </div>
+            <div className="service-box">
+              <h1 className="title">Exterior</h1>
+            </div>
+            <div className="service-box">
+              <h1 className="title">Other..</h1>
+            </div>
+          </div>
 
-        <div className="vertical-content">
-          Everything we make must meet our three experience principles: smart,
-          simple and human. While these never <span>budge</span>, we are proudly
-          flexible in our process; continually adapting our methods to meet the
-          specific challenges of each <span>project</span>.
+          <div className="vertical-content">
+            Everything we make must meet our three experience principles: smart,
+            simple and human. While these never <span>budge</span>, we are
+            proudly flexible in our process; continually adapting our methods to
+            meet the specific challenges of each <span>project</span>.
+          </div>
         </div>
       </div>
+
+      <Footer />
     </motion.div>
   );
 };
