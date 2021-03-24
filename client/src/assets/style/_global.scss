@@ -31,6 +31,91 @@ $lightGray: #eaeaea;
 
 /********************************************************/
 
+//Media Queries
+@mixin media($breakpoint) {
+  @if $breakpoint == phone-sm {
+    @media only screen and (max-width: 320px) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone-md {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone-lg {
+    @media only screen and (max-width: 576px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-sm {
+    @media only screen and (max-width: 798px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-md {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-lg {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-sm {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-md {
+    @media only screen and (max-width: 1366px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-lg {
+    @media only screen and (max-width: 1680px) {
+      @content;
+    }
+  }
+}
+
+/*
+
+@include media(desktop-lg) {
+  
+}
+@include media(desktop-md) {
+
+}
+@include media(desktop-sm) {
+
+}
+@include media(tablet-lg) {
+
+}
+@include media(tablet-md) {
+
+}
+@include media(tablet-sm) {
+
+}
+@include media(phone-lg) {
+
+}
+@include media(phone-md) {
+
+}
+@include media(phone-sm) {
+
+}
+
+
+
+*/
+
+/********************************************************/
+
 // Global Styles
 html {
   height: 100%;
@@ -44,7 +129,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: $lightGray;
-
 }
 * {
   margin: 0;

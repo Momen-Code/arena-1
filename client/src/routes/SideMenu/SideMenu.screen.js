@@ -25,7 +25,7 @@ const SideMenu = () => {
       label: "Portfolio",
     },
     {
-      url: "/",
+      url: "/careers",
       label: "Careers",
     },
     {

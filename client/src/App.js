@@ -9,6 +9,7 @@ import {
   Services,
   Portfolio,
   SideMenu,
+  Careers,
 } from "./routes";
 
 //Components
@@ -29,6 +30,7 @@ const App = () => {
           <Route exact path="/our-services" component={Services} />
           <Route exact path="/portfolio" component={Portfolio} />
           <Route exact path="/menu" component={SideMenu} />
+          <Route exact path="/careers" component={Careers} />
         </Switch>
       </AnimatePresence>
       {/* <Footer /> */}

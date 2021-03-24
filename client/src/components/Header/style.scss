@@ -120,4 +120,42 @@
       border-radius: 12px 0 0 12px;
     }
   }
+
+  /********************************/
+  @include media(desktop-lg) {
+    .get-quote-container {
+      .get-quote-btn {
+        right: 65vw;
+        &:hover {
+          right: calc(65vw + 30px);
+        }
+      }
+    }
+  }
+  /********************************/
+  @include media(desktop-md) {
+    
+  }
+  /********************************/
+  @include media(desktop-sm) {
+  }
+  /********************************/
+  @include media(tablet-lg) {
+  }
+  /********************************/
+  @include media(tablet-md) {
+  }
+  /********************************/
+  @include media(tablet-sm) {
+  }
+  /********************************/
+  @include media(phone-lg) {
+  }
+  /********************************/
+  @include media(phone-md) {
+  }
+  /********************************/
+  @include media(phone-sm) {
+  }
+  /********************************/
 }
