@@ -1,14 +1,15 @@
 @import "../../assets/style/global";
 
 .header-container {
-  position: fixed;
+  position: absolute;
+  top: 0;
   z-index: 10;
   padding: 30px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: calc(100% - 40px);
-  max-width: 100%;
+  min-width: 100%;
   transition: 0.3s ease;
   margin: auto;
 
@@ -69,14 +70,13 @@
 
   .get-quote-container {
     position: absolute;
-    right: 0;
+    right: calc(25px - 1200px);
     bottom: 0;
-    top: 0;
+    top: 20px;
     z-index: 15;
-    transform: translateX(100%) !important;
     transition: 1.5s ease;
     &.active {
-      transform: translateX(50px) !important;
+      right: 0;
     }
     .get-quote-btn {
       position: absolute;
@@ -96,6 +96,7 @@
       cursor: pointer;
       user-select: none;
       transition: 1s ease;
+      background-color: $lightGray;
       &:hover {
         background-color: $primary;
         color: $white;
@@ -109,9 +110,10 @@
       }
     }
     .get-quote-wrapper {
+      display: flex;
       background-color: $lightGray;
       width: max-content;
-      height: 95vh;
+      min-height: 95vh;
       position: relative;
       z-index: 2;
       transition: 0.2s ease;
@@ -122,29 +124,55 @@
 
   /********************************/
   @include media(desktop-lg) {
-    .get-quote-container {
-      .get-quote-btn {
-        right: 65vw;
-        &:hover {
-          right: calc(65vw + 30px);
-        }
-      }
-    }
   }
   /********************************/
   @include media(desktop-md) {
+    .get-quote-container {
+      right: calc(25px - 1250px);
+    }
   }
   /********************************/
   @include media(desktop-sm) {
+    .get-quote-container {
+      right: calc(25px - 850px);
+    }
   }
   /********************************/
   @include media(tablet-lg) {
   }
   /********************************/
   @include media(tablet-md) {
+    .get-quote-container {
+      right: calc(25px - 650px);
+      .get-quote-wrapper {
+        height: max-content;
+      }
+    }
   }
   /********************************/
   @include media(tablet-sm) {
+    padding: 30px 40px;
+    .burger-menu {
+      width: 50px;
+      span {
+        height: 10px;
+        
+      }
+    }
+    .get-quote-container {
+      right: calc(15px - 80vw);
+
+      .get-quote-btn {
+        font-size: 1.5em;
+        transform: rotate(-90deg) translateY(-10px);
+        &:hover {
+          transform: rotate(-90deg) translateY(-50%);
+        }
+        &.active {
+          transform: rotate(-90deg) translateY(-30%);
+        }
+      }
+    }
   }
   /********************************/
   @include media(phone-lg) {

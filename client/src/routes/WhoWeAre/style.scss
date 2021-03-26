@@ -4,11 +4,14 @@
   width: 100%;
   background-color: $lightGray;
   position: absolute;
-
+  padding-top: 80px;
   .page-container {
     min-height: 100vh;
     display: flex;
     padding: 20px;
+    &:nth-child(1) {
+      min-height: calc(100vh - 120px);
+    }
   }
   .header-container {
     .logo-container {
@@ -93,5 +96,91 @@
         font-weight: 500;
       }
     }
+  }
+
+  @include media(desktop-lg) {
+  }
+  @include media(desktop-md) {
+  }
+  @include media(desktop-sm) {
+  }
+  @include media(tablet-lg) {
+  }
+  @include media(tablet-md) {
+  }
+  @include media(tablet-sm) {
+    .right-wrapper {
+      margin-left: 20px;
+      .whoweare-big {
+        span {
+          font-size: 7em;
+          line-height: 1em;
+        }
+      }
+    }
+
+    .page-container {
+      &:nth-child(2) {
+        .right-wrapper {
+          flex-direction: row-reverse;
+          margin-left: 20px;
+        }
+      }
+      &:nth-child(3) {
+        .right-wrapper {
+          flex-direction: row-reverse;
+          .whoweare-big {
+            flex-direction: row-reverse;
+            span {
+              font-size: 4em;
+              writing-mode: vertical-lr;
+              text-orientation: mixed;
+            }
+          }
+        }
+      }
+      &:nth-child(4) {
+        .right-wrapper {
+          .whoweare-big {
+            margin-left: 30px;
+            align-self: center;
+            span {
+              font-size: 4em;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include media(phone-lg) {
+    .right-wrapper {
+      .vertical-content {
+        font-size: 1.2em;
+      }
+    }
+  }
+  @include media(phone-md) {
+    .page-container {
+      .left-wrapper {
+        min-width: 50px;
+      }
+      padding: 0 10px;
+      &:nth-child(2) {
+        .right-wrapper {
+          .whoweare-big {
+            margin-left: 20px;
+            span {
+              font-size: 6em;
+            }
+          }
+        }
+      }
+      &:nth-child(3) {
+      }
+      &:nth-child(4) {
+      }
+    }
+  }
+  @include media(phone-sm) {
   }
 }

@@ -94,15 +94,17 @@ const SideMenu = () => {
           <img src={CircleShape} alt="" />
         </motion.div>
         <div className="centered-content">
-          <motion.button
-            className="contactus-btn"
-            initial="initial"
-            animate="in"
-            exit="out"
-            variants={leftImageVariants}
-          >
-            Contact Us
-          </motion.button>
+          <Link to="/contact-us" className="contactus-btn-container">
+            <motion.button
+              className="contactus-btn"
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={leftImageVariants}
+            >
+              Contact Us
+            </motion.button>
+          </Link>
           <motion.div
             className="left-wrapper"
             initial="initial"

@@ -3,17 +3,18 @@
 .contact-us-container {
   width: 100%;
   min-height: 100vh;
+  padding-top: 60px;
   background-color: $lightGray;
   position: relative;
   display: flex;
   flex-direction: column;
-  
+
   .header-container {
     .logo-container {
       color: $primary;
     }
   }
-  
+
   .info-container {
     padding: 20px;
     min-height: 95vh;
@@ -60,6 +61,7 @@
       z-index: 1;
       left: -30px;
       top: -100px;
+      animation: roll 100s ease infinite;
     }
     .information {
       text-transform: uppercase;
@@ -67,5 +69,74 @@
       font-weight: 500;
       color: $gray;
     }
+  }
+
+  @include media(desktop-lg) {
+  }
+  @include media(desktop-md) {
+  }
+  @include media(desktop-sm) {
+  }
+  @include media(tablet-lg) {
+  }
+  @include media(tablet-md) {
+    .info-container {
+      align-items: flex-start;
+      .contact-txt {
+        font-size: 120px;
+        line-height: 100px;
+        
+      }
+      .info-wrapper {
+        margin-top: 10px;
+        .circle-img {
+          width: 200px;
+        }
+        .us-txt {
+          font-size: 120px;
+          line-height: 90px;
+        }
+        .information {
+          font-size: 20px;
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  @include media(tablet-sm) {
+  }
+  @include media(phone-lg) {
+    .info-container {
+      width: 90%;
+      padding: 0;
+      .contact-txt {
+        font-size: 90px;
+        line-height: 70px;
+        
+      }
+      .info-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+        .circle-img {
+          width: 160px;
+          top: -115px;
+        }
+        .us-txt {
+          font-size: 90px;
+          line-height: 70px;
+        }
+        .information {
+          font-size: 18px;
+          padding-left: 30px;
+          align-self: flex-end;
+        }
+      }
+    }
+    
+  }
+  @include media(phone-md) {
+  }
+  @include media(phone-sm) {
   }
 }

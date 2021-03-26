@@ -24,7 +24,7 @@
     background-size: auto;
     margin: auto;
     max-width: 100%;
-    width: 80%;
+    width: 80vw;
     height: 70vh;
     position: relative;
     h3 {
@@ -81,5 +81,52 @@
         clip-path: circle(100% at 50% 50%);
       }
     }
+  }
+
+  @include media(desktop-lg) {
+  }
+  @include media(desktop-md) {
+  }
+  @include media(desktop-sm) {
+  }
+  @include media(tablet-lg) {
+  }
+  @include media(tablet-md) {
+    .page-container {
+      padding: 100px 0 50px;
+    }
+    .content-container {
+      h3 {
+        font-size: 1.7em;
+      }
+      .circle-img {
+        width: 200px;
+        height: 200px;
+        bottom: 50%;
+      }
+    }
+  }
+  @include media(tablet-sm) {
+  }
+  @include media(phone-lg) {
+    .content-container {
+      width: 70vw;
+      margin-left: 25px;
+      margin-right: auto;
+      h3 {
+        position: absolute;
+        right: -15vw;
+        font-size: 1.2em;
+      }
+    }
+    .all-jobs-btn  {
+      left: unset;
+      right: -120px;
+      transform: rotate(-90deg) scale(-1);
+    }
+  }
+  @include media(phone-md) {
+  }
+  @include media(phone-sm) {
   }
 }

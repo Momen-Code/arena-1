@@ -10,8 +10,8 @@
   .page-container {
     display: flex;
     align-items: center;
-    height: 100vh;
-    padding: 20px;
+    min-height: 100vh;
+    padding: 100px 20px 70px;
   }
   .left-wrapper {
     background: url("../../assets/img/home-bg.png") no-repeat;
@@ -54,10 +54,11 @@
     justify-content: space-evenly;
     padding-right: 60px;
     height: 580px;
+    padding-bottom: 80px;
     .services-grid {
       display: grid;
       grid-template-rows: 280px 280px;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 280px 280px;
       justify-items: center;
       align-content: center;
       column-gap: 20px;
@@ -109,5 +110,97 @@
         color: $primary;
       }
     }
+  }
+
+  @include media(desktop-lg) {
+  }
+  @include media(desktop-md) {
+    .right-wrapper {
+      padding-left: 50px;
+      .vertical-content {
+        margin-left: 30px;
+      }
+    }
+  }
+  @include media(desktop-sm) {
+    .right-wrapper {
+      .vertical-content {
+        font-size: 1.5em;
+        line-height: 1.3em;
+      }
+      .services-grid {
+        grid-template-rows: 200px 200px;
+        grid-template-columns: 200px 200px;
+
+        .service-box {
+          padding: 15px;
+          h1.title {
+            font-size: 1.5em;
+          }
+        }
+        .triangle-shape {
+          bottom: -70px;
+          border: 40px solid transparent;
+          border-top: 60px solid $primary;
+        }
+      }
+    }
+  }
+  @include media(tablet-lg) {
+  }
+  @include media(tablet-md) {
+    .page-container {
+      padding: 100px 0px 60px;
+    }
+    .header-container {
+      .logo-container {
+        color: $primary;
+      }
+    }
+    .page-container {
+      flex-direction: column;
+    }
+    .left-wrapper {
+      min-height: unset;
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 50px;
+      .our-services-txt {
+        height: auto;
+        writing-mode: unset;
+        text-orientation: unset;
+      }
+    }
+    .right-wrapper {
+      padding: 0;
+    }
+  }
+  @include media(tablet-sm) {
+    .right-wrapper {
+      padding: 0 20px;
+      height: max-content;
+      flex-direction: column;
+      align-items: center;
+      .services-grid {
+        grid-template-rows: 150px 150px;
+        grid-template-columns: 150px 150px;
+        .triangle-shape {
+          bottom: -100px;
+        }
+      }
+      .vertical-content {
+        margin: 0;
+        margin-top: 80px;
+        writing-mode: unset;
+        text-orientation: unset;
+        transform: none;
+      }
+    }
+  }
+  @include media(phone-lg) {
+  }
+  @include media(phone-md) {
+  }
+  @include media(phone-sm) {
   }
 }

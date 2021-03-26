@@ -2,21 +2,19 @@
 
 .footer-container {
   background-color: $primary;
-  // margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   color: $white;
   position: relative;
   z-index: 2;
+  padding-left: 30px;
   animation: clipCircle 2s ease 1;
   @keyframes clipCircle {
     0% {
       clip-path: circle(0% at 50% 50%);
-      
     }
     100% {
       clip-path: circle(100% at 50% 50%);
-
     }
   }
   .logo-container {
@@ -90,6 +88,92 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
+    }
+  }
+
+  @include media(desktop-lg) {
+  }
+  @include media(desktop-md) {
+  }
+  @include media(desktop-sm) {
+    grid-template-areas:
+      "logo img"
+      "links address";
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    .logo-container {
+      grid-area: logo;
+    }
+    .nav-links {
+      grid-area: links;
+    }
+    .address-container {
+      grid-area: address;
+    }
+    .designed-archaos {
+      grid-area: img;
+      h3 {
+        padding: 20px 0;
+      }
+    }
+  }
+  @include media(tablet-lg) {
+  }
+  @include media(tablet-md) {
+  }
+  @include media(tablet-sm) {
+    .nav-links {
+      .links {
+        flex-direction: column;
+      }
+    }
+  }
+  @include media(phone-lg) {
+    padding-left: 15px;
+  }
+  @include media(phone-md) {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    padding-left: 0;
+    .logo-container {
+      order: 1;
+    }
+    .nav-links {
+      order: 3;
+      padding-left: 15px;
+      .links {
+        flex-direction: row;
+      }
+    }
+    .address-container {
+      padding-left: 15px;
+      order: 2;
+    }
+    .designed-archaos {
+      order: 4;
+      margin: 0;
+      flex-direction: column;
+      h3 {
+        padding: 0;
+        margin: 0 auto;
+        transform: none;
+
+        writing-mode: unset;
+        text-orientation: unset;
+        white-space: nowrap;
+      }
+      .img-bg {
+        width: 100%;
+        height: 100px;
+      }
+    }
+  }
+  @include media(phone-sm) {
+    .nav-links {
+      .links {
+        flex-direction: column;
+      }
     }
   }
 }

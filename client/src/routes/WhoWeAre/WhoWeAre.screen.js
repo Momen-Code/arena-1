@@ -118,6 +118,13 @@ const WhoWeAre = () => {
       <div className="page-container">
         <div className="left-wrapper"></div>
         <div className="right-wrapper">
+          <div className="vertical-content">
+            <VerticalText>
+              We design digital products that go beyond pure functionality and
+              usability to evoke trust, joy and brand loyalty. Since 2003 we've
+              been honing our craft as UX and UI specialists.
+            </VerticalText>
+          </div>
           <div className="whoweare-big">
             {["We", "Aim", "For"].map((word, i) => (
               <motion.span
@@ -132,13 +139,6 @@ const WhoWeAre = () => {
                 {word}
               </motion.span>
             ))}
-          </div>
-          <div className="vertical-content">
-            <VerticalText>
-              We design digital products that go beyond pure functionality and
-              usability to evoke trust, joy and brand loyalty. Since 2003 we've
-              been honing our craft as UX and UI specialists.
-            </VerticalText>
           </div>
         </div>
         <div className="circle-shape"></div>

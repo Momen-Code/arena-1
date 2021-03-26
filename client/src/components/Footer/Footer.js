@@ -30,7 +30,6 @@ const Footer = () => {
       </div>
       <div className="address-container">
         <h2>ADDRESS</h2>
-        <br />
         AHMED YEHIA STREET , <br />
         BESIDE SHALABY PHARMACY AND L’ECLAIR ALEXANDRIA,
         <br /> EGYPT

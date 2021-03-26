@@ -136,6 +136,7 @@ body {
   font-family: Cairo, sans-serif;
   box-sizing: border-box;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 //scrollbar style
@@ -158,6 +159,7 @@ body {
   background-color: $lightGray;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 /********************************************************/
@@ -166,7 +168,6 @@ body {
 @mixin serviceBox {
   cursor: pointer;
   width: 100%;
-  min-width: 280px;
   height: 100%;
   background-color: $gray;
   padding: 25px;
