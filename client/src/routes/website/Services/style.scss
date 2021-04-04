@@ -1,0 +1,212 @@
+@import "../../../assets/style/global";
+
+.services-container {
+  width: 100%;
+  background-color: $lightGray;
+  position: absolute;
+  .header-container {
+    padding-top: 50px;
+  }
+  .page-container {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 20px 70px;
+  }
+  .left-wrapper {
+    background: url("../../../assets/img/home-bg.png") no-repeat;
+    background-color: $gray;
+    min-height: 95vh;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .circle-img {
+      color: $gray;
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      position: absolute;
+      z-index: 1;
+      bottom: -200px;
+      right: -150px;
+      animation: roll 140s ease infinite;
+    }
+    .our-services-txt {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      height: 500px;
+      color: $white;
+      font-size: 80px;
+      line-height: 80px;
+      transition: 0.5s ease;
+      text-transform: uppercase;
+      white-space: nowrap;
+      position: relative;
+    }
+  }
+  .right-wrapper {
+    flex: 6;
+    position: relative;
+    background-color: $lightGray;
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 60px;
+    height: 580px;
+    padding-bottom: 80px;
+    .services-grid {
+      display: grid;
+      grid-template-rows: 280px 280px;
+      grid-template-columns: 280px 280px;
+      justify-items: center;
+      align-content: center;
+      column-gap: 20px;
+      row-gap: 20px;
+      position: relative;
+
+      .service-box {
+        @include serviceBox;
+        clip-path: circle(200% at 50% 50%);
+        animation: clipBox 1.5s ease 1;
+        transition: 0.3s ease;
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0px 8px 10px rgba($color: $primary, $alpha: 0.2);
+        }
+        @keyframes clipBox {
+          0% {
+            clip-path: circle(0% at 50% 50%);
+          }
+          100% {
+            clip-path: circle(200% at 50% 50%);
+          }
+        }
+      }
+      .triangle-shape {
+        position: absolute;
+        bottom: -150px;
+        cursor: pointer;
+        transition: 0.2s ease;
+        transform: rotateX(60deg);
+        border: 50px solid transparent;
+        border-top: 80px solid $primary;
+        &:hover {
+          border-top-color: $gray;
+        }
+      }
+    }
+    .vertical-content {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 30px;
+      line-height: 45px;
+      display: flex;
+      flex-direction: column;
+      transform: scale(-1);
+      display: inline;
+      & > span {
+        font-weight: 500;
+        color: $primary;
+      }
+    }
+  }
+
+  @include media(desktop-lg) {
+  }
+  @include media(desktop-md) {
+    .right-wrapper {
+      padding-left: 50px;
+      .vertical-content {
+        margin-left: 30px;
+      }
+    }
+  }
+  @include media(desktop-sm) {
+    .right-wrapper {
+      .vertical-content {
+        font-size: 1.5em;
+        line-height: 1.3em;
+      }
+      .services-grid {
+        grid-template-rows: 200px 200px;
+        grid-template-columns: 200px 200px;
+
+        .service-box {
+          padding: 15px;
+          h1.title {
+            font-size: 1.5em;
+          }
+        }
+        .triangle-shape {
+          bottom: -70px;
+          border: 40px solid transparent;
+          border-top: 60px solid $primary;
+        }
+      }
+    }
+  }
+  @include media(tablet-lg) {
+  }
+  @include media(tablet-md) {
+    .page-container {
+      padding: 100px 0px 60px;
+    }
+    .header-container {
+      .logo-container {
+        color: $primary;
+      }
+    }
+    .page-container {
+      flex-direction: column;
+    }
+    .left-wrapper {
+      min-height: unset;
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 50px;
+      .our-services-txt {
+        height: auto;
+        writing-mode: unset;
+        text-orientation: unset;
+      }
+    }
+    .right-wrapper {
+      padding: 0;
+    }
+  }
+  @include media(tablet-sm) {
+    .right-wrapper {
+      padding: 0 20px;
+      height: max-content;
+      flex-direction: column;
+      align-items: center;
+      .services-grid {
+        grid-template-rows: 150px 150px;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 40px;
+        .triangle-shape {
+          bottom: -100px;
+        }
+      }
+      .vertical-content {
+        margin: 0;
+        margin-top: 120px;
+        writing-mode: unset;
+        text-orientation: unset;
+        transform: none;
+      }
+    }
+  }
+  @include media(phone-lg) {
+  }
+  @include media(phone-md) {
+  }
+  @include media(phone-sm) {
+  }
+  @include media(small-height) {
+    .page-container {
+      min-height: 800px;
+    }
+  }
+}
