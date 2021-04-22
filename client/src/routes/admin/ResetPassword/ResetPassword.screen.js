@@ -6,7 +6,7 @@ import "./style.scss";
 
 //Assets
 
-const PasswordReset = () => {
+const ResetPassword = () => {
   return (
     <div className="password-reset-container">
       <div className="content-container">
@@ -32,7 +32,7 @@ const PasswordReset = () => {
             </div>
           </form>
           <div className="forget-pass-container">
-            <Link to="/">Go to login page</Link>
+            <Link to="/admin/login">Go to login page</Link>
           </div>
         </div>
       </div>
@@ -40,4 +40,4 @@ const PasswordReset = () => {
   );
 };
 
-export default PasswordReset;
+export default ResetPassword;

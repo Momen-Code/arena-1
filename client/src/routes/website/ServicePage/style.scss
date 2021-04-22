@@ -1,0 +1,131 @@
+@import '../../../assets/style/global';
+
+.service-page-container {
+	width: 100%;
+	background-color: $lightGray;
+	position: absolute;
+	.header-container {
+		padding-top: 50px;
+		.logo-container {
+			color: $primary;
+		}
+	}
+	.page-container {
+		display: flex;
+		min-height: 100vh;
+		padding: 100px 20px 70px;
+	}
+
+	.content-container {
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+		flex-direction: column;
+		padding-top: 100px;
+		width: 100%;
+		.images-container {
+			position: relative;
+			display: flex;
+			justify-content: flex-start;
+			width: 100%;
+			.bg-img {
+				display: block;
+				margin: auto;
+				background-size: cover;
+				max-width: 80%;
+				width: 1200px;
+				height: 500px;
+				position: relative;
+				z-index: 3;
+			}
+			.circle-img {
+				color: $gray;
+				width: 300px;
+				height: 300px;
+				object-fit: contain;
+				animation: roll 80s ease infinite;
+				position: absolute;
+				z-index: 1;
+				top: -100px;
+				left: 100px;
+			}
+		}
+		.header-info {
+			width: 800px;
+			position: relative;
+			top: -50px;
+			z-index: 3;
+			h1 {
+				color: $primary;
+				font-size: 50px;
+				font-weight: 500;
+				text-shadow: 0px 1px 5px rgba($color: $lightGray, $alpha: 0.3);
+				line-height: 50px;
+				display: table-caption;
+			}
+			p {
+				color: $primary;
+			}
+		}
+		.content-info {
+			align-self: flex-start;
+			padding-left: 15vw;
+			h3 {
+				color: $primary;
+				font-size: 40px;
+				font-weight: 500;
+			}
+			p {
+				color: $primary;
+				font-size: 30px;
+				line-height: 40px;
+				text-align: right;
+			}
+		}
+		.get-quote-btn {
+			margin-top: 30px;
+			border-radius: 8px;
+			border: 2px solid $primary;
+			background-color: transparent;
+			color: $primary;
+			transform: rotate(0deg);
+			font-size: 30px;
+			font-weight: 400;
+			padding: 0 30px;
+			line-height: 40px;
+			cursor: pointer;
+			outline: none;
+			transition: 0.3s ease;
+			align-self: center;
+			&:after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background-color: $primary;
+				top: 0;
+				left: 0;
+				transition: 0.3s ease;
+				clip-path: circle(0% at 50% 50%);
+				z-index: -1;
+			}
+			&:hover {
+				color: $white;
+				&:after {
+					clip-path: circle(100% at 50% 50%);
+				}
+			}
+		}
+		.back-btn {
+			display: flex;
+			align-items: center;
+			margin-bottom: 30px;
+			align-self: flex-end;
+			svg {
+				margin-inline-start: 20px;
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+@import "../../../assets/style/global";
+
+.users-container {
+  .table-container {
+    @include tableContainer;
+    margin-top: 70px;
+  }
+}

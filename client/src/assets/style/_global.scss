@@ -4,6 +4,7 @@ $black: #000000;
 $white: #ffffff;
 $gray: #4b4b4b;
 $lightGray: #eaeaea;
+$purple: #5352ed;
 $dark-grey: #0000004d;
 $light-grey: #00000029;
 $mid-grey: #a5b1c2;
@@ -17,84 +18,84 @@ $light-green: #2ecc71;
 
 //Fonts
 @font-face {
-  src: url("../font/saved-by-zero-rg.ttf");
-  font-family: Zero;
+	src: url('../font/saved-by-zero-rg.ttf');
+	font-family: Zero;
 }
 @font-face {
-  src: url("../font/Cairo-Regular.ttf");
-  font-family: Cairo;
-  font-weight: 400;
+	src: url('../font/Cairo-Regular.ttf');
+	font-family: Cairo;
+	font-weight: 400;
 }
 @font-face {
-  src: url("../font/Cairo-SemiBold.ttf");
-  font-family: Cairo;
-  font-weight: 500;
+	src: url('../font/Cairo-SemiBold.ttf');
+	font-family: Cairo;
+	font-weight: 500;
 }
 @font-face {
-  src: url("../font/Cairo-Bold.ttf");
-  font-family: Cairo;
-  font-weight: 600;
+	src: url('../font/Cairo-Bold.ttf');
+	font-family: Cairo;
+	font-weight: 600;
 }
 
 //Fonts
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700&display=swap"); //font-family: 'Libre Franklin', sans-serif;
-@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap"); //Tajawal => font-family: 'Tajawal', sans-serif;
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap"); //Cairo => font-family: 'Cairo', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700&display=swap'); //font-family: 'Libre Franklin', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap'); //Tajawal => font-family: 'Tajawal', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap'); //Cairo => font-family: 'Cairo', sans-serif;
 
 /********************************************************/
 
 //Media Queries
 @mixin media($breakpoint) {
-  @if $breakpoint == phone-sm {
-    @media only screen and (max-width: 320px) {
-      @content;
-    }
-  }
-  @if $breakpoint == phone-md {
-    @media only screen and (max-width: 480px) {
-      @content;
-    }
-  }
-  @if $breakpoint == phone-lg {
-    @media only screen and (max-width: 576px) {
-      @content;
-    }
-  }
-  @if $breakpoint == tablet-sm {
-    @media only screen and (max-width: 798px) {
-      @content;
-    }
-  }
-  @if $breakpoint == tablet-md {
-    @media only screen and (max-width: 900px) {
-      @content;
-    }
-  }
-  @if $breakpoint == tablet-lg {
-    @media only screen and (max-width: 1024px) {
-      @content;
-    }
-  }
-  @if $breakpoint == desktop-sm {
-    @media only screen and (max-width: 1200px) {
-      @content;
-    }
-  }
-  @if $breakpoint == desktop-md {
-    @media only screen and (max-width: 1366px) {
-      @content;
-    }
-  }
-  @if $breakpoint == desktop-lg {
-    @media only screen and (max-width: 1680px) {
-      @content;
-    }
-  }
-  @if $breakpoint == small-height {
-    @media only screen and (max-height: 800px) {
-      @content;
-    }
-  }
+	@if $breakpoint == phone-sm {
+		@media only screen and (max-width: 320px) {
+			@content;
+		}
+	}
+	@if $breakpoint == phone-md {
+		@media only screen and (max-width: 480px) {
+			@content;
+		}
+	}
+	@if $breakpoint == phone-lg {
+		@media only screen and (max-width: 576px) {
+			@content;
+		}
+	}
+	@if $breakpoint == tablet-sm {
+		@media only screen and (max-width: 798px) {
+			@content;
+		}
+	}
+	@if $breakpoint == tablet-md {
+		@media only screen and (max-width: 900px) {
+			@content;
+		}
+	}
+	@if $breakpoint == tablet-lg {
+		@media only screen and (max-width: 1024px) {
+			@content;
+		}
+	}
+	@if $breakpoint == desktop-sm {
+		@media only screen and (max-width: 1200px) {
+			@content;
+		}
+	}
+	@if $breakpoint == desktop-md {
+		@media only screen and (max-width: 1366px) {
+			@content;
+		}
+	}
+	@if $breakpoint == desktop-lg {
+		@media only screen and (max-width: 1680px) {
+			@content;
+		}
+	}
+	@if $breakpoint == small-height {
+		@media only screen and (max-height: 800px) {
+			@content;
+		}
+	}
 }
 
 /*
@@ -135,82 +136,165 @@ $light-green: #2ecc71;
 
 // Global Styles
 html {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
 }
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Cairo, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: $lightGray;
+	margin: 0;
+	padding: 0;
+	font-family: Cairo, sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: $lightGray;
 }
 * {
-  margin: 0;
-  padding: 0;
-  font-family: Cairo, sans-serif;
-  box-sizing: border-box;
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
+	margin: 0;
+	padding: 0;
+	font-family: Cairo, sans-serif;
+	box-sizing: border-box;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
 }
 
 //scrollbar style
 *::-webkit-scrollbar {
-  width: 2px;
-  height: 0px;
+	width: 2px;
+	height: 0px;
 }
 *::-webkit-scrollbar-track {
-  background-color: $white;
+	background-color: $white;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: $black;
-  border-radius: 10px;
+	background-color: $black;
+	border-radius: 10px;
 }
 
 #root,
 .app-container {
-  display: flex;
-  flex-direction: column;
-  background-color: $lightGray;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	background-color: $lightGray;
+	min-height: 100vh;
+	position: relative;
+	overflow-x: hidden;
 }
 
 /********************************************************/
 
 //Globals
 @mixin serviceBox {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  background-color: $gray;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  h1.title {
-    font-weight: 400;
-    color: $white;
-    font-size: 26px;
-    line-height: 26px;
-    text-transform: uppercase;
-  }
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	background-color: $gray;
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	h1.title {
+		font-weight: 400;
+		color: $white;
+		font-size: 26px;
+		line-height: 26px;
+		text-transform: uppercase;
+	}
+}
+
+@mixin tableContainer {
+	box-shadow: 0px 3px 6px $light-grey;
+	overflow: hidden;
+	overflow-x: auto;
+	margin: 50px auto;
+	border-radius: 15px;
+	width: 1000px;
+	max-width: 95%;
+	table {
+		text-align: center;
+		border-collapse: collapse;
+		width: 100%;
+		thead {
+			th {
+				border-bottom: 1px solid $grey;
+				padding: 5px;
+				padding-left: 0px;
+				padding-right: 30px;
+				font-size: 18px;
+				font-weight: 500;
+				color: $grey;
+				white-space: nowrap;
+				text-align: left;
+				&:nth-child(1) {
+					padding-left: 40px;
+				}
+			}
+		}
+		tbody {
+			tr {
+				td {
+					text-align: left;
+					padding: 15px 0px;
+					padding-right: 30px;
+					&:nth-child(1) {
+						padding-left: 40px;
+					}
+					&:nth-last-child(1) {
+						padding-right: 0px;
+					}
+				}
+				&:nth-child(even) {
+					background-color: rgba($mid-grey, 0.7);
+					td {
+						color: $white;
+					}
+				}
+			}
+			.action-btns {
+				display: flex;
+			}
+			.icon-btn {
+				border: none;
+				outline: none;
+				background: linear-gradient(59deg, $primary 0%, $purple 100%);
+				box-shadow: 0px 3px 10px rgba($color: #000000, $alpha: 0.3);
+				width: 35px;
+				height: 35px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-right: 20px;
+				padding: 5px;
+				border-radius: 6px;
+				svg {
+					color: $white;
+				}
+			}
+		}
+	}
 }
 
 /********************************************************/
 
 //Animations
 @keyframes roll {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@mixin box-animate {
+	animation: box 0.3s ease 1;
+}
+@keyframes box {
+	0% {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(unset);
+	}
 }

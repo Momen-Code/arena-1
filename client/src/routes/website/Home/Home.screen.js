@@ -1,129 +1,102 @@
-import { useEffect } from "react";
-import { motion, useViewportScroll } from "framer-motion";
-import { useHistory } from "react-router-dom";
+import { useEffect } from 'react';
+import { motion, useViewportScroll } from 'framer-motion';
+import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 //Components
-import { Header, Footer } from "../../../components";
+import { Header, Footer } from '../../../components';
 
 //Style
-import "./style.scss";
+import './style.scss';
 
 //Assets
 // @ts-ignore
-import CircleShape from "../../../assets/img/circle-shape-primary.png";
+import CircleShape from '../../../assets/img/circle-shape-primary.png';
 
 const Home = () => {
-  const history = useHistory();
-  const { scrollYProgress } = useViewportScroll();
+	const { t } = useTranslation('translations');
 
-  // useEffect(() => {
-  //   document.documentElement.scrollTop = 0;
-  //   setTimeout(() => {
-  //     window.addEventListener("scroll", handleScroll);
-  //   }, 2000);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+	const history = useHistory();
+	const { scrollYProgress } = useViewportScroll();
 
-  // const handleScroll = (e) => {
-  //   const yPos = window.scrollY;
-  //   const isScrollUp = yPos < 20;
+	// useEffect(() => {
+	//   document.documentElement.scrollTop = 0;
+	//   setTimeout(() => {
+	//     window.addEventListener("scroll", handleScroll);
+	//   }, 2000);
+	//   return () => window.removeEventListener("scroll", handleScroll);
+	// }, []);
 
-  //   if (isScrollUp) {
-  //     // history.push("/who-we-are", { prevPath: "/" });
-  //   } else {
-  //     history.push("/who-we-are", { prevPath: "/" });
-  //   }
-  // };
+	// const handleScroll = (e) => {
+	//   const yPos = window.scrollY;
+	//   const isScrollUp = yPos < 20;
 
-  const pageVariants = {
-    initial: {},
-    in: {
-      y: 0,
-    },
-    out: {},
-  };
+	//   if (isScrollUp) {
+	//     // history.push("/who-we-are", { prevPath: "/" });
+	//   } else {
+	//     history.push("/who-we-are", { prevPath: "/" });
+	//   }
+	// };
 
-  const lineVariants = {
-    initial: {
-      x: "-50px",
-      opacity: 0,
-    },
-    in: {
-      x: 0,
-      opacity: 1,
-    },
-    out: {
-      x: "100%",
-      opacity: 0,
-    },
-  };
+	const pageVariants = {
+		initial: {},
+		in: {
+			y: 0,
+		},
+		out: {},
+	};
 
-  const lineTransitions = {
-    duration: 0.7,
-  };
+	const lineVariants = {
+		initial: {
+			x: '-50px',
+			opacity: 0,
+		},
+		in: {
+			x: 0,
+			opacity: 1,
+		},
+		out: {
+			x: '100%',
+			opacity: 0,
+		},
+	};
 
-  return (
-    <motion.div
-      className="home-container"
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={{ duration: 2 }}
-    >
-      <Header />
-      <div className="home-flex">
-        <div className="left-wrapper">
-          <motion.div className="info-text">
-            <div>
-              <motion.div
-                initial="initial"
-                animate="in"
-                exit="out"
-                variants={lineVariants}
-                transition={lineTransitions}
-              >
-                Cynicism is something that is part of the media
-              </motion.div>
-            </div>
-            <motion.div
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={lineVariants}
-              transition={lineTransitions}
-            >
-              production of a certain type of subjectivity or
-            </motion.div>
-            <motion.div
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={lineVariants}
-              transition={lineTransitions}
-            >
-              consciousness that is passive and
-              <span>disempowered</span>,
-            </motion.div>
-            <motion.div
-              initial="initial"
-              animate="in"
-              exit="out"
-              variants={lineVariants}
-              transition={lineTransitions}
-            >
-              cynical, fatalistic, pessimistic
-            </motion.div>
-          </motion.div>
-        </div>
-        <div className="right-wrapper">
-          <img className="circle-img" src={CircleShape} alt="" />
-        </div>
-      </div>
+	const lineTransitions = {
+		duration: 0.4,
+	};
 
-      <Footer />
-    </motion.div>
-  );
+	return (
+		<motion.div
+			className="home-container"
+			initial="initial"
+			animate="in"
+			exit="out"
+			variants={pageVariants}
+			transition={{ duration: 1 }}
+		>
+			<Header />
+			<div className="home-flex">
+				<div className="left-wrapper">
+					<motion.div className="info-text">
+						<motion.div
+							initial="initial"
+							animate="in"
+							exit="out"
+							variants={lineVariants}
+							transition={lineTransitions}
+						>
+							{t('WHO_WE_ARE_TXT')}
+						</motion.div>
+					</motion.div>
+				</div>
+				<div className="right-wrapper">
+					<img className="circle-img" src={CircleShape} alt="" />
+				</div>
+			</div>
+
+			<Footer />
+		</motion.div>
+	);
 };
 
 export default Home;

@@ -6,21 +6,23 @@
   position: absolute;
   .header-container {
     padding-top: 50px;
+    .logo-container {
+      color: $primary;
+    }
   }
   .page-container {
     display: flex;
-    align-items: center;
     min-height: 100vh;
     padding: 100px 20px 70px;
   }
   .left-wrapper {
     background: url("../../../assets/img/home-bg.png") no-repeat;
     background-color: $gray;
-    min-height: 95vh;
+    min-height: 800px;
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 60px;
     position: relative;
     .circle-img {
       color: $gray;
@@ -31,12 +33,11 @@
       z-index: 1;
       bottom: -200px;
       right: -150px;
-      animation: roll 140s ease infinite;
+      animation: roll 80s ease infinite;
     }
     .our-services-txt {
       writing-mode: vertical-rl;
       text-orientation: mixed;
-      height: 500px;
       color: $white;
       font-size: 80px;
       line-height: 80px;
@@ -50,14 +51,84 @@
     flex: 6;
     position: relative;
     background-color: $lightGray;
-    display: flex;
-    justify-content: space-evenly;
-    padding-right: 60px;
-    height: 580px;
-    padding-bottom: 80px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 60px 60px 80px;
+    column-gap: 30px;
+    row-gap: 30px;
+    .services-wrapper {
+    }
+    .btns-grid {
+      display: grid;
+      grid-template-columns: 280px 280px;
+      justify-items: center;
+      align-content: center;
+      column-gap: 20px;
+      row-gap: 20px;
+      margin-bottom: 20px;
+    }
+    .service-btn {
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+      border: none;
+      background-color: transparent;
+      color: $primary;
+      font-size: 20px;
+      line-height: 40px;
+      font-weight: 500;
+      padding: 0 30px;
+      cursor: pointer;
+      outline: none;
+      height: max-content;
+      transition: 0.3s ease;
+      white-space: nowrap;
+      animation-fill-mode: forwards;
+      animation: clipBtn 1.5s ease 1;
+      position: relative;
+      transform: rotate(0deg);
+      overflow: hidden;
+      &.active {
+        background-color: $primary;
+        color: $white;
+      }
+      @keyframes clipBtn {
+        0% {
+          color: $primary;
+          clip-path: circle(0% at 50% 50%);
+          background-color: $primary;
+        }
+        100% {
+          color: $white;
+          clip-path: circle(100% at 50% 50%);
+          background-color: transparent;
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: $primary;
+        top: 0;
+        left: 0;
+        transition: 0.3s ease;
+        clip-path: circle(0% at 50% 50%);
+        z-index: -1;
+      }
+      &:hover {
+        color: $white;
+        // background-color: $primary;
+        &:after {
+          clip-path: circle(100% at 50% 50%);
+        }
+      }
+    }
     .services-grid {
       display: grid;
-      grid-template-rows: 280px 280px;
+      grid-auto-rows: 280px;
       grid-template-columns: 280px 280px;
       justify-items: center;
       align-content: center;
@@ -97,13 +168,13 @@
       }
     }
     .vertical-content {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
+      // writing-mode: vertical-rl;
+      // text-orientation: mixed;
       font-size: 30px;
       line-height: 45px;
       display: flex;
       flex-direction: column;
-      transform: scale(-1);
+      // transform: scale(-1);
       display: inline;
       & > span {
         font-weight: 500;
@@ -128,8 +199,15 @@
         font-size: 1.5em;
         line-height: 1.3em;
       }
+      .btns-grid {
+        grid-template-columns: 200px 200px;
+      }
+      .service-btn {
+        font-size: 16px;
+        padding: 0 10px;
+      }
       .services-grid {
-        grid-template-rows: 200px 200px;
+        grid-auto-rows: 200px 200px;
         grid-template-columns: 200px 200px;
 
         .service-box {
@@ -147,6 +225,9 @@
     }
   }
   @include media(tablet-lg) {
+    .right-wrapper {
+      grid-template-columns: 1fr;
+    }
   }
   @include media(tablet-md) {
     .page-container {
@@ -181,8 +262,12 @@
       height: max-content;
       flex-direction: column;
       align-items: center;
+      .btns-grid {
+        grid-template-columns: 1fr 1fr;
+        align-self: center;
+        place-items: center;
+      }
       .services-grid {
-        grid-template-rows: 150px 150px;
         grid-template-columns: 1fr 1fr;
         margin-top: 40px;
         .triangle-shape {
@@ -201,6 +286,26 @@
   @include media(phone-lg) {
   }
   @include media(phone-md) {
+    .right-wrapper {
+      .btns-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .service-btn {
+        white-space: normal;
+        line-height: 26px;
+        padding: 3px 10px;
+        height: 100%;
+      }
+      .services-grid {
+        grid-auto-rows: 150px;
+        grid-template-columns: 1fr 1fr;
+        .service-box {
+          h1.title {
+            font-size: 1em;
+          }
+        }
+      }
+    }
   }
   @include media(phone-sm) {
   }

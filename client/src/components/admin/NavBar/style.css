@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap");
+/*
+--------------------------
+---To use media queries---
+--------------------------
+
+@include media(desktop-lg) {
+  
+}
+@include media(desktop-sm) {
+
+}
+@include media(tablet-lg) {
+
+}
+@include media(tablet-sm) {
+
+}
+@include media(phone-lg) {
+
+}
+@include media(phone-sm) {
+
+}
+
+*/
+/*****************************************/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Tajawal", sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Tajawal", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #2e5361;
+  border-radius: 10px;
+}
+
+/********************************************************/
+/******************************/
+/******************************/
+.nav-bar-container .navbar-container {
+  width: 100%;
+  max-height: 50px;
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-bar-container .navbar-container .burger-menu {
+  background-color: #2e5361;
+  width: 45px;
+  height: 35px;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.nav-bar-container .navbar-container .burger-menu span {
+  border-top: 2px solid #ffffff;
+  width: 25px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.nav-bar-container .navbar-container a {
+  background-color: #e74c3c;
+  border: 1px solid #f19895;
+  border-radius: 12px;
+  padding: 3px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-bar-container .navbar-container a .btn-container h3 {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.nav-bar-container .navbar-container a .icon-container {
+  margin: 7px;
+  margin-bottom: 0 !important;
+}
+
+.nav-bar-container .navbar-container a .icon-container svg {
+  color: #ffffff;
+}
+
+.nav-bar-container .sidebar {
+  position: fixed;
+  right: 20px;
+  top: 60px;
+  z-index: 2;
+  width: 250px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 2px 6px #0000004d;
+          box-shadow: 0px 2px 6px #0000004d;
+  border-radius: 10px;
+}
+
+.nav-bar-container .sidebar .triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 15px solid #2e5361;
+  position: relative;
+  top: -15px;
+  right: 10px;
+}
+
+.nav-bar-container .sidebar .btns-container div {
+  background: transparent linear-gradient(79deg, #f19895 0%, #f8ba7d 43%, #ffdc64 100%) 0% 0% no-repeat padding-box;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 60%;
+  text-align: center;
+  margin: 10px auto;
+  padding: 5px;
+}
+
+.nav-bar-container .sidebar .btns-container div button {
+  outline: none;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.nav-bar-container .sidebar .btns-container div svg {
+  color: #ffffff;
+}
+
+.nav-bar-container .sidebar .bottom-buttons {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.nav-bar-container .sidebar .bottom-buttons div {
+  width: 100%;
+  background-color: #2e5361;
+  border-bottom: 1px solid #00000029 !important;
+  border-radius: 0;
+  color: transparent;
+  outline: none;
+  border: none;
+  padding: 5px;
+}
+
+.nav-bar-container .sidebar .bottom-buttons div button {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #ffffff;
+}
+
+.nav-bar-container .sidebar .bottom-buttons .last {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.nav-bar-container .sidebar .bottom-buttons .first {
+  background-color: transparent;
+  background: transparent linear-gradient(79deg, #f19895 0%, #f8ba7d 43%, #ffdc64 100%) 0% 0% no-repeat padding-box;
+}
+/*# sourceMappingURL=style.css.map */

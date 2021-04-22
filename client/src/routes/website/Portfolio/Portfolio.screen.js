@@ -48,7 +48,7 @@ const Services = () => {
                 variants={letterVariants}
                 custom={i}
                 transition={{
-                  duration: 2,
+                  duration: 1,
                 }}
               >
                 {letter}
@@ -63,12 +63,18 @@ const Services = () => {
                 variants={letterVariants}
                 custom={i}
                 transition={{
-                  duration: 2,
+                  duration: 1,
                 }}
               >
                 {letter}
               </motion.span>
             ))}
+          </div>
+          <div className="vertical-content">
+            Everything we make must meet our three experience principles: smart,
+            simple and human. While these never <span>budge</span>, we are
+            proudly flexible in our process; continually adapting our methods to
+            meet the specific challenges of each <span>project</span>.
           </div>
         </div>
         <div className="right-wrapper">
@@ -86,13 +92,6 @@ const Services = () => {
               <h1 className="title">Project 04</h1>
             </div>
             <div className="triangle-shape" />
-          </div>
-
-          <div className="vertical-content">
-            Everything we make must meet our three experience principles: smart,
-            simple and human. While these never <span>budge</span>, we are
-            proudly flexible in our process; continually adapting our methods to
-            meet the specific challenges of each <span>project</span>.
           </div>
         </div>
       </div>
