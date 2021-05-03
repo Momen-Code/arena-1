@@ -18,7 +18,7 @@ import { ReactComponent as ArFlag } from '../../../assets/img/ar-flag.svg';
 import { ReactComponent as EnFlag } from '../../../assets/img/en-flag.svg';
 
 const Header = ({ getquote = true, menuOpen = false }) => {
-	const { t, i18n } = useTranslation();
+	const { t, i18n } = useTranslation('translations');
 
 	const { state: locationState, pathname } = useLocation();
 	const [quoteActive, setQuoteActive] = useState(false);
@@ -42,20 +42,20 @@ const Header = ({ getquote = true, menuOpen = false }) => {
 	const quoteVariants = menuOpen
 		? {
 				initial: {
-					x: 120,
+					x: i18n.dir() == 'ltr' ? 120 : -120,
 					transition: 'none',
 				},
-				in: { x: 120 },
+				in: { x: i18n.dir() == 'ltr' ? 120 : 0 },
 				out: {
-					x: 120,
+					x: i18n.dir() == 'ltr' ? 120 : -120,
 				},
 		  }
 		: {
 				initial: {
-					x: 120,
+					x: i18n.dir() == 'ltr' ? 120 : 0,
 				},
 				in: { x: 0 },
-				out: { x: 150, transition: 'none' },
+				out: { x: i18n.dir() == 'ltr' ? 150 : 0, transition: 'none' },
 		  };
 
 	const quoteTransition = menuOpen ? {} : { duration: 0.2, x: { type: 'spring', stiffness: 200 } };
@@ -180,7 +180,7 @@ const Header = ({ getquote = true, menuOpen = false }) => {
 					className={`get-quote-btn ${quoteActive ? ' active' : ''}`}
 					onClick={() => setQuoteActive(!quoteActive)}
 				>
-					Get a Quote
+					{t('GET_A_QUOTE')}
 				</div>
 				<div className={`get-quote-wrapper ${quoteActive ? ' active' : ''}`}>
 					<AiFillCloseCircle className="close-icon" onClick={() => setQuoteActive(false)} />

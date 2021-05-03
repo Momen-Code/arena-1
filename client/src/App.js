@@ -20,8 +20,10 @@ import {
 
 //Components
 import { Header, Footer } from './components';
+
 //Style
 import './assets/style/_global.scss';
+import './assets/style/rtl.scss';
 
 const App = () => {
 	const { i18n } = useTranslation();

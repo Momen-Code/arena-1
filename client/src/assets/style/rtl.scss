@@ -1,0 +1,84 @@
+@import './global';
+
+.rtl-layout {
+	.header-container {
+		.get-quote-container {
+			right: unset;
+			left: -1000px;
+			&.active {
+				left: 0;
+			}
+			.get-quote-btn {
+				transform: rotate(90deg) translateY(60%);
+				transform-origin: 100% 100%;
+				top: 50vh;
+				&.active {
+					transform: rotate(90deg) translateY(40%);
+				}
+			}
+		}
+		/********************************/
+		@include media(desktop-md) {
+			.get-quote-container {
+				left: -1020px;
+				right: unset;
+			}
+		}
+		/********************************/
+		@include media(desktop-sm) {
+			.get-quote-container {
+				left: -700px;
+				right: unset;
+			}
+		}
+		/********************************/
+		@include media(tablet-md) {
+			.get-quote-container {
+				left: -600px;
+				right: unset;
+				.get-quote-wrapper {
+					height: max-content;
+				}
+			}
+		}
+		@include media(tablet-sm) {
+			.get-quote-container {
+				left: -80vw;
+				right: unset;
+
+				.get-quote-btn {
+					font-size: 1.5em;
+				}
+			}
+		}
+	}
+	.get-quote-paper-container {
+		.left-container {
+			h1 {
+				&:nth-child(2) {
+					font-size: 60px;
+				}
+			}
+		}
+		@include media(desktop-sm) {
+			.left-container {
+				display: flex;
+				h1 {
+					&:nth-child(2) {
+						font-size: 2em;
+					}
+				}
+			}
+		}
+	}
+
+  .who-we-are-container {
+    .right-wrapper {
+			.whoweare-big {
+				span {
+					line-height: 190px;
+				}
+			}
+		}
+  }
+}
