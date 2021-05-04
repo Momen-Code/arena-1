@@ -20,6 +20,7 @@ import {
 
 //Components
 import { Header, Footer } from './components';
+// import Bg3D from './3d';
 
 //Style
 import './assets/style/_global.scss';
@@ -41,6 +42,23 @@ const App = () => {
 
 	return (
 		<div className="app-container" data-test="hello">
+			{/* <Bg3D /> */}
+			<div className="container-fluid fixed-top header disable-selection">
+				<div className="row">
+					<div className="col"></div>
+					<div className="col-md-6">
+						<div className="row">
+							<div className="col">
+								<h1>
+									<strong>Lab City 3D</strong>
+								</h1>
+								<p className="small">– Back to the red –</p>
+							</div>
+						</div>
+					</div>
+					<div className="col"></div>
+				</div>
+			</div>
 			<AnimatePresence exitBeforeEnter>
 				<Switch location={location} key={location.pathname}>
 					<Route exact path="/" component={Home} />
