@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams, useHistory, Link } from 'react-router-dom';
-import { AiOutlineArrowRight } from 'react-icons/ai';
+import { AiOutlineArrowRight,AiOutlineArrowLeft } from 'react-icons/ai';
 import servicesData from '../../../util/services';
 
 //Components
@@ -17,7 +17,7 @@ import CircleShape from '../../../assets/img/circle-shape-primary.png';
 import ServiceImage from '../../../assets/img/service-page.png';
 
 const ServicePage = () => {
-	const { t } = useTranslation('translations');
+	const { t,i18n } = useTranslation('translations');
 	const { service: serviceSlug } = useParams();
 	const history = useHistory();
 
@@ -34,8 +34,8 @@ const ServicePage = () => {
 			<div className="page-container">
 				<div className="content-container">
 					<Link to="/our-services" className="get-quote-btn back-btn">
-						Back to services
-						<AiOutlineArrowRight />
+						{t('BACK_TO_SERVICES')}
+						{i18n.dir() == 'ltr' ? <AiOutlineArrowRight /> : <AiOutlineArrowLeft />}
 					</Link>
 					<div className="images-container">
 						<img className="bg-img" src={ServiceImage} alt="" />
@@ -46,12 +46,12 @@ const ServicePage = () => {
 						<p>{servicesData[selectedIndex].description}</p>
 					</div>
 					<div className="content-info">
-						<h3>How Can We Help You ?</h3>
+						<h3>{t('HOW_CAN_WE_HELP_YOU')}</h3>
 						{servicesData[selectedIndex].subservices.map((service) => (
 							<p>{service.title}-</p>
 						))}
 					</div>
-					<button className="get-quote-btn">Get a Quote</button>
+					<button className="get-quote-btn">{t('GET_A_QUOTE')}</button>
 				</div>
 			</div>
 			<Footer />

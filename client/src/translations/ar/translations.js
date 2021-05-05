@@ -44,6 +44,8 @@ const TRANSLATION_AR = {
 	FOR_QUESTIONS_COMPLAINS: 'للأسئلة والاستفسارات',
 	ADDRESS_VALUE: '32 شارع حسين غنام, حي الحمراء, جدة',
 	SAUDI_ARABIA: 'السعودية',
+	HOW_CAN_WE_HELP_YOU: 'كيف يمكننا مساعدتك ؟',
+	BACK_TO_SERVICES: 'العودة الي الخدمات',
 };
 
 export default TRANSLATION_AR;

@@ -47,6 +47,8 @@ const TRANSLATION_EN = {
 	FOR_QUESTIONS_COMPLAINS: 'For questions & complains',
 	ADDRESS_VALUE: '32 Husayn Channam St, Al-Hamraa Dist, Gadah',
 	SAUDI_ARABIA: 'Saudi Arabia',
+	HOW_CAN_WE_HELP_YOU: 'How Can We Help You ?',
+	BACK_TO_SERVICES: "Back to services"
 };
 
 export default TRANSLATION_EN;

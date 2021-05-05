@@ -105,4 +105,14 @@
 			justify-content: unset;
 		}
 	}
+	.service-page-container {
+		.content-container {
+			.images-container {
+				.circle-img {
+					left: unset;
+					right: 100px;
+				}
+			}
+		}
+	}
 }
