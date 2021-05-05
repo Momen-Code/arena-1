@@ -43,12 +43,7 @@ const ServicePage = () => {
 					</div>
 					<div className="header-info">
 						<h1>{servicesData[selectedIndex].title.replace(' ', '\n')}</h1>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel
-							sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam
-							eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-							accusantium nemo autem. Veritatis
-						</p>
+						<p>{servicesData[selectedIndex].description}</p>
 					</div>
 					<div className="content-info">
 						<h3>How Can We Help You ?</h3>
