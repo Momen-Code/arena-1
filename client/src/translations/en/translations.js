@@ -35,7 +35,7 @@ const TRANSLATION_EN = {
   implementing it with high quality materials seeking to help clients reach their goals
   through our service`,
 	WHO_WE_ARE_TXT: `We are group of people who understand and recognized the gap between the design and
-  production, so we decided to unit the process, by designing and producing what represent our
+  production, so we decided to unite the process, by designing and producing what represent our
   client's brand.`,
 	OUR_MISSION_TXT: `Our Mission is to design and produce what is perfectly represent our client, and collaborate
   with companies to reach thier goals.`,
