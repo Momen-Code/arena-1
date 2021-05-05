@@ -72,13 +72,32 @@
 		}
 	}
 
-  .who-we-are-container {
-    .right-wrapper {
+	.who-we-are-container {
+		.right-wrapper {
 			.whoweare-big {
 				span {
 					line-height: 190px;
 				}
 			}
 		}
-  }
+	}
+	.services-container {
+		.left-wrapper {
+			.our-services-txt {
+				transform: scale(-1);
+			}
+		}
+		@include media(tablet-md) {
+			.left-wrapper {
+				.our-services-txt {
+					transform: scale(1);
+				}
+			}
+		}
+	}
+	.contact-us-container {
+		.info-wrapper {
+			justify-content: unset;
+		}
+	}
 }

@@ -33,9 +33,9 @@ const Footer = () => {
 			</div>
 			<div className="address-container">
 				<h2>{t('ADDRESS')}</h2>
-				AHMED YEHIA STREET , <br />
-				BESIDE SHALABY PHARMACY AND L’ECLAIR ALEXANDRIA,
-				<br /> EGYPT
+				{t('ADDRESS_VALUE')}
+				<br />
+				{t('SAUDI_ARABIA')}
 			</div>
 			<div className="designed-archaos">
 				<h3>{t('DESIGNED_BY')} ARCHAOS</h3>

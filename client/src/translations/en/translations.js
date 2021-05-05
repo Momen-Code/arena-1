@@ -39,6 +39,14 @@ const TRANSLATION_EN = {
   client's brand.`,
 	OUR_MISSION_TXT: `Our Mission is to design and produce what is perfectly represent our client, and collaborate
   with companies to reach thier goals.`,
+	OUR_PROJECTS: 'Our Projects',
+	OUR_SERVICES: 'Our Services',
+	TEXT_INFO:
+		'Everything we make must meet our three experience principles: smart, simple and human. While these never budge, we are proudly flexible in our process; continually adapting our methods to meet the specific challenges of each project.',
+	CONTACT_US_AT: 'Contact us at',
+	FOR_QUESTIONS_COMPLAINS: 'For questions & complains',
+	ADDRESS_VALUE: '32 Husayn Channam St, Al-Hamraa Dist, Gadah',
+	SAUDI_ARABIA: 'Saudi Arabia',
 };
 
 export default TRANSLATION_EN;

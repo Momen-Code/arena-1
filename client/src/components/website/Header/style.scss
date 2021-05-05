@@ -78,6 +78,7 @@
 		display: flex;
 		overflow-x: visible;
 		overflow-y: auto;
+		will-change: transform;
 		&.active {
 			right: 0;
 		}
@@ -101,6 +102,7 @@
 			transition: 1s ease;
 			background-color: $lightGray;
 			white-space: nowrap;
+			will-change: transform;
 			@media all and (max-height: 550px) {
 				top: 20vh;
 			}
@@ -157,7 +159,7 @@
 			padding: 8px 15px 0;
 			cursor: pointer;
 			transition: 0.3s ease;
-      background-color: $white;
+			background-color: $white;
 			&:hover {
 				background-color: $primary;
 			}

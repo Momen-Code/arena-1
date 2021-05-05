@@ -23,12 +23,11 @@ const ContactUs = () => {
 					<img className="circle-img" src={CircleShape} alt="" />
 					<div className="us-txt">{i18n.language == 'en' ? 'US' : ''}</div>
 					<div className="information">
-						<div>5 , YAHIA STREET , GLEEM , ALEXANDRIA</div>
-						<div>+201065157968</div>
-						<div>0324567859</div>
-						<div>FOR QUIESTIONS {'&'} COMPLAINS</div>
-						<div>CONTACT US AT</div>
-						<div>ARENA.WORK@AR.COM</div>
+						<div>{t('ADDRESS_VALUE')}</div>
+						<div dir="ltr">+966 56 112 2994</div>
+						<div>{t('FOR_QUESTIONS_COMPLAINS')}</div>
+						<div>{t('CONTACT_US_AT')}</div>
+						<div>SALES@ARENA.com</div>
 					</div>
 				</div>
 			</div>

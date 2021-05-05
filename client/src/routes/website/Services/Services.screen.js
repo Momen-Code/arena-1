@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useHistory, useLocation, Link, useRouteMatch } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import servicesData from '../../../util/services';
 
 //Components
@@ -10,6 +11,7 @@ import { Header, Footer } from '../../../components';
 import './style.scss';
 
 const Services = () => {
+	const { t, i18n } = useTranslation('translations');
 	const history = useHistory();
 	const { pathname, state } = useLocation();
 	const { path } = useRouteMatch();
@@ -91,35 +93,42 @@ const Services = () => {
 			<div className="page-container">
 				<div className="left-wrapper">
 					<div className="our-services-txt">
-						{['O', 'U', 'R'].map((letter, i) => (
-							<motion.span
-								initial="initial"
-								animate="in"
-								exit="out"
-								variants={letterVariants}
-								custom={i}
-								transition={{
-									duration: 1,
-								}}
-							>
-								{letter}
-							</motion.span>
-						))}
+						{t('OUR_SERVICES')
+							.split(' ')[0]
+							.split('')
+							.map((letter, i) => (
+								<motion.span
+									initial="initial"
+									animate="in"
+									exit="out"
+									variants={letterVariants}
+									custom={i}
+									transition={{
+										duration: 1,
+									}}
+								>
+									{letter}
+								</motion.span>
+							))}
 						<br />
-						{['S', 'E', 'R', 'V', 'I', 'C', 'E', 'S'].map((letter, i) => (
-							<motion.span
-								initial="initial"
-								animate="in"
-								exit="out"
-								variants={letterVariants}
-								custom={i}
-								transition={{
-									duration: 1,
-								}}
-							>
-								{letter}
-							</motion.span>
-						))}
+						{t('OUR_SERVICES').split(' ')[1] &&
+							t('OUR_SERVICES')
+								.split(' ')[1]
+								.split('')
+								.map((letter, i) => (
+									<motion.span
+										initial="initial"
+										animate="in"
+										exit="out"
+										variants={letterVariants}
+										custom={i}
+										transition={{
+											duration: 1,
+										}}
+									>
+										{letter}
+									</motion.span>
+								))}
 					</div>
 				</div>
 				<div className="right-wrapper">
@@ -144,17 +153,13 @@ const Services = () => {
 												<h1 className="title">{subservice.title}</h1>
 											</Link>
 										))}
-										<div className="triangle-shape" />
+										{/* <div className="triangle-shape" /> */}
 									</div>
 								)
 						)}
 					</div>
 
-					<div className="vertical-content">
-						Everything we make must meet our three experience principles: smart, simple and human. While
-						these never <span>budge</span>, we are proudly flexible in our process; continually adapting our
-						methods to meet the specific challenges of each <span>project</span>.
-					</div>
+					<div className="vertical-content">{t('TEXT_INFO')}</div>
 				</div>
 			</div>
 
