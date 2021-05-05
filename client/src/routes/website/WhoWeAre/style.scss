@@ -20,7 +20,7 @@
 	}
 	.left-wrapper {
 		background: url('../../../assets/img/home-bg-opacity.png') no-repeat;
-		flex: 3;
+		flex: 1;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -112,6 +112,7 @@
 	@include media(tablet-sm) {
 		.right-wrapper {
 			margin-inline-start: 20px;
+			flex-direction: column;
 			.whoweare-big {
 				span {
 					font-size: 7em;
@@ -123,19 +124,14 @@
 		.page-container {
 			&:nth-child(2) {
 				.right-wrapper {
-					flex-direction: row-reverse;
 					margin-inline-start: 20px;
 				}
 			}
 			&:nth-child(3) {
 				.right-wrapper {
-					flex-direction: row-reverse;
 					.whoweare-big {
-						flex-direction: row-reverse;
 						span {
 							font-size: 4em;
-							writing-mode: vertical-lr;
-							text-orientation: mixed;
 						}
 					}
 				}

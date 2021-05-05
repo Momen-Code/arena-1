@@ -77,6 +77,11 @@
 			.whoweare-big {
 				span {
 					line-height: 190px;
+
+					&::before {
+						width: 100%;
+						animation: none;
+					}
 				}
 			}
 		}
