@@ -10,12 +10,13 @@ import {
 	ContactUs,
 	Services,
 	ServicePage,
-	Portfolio,
+	Projects,
 	SideMenu,
 	Careers,
 	Login,
 	ResetPassword,
 	Users,
+	Page404,
 } from './routes';
 
 //Components
@@ -48,13 +49,15 @@ const App = () => {
 					<Route exact path="/contact-us" component={ContactUs} />
 					<Route exact path="/our-services/:service" component={ServicePage} />
 					<Route path="/our-services" component={Services} />
-					<Route exact path="/portfolio" component={Portfolio} />
+					<Route exact path="/projects" component={Projects} />
 					<Route exact path="/menu" component={SideMenu} />
 					<Route exact path="/careers" component={Careers} />
 					<Route exact path="/admin" component={() => <Redirect to="/admin/login" />} />
 					<Route exact path="/admin/login" component={Login} />
 					<Route exact path="/admin/reset-password" component={ResetPassword} />
 					<Route exact path="/admin/users" component={Users} />
+					<Route exact path="/404" component={Page404} />
+					<Redirect to="/404" />
 				</Switch>
 			</AnimatePresence>
 			{/* <Footer /> */}

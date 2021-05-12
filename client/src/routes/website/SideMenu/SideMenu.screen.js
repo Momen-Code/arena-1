@@ -25,7 +25,7 @@ const SideMenu = () => {
 			label: t('SERVICES'),
 		},
 		{
-			url: '/portfolio',
+			url: '/projects',
 			label: t('PROJECTS'),
 		},
 		{

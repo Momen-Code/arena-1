@@ -11,7 +11,7 @@ import './style.scss';
 // @ts-ignore
 import CircleShape from '../../../assets/img/circle-shape-primary.png';
 
-const Services = () => {
+const Projects = () => {
 	const { t, i18n } = useTranslation('translations');
 
 	const letterVariants = {
@@ -36,13 +36,13 @@ const Services = () => {
 	};
 
 	return (
-		<div className="portfolio-container">
+		<div className="projects-container">
 			<Header />
 			<div className="page-container">
 				<img className="circle-img" src={CircleShape} alt="" />
 
 				<div className="left-wrapper">
-					<div className="our-portfolio-txt">
+					<div className="our-projects-txt">
 						{t('OUR_PROJECTS')
 							.split(' ')[0]
 							.split('')
@@ -82,17 +82,17 @@ const Services = () => {
 					<div className="vertical-content">{t('TEXT_INFO')}</div>
 				</div>
 				<div className="right-wrapper">
-					<div className="portfolio-grid">
-						<div className="portfolio-box">
+					<div className="projects-grid">
+						<div className="projects-box">
 							<h1 className="title">Project 01</h1>
 						</div>
-						<div className="portfolio-box">
+						<div className="projects-box">
 							<h1 className="title">Project 02</h1>
 						</div>
-						<div className="portfolio-box">
+						<div className="projects-box">
 							<h1 className="title">Project 03</h1>
 						</div>
-						<div className="portfolio-box">
+						<div className="projects-box">
 							<h1 className="title">Project 04</h1>
 						</div>
 						<div className="triangle-shape" />
@@ -104,4 +104,4 @@ const Services = () => {
 	);
 };
 
-export default Services;
+export default Projects;
