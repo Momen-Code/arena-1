@@ -123,7 +123,7 @@ const Projects = () => {
 							}}
 						>
 							<PulseLoader loading={isLoading} color="#830a0a" />
-							{!isLoading && 'Load More'}
+							{!isLoading && t('LOAD_MORE')}
 						</button>
 					)}
 				</div>

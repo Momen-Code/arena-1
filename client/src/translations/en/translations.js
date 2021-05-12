@@ -48,7 +48,8 @@ const TRANSLATION_EN = {
 	ADDRESS_VALUE: '32 Husayn Channam St, Al-Hamraa Dist, Gadah',
 	SAUDI_ARABIA: 'Saudi Arabia',
 	HOW_CAN_WE_HELP_YOU: 'How Can We Help You ?',
-	BACK_TO_SERVICES: "Back to services"
+	BACK_TO_SERVICES: 'Back to services',
+	LOAD_MORE: 'Load More',
 };
 
 export default TRANSLATION_EN;

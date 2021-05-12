@@ -159,7 +159,7 @@ const Services = () => {
 						)}
 					</div>
 
-					<div className="vertical-content">{t('TEXT_INFO')}</div>
+					<div className="vertical-content">{servicesData[selectedService].description}</div>
 				</div>
 			</div>
 
