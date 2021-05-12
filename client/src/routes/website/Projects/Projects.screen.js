@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import PulseLoader from 'react-spinners/PulseLoader';
 
 //Components
 import { Header, Footer } from '../../../components';
@@ -11,8 +13,14 @@ import './style.scss';
 // @ts-ignore
 import CircleShape from '../../../assets/img/circle-shape-primary.png';
 
+import PROJECTS from '../../../util/projects';
+
 const Projects = () => {
 	const { t, i18n } = useTranslation('translations');
+
+	const [activeProjects, setActiveProjects] = useState(PROJECTS.slice(0, 3));
+	const [inActiveProjects, setInActiveProjects] = useState(PROJECTS.slice(3));
+	const [isLoading, setIsLoading] = useState(false);
 
 	const letterVariants = {
 		initial: (i) => ({
@@ -41,7 +49,7 @@ const Projects = () => {
 			<div className="page-container">
 				<img className="circle-img" src={CircleShape} alt="" />
 
-				<div className="left-wrapper">
+				<div className="top-wrapper">
 					<div className="our-projects-txt">
 						{t('OUR_PROJECTS')
 							.split(' ')[0]
@@ -81,22 +89,43 @@ const Projects = () => {
 					</div>
 					<div className="vertical-content">{t('TEXT_INFO')}</div>
 				</div>
-				<div className="right-wrapper">
+				<div className="bottom-wrapper">
 					<div className="projects-grid">
-						<div className="projects-box">
-							<h1 className="title">Project 01</h1>
-						</div>
-						<div className="projects-box">
-							<h1 className="title">Project 02</h1>
-						</div>
-						<div className="projects-box">
-							<h1 className="title">Project 03</h1>
-						</div>
-						<div className="projects-box">
-							<h1 className="title">Project 04</h1>
-						</div>
-						<div className="triangle-shape" />
+						{activeProjects.map((project, i) => (
+							<div className="project-box" key={i}>
+								<div className="project-img">
+									<img alt="project image" src={`/images/projects/${project.thumbnail}`} />
+								</div>
+								<h1 className="title">{project.title}</h1>
+							</div>
+						))}
 					</div>
+					<div className="projects-grid inactive">
+						{inActiveProjects.map((project, i) => (
+							<div className="project-box" key={i}>
+								<div className="project-img">
+									<img alt="project image" src={`/images/projects/${project.thumbnail}`} />
+								</div>
+								<h1 className="title">{project.title}</h1>
+							</div>
+						))}
+					</div>
+					{inActiveProjects.length != 0 && (
+						<button
+							className="load-more-btn"
+							onClick={() => {
+								setIsLoading(true);
+								setTimeout(() => {
+									setIsLoading(false);
+									setActiveProjects(PROJECTS.slice(0, activeProjects.length + 3));
+									setInActiveProjects(PROJECTS.slice(activeProjects.length + 3));
+								}, 1500);
+							}}
+						>
+							<PulseLoader loading={isLoading} color="#830a0a" />
+							{!isLoading && 'Load More'}
+						</button>
+					)}
 				</div>
 			</div>
 			<Footer />
