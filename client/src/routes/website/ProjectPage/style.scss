@@ -1,0 +1,95 @@
+@import '../../../assets/style/global';
+
+.project-page-container {
+	width: 100%;
+	background-color: $lightGray;
+	position: absolute;
+	.header-container {
+		padding-top: 50px;
+		.logo-container {
+			color: $primary;
+		}
+	}
+	.page-container {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		padding: 100px 20px 70px;
+		align-items: center;
+	}
+	.slider-container {
+		position: relative;
+		height: 600px;
+		width: 1200px;
+		max-width: 90%;
+		margin: auto;
+		margin-top: 50px;
+
+		.circle-img {
+			color: $gray;
+			width: 16em;
+			height: 16em;
+			object-fit: contain;
+			animation: roll 80s ease infinite;
+			position: absolute;
+			z-index: 1;
+			top: -100px;
+			right: -100px;
+		}
+	}
+	.swiper-container {
+		box-shadow: 0px 5px 20px 2px rgba($color: $primary, $alpha: 0.2);
+		border-radius: 10px;
+		height: inherit;
+		width: inherit;
+		margin: 0;
+		.swiper-slide {
+			height: 100%;
+			width: 100%;
+			cursor: pointer;
+		}
+		img {
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+		.swiper-pagination {
+			.swiper-pagination-bullet {
+				width: 50px;
+				border-radius: 4px;
+				
+				&-active {
+					background-color: $primary;
+				}
+			}
+		}
+	}
+	.btns-container {
+		display: flex;
+		justify-content: flex-end;
+		margin: 25px auto;
+		button {
+			font-size: 16px;
+			@include advBtn;
+			text-transform: uppercase;
+			&:active {
+				transform: scale(0.95);
+			}
+			&:nth-child(1) {
+				margin-inline-end: 20px;
+			}
+		}
+	}
+
+	.slider-footer {
+		color: $primary;
+		width: 1000px;
+		max-width: 95%;
+		.title {
+			font-size: 3em;
+		}
+		p {
+			font-size: 1.3em;
+		}
+	}
+}

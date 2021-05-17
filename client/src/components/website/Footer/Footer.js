@@ -4,6 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
+//Assets
+// @ts-ignore
+import Logo from '../../../assets/img/logo-gray.png';
+
 const Footer = () => {
 	const { t, i18n } = useTranslation('translations');
 
@@ -11,7 +15,7 @@ const Footer = () => {
 		<div className="footer-container">
 			<div className="logo-container">
 				<Link to="/">
-					<h1>ARENA</h1>
+					<img className="logo-img" alt="ARENA" src={Logo} />
 				</Link>
 				<div className="copyright">© 2020 ARCHAOS</div>
 			</div>

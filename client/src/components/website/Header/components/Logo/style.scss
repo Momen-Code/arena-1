@@ -1,15 +1,28 @@
-@import "../../../../../assets/style/global";
+@import '../../../../../assets/style/global';
 
 .logo-container {
-  color: $white;
-  direction: ltr;
-  span {
-    font-family: Zero;
-    color: inherit;
-    letter-spacing: 10px;
-    font-size: 24px;
-    display: inline-block;
-    position: relative;
-    will-change: transform, top, right, left, bottom;
-  }
+	color: $white;
+	direction: ltr;
+
+	.arena {
+		span {
+			font-family: Zero;
+			color: inherit;
+			letter-spacing: 10px;
+			font-size: 24px;
+			display: inline-block;
+			position: relative;
+			will-change: transform, top, right, left, bottom;
+		}
+	}
+	.media-production {
+		text-transform: uppercase;
+		font-size: 12px;
+		letter-spacing: 3px;
+		transform: translateY(-8px);
+		span {
+			position: relative;
+			display: inline-block;
+		}
+	}
 }

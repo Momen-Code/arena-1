@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import PulseLoader from 'react-spinners/PulseLoader';
@@ -17,6 +18,7 @@ import PROJECTS from '../../../util/projects';
 
 const Projects = () => {
 	const { t, i18n } = useTranslation('translations');
+	const location = useLocation();
 
 	const [activeProjects, setActiveProjects] = useState(PROJECTS.slice(0, 3));
 	const [inActiveProjects, setInActiveProjects] = useState(PROJECTS.slice(3));
@@ -92,12 +94,12 @@ const Projects = () => {
 				<div className="bottom-wrapper">
 					<div className="projects-grid">
 						{activeProjects.map((project, i) => (
-							<div className="project-box" key={i}>
+							<Link to={`${location.pathname}/${project.slug}`} className="project-box" key={i}>
 								<div className="project-img">
 									<img alt="project image" src={`/images/projects/${project.thumbnail}`} />
 								</div>
 								<h1 className="title">{project.title}</h1>
-							</div>
+							</Link>
 						))}
 					</div>
 					<div className="projects-grid inactive">

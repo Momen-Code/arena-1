@@ -11,6 +11,7 @@ import {
 	Services,
 	ServicePage,
 	Projects,
+	ProjectPage,
 	SideMenu,
 	Careers,
 	Login,
@@ -49,7 +50,8 @@ const App = () => {
 					<Route exact path="/contact-us" component={ContactUs} />
 					<Route exact path="/our-services/:service" component={ServicePage} />
 					<Route path="/our-services" component={Services} />
-					<Route exact path="/projects" component={Projects} />
+					<Route exact path="/projects/:project" component={ProjectPage} />
+					<Route path="/projects" component={Projects} />
 					<Route exact path="/menu" component={SideMenu} />
 					<Route exact path="/careers" component={Careers} />
 					<Route exact path="/admin" component={() => <Redirect to="/admin/login" />} />

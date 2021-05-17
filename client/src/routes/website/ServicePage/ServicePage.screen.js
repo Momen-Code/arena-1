@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams, useHistory, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { AiOutlineArrowRight,AiOutlineArrowLeft } from 'react-icons/ai';
 import servicesData from '../../../util/services';
 
@@ -19,7 +19,6 @@ import ServiceImage from '../../../assets/img/service-page.png';
 const ServicePage = () => {
 	const { t,i18n } = useTranslation('translations');
 	const { service: serviceSlug } = useParams();
-	const history = useHistory();
 
 	const [selectedIndex, setSelectedIndex] = useState(
 		servicesData.indexOf(servicesData.find((s) => s.slug == serviceSlug))

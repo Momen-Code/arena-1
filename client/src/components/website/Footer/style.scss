@@ -26,9 +26,10 @@
 		a {
 			color: $white;
 		}
-		h1 {
-			font-family: Zero;
-			letter-spacing: 20px;
+		.logo-img {
+			width: 250px;
+			height: 100px;
+			object-fit: contain;
 		}
 		.copyright {
 			font-size: 12px;
