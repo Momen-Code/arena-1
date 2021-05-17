@@ -16,14 +16,25 @@
 		min-height: 100vh;
 		padding: 100px 20px 70px;
 		align-items: center;
-	}
-	.slider-container {
-		position: relative;
-		height: 600px;
 		width: 1200px;
 		max-width: 90%;
 		margin: auto;
 		margin-top: 50px;
+		.goback-btn {
+			@include advBtn;
+			display: flex;
+			align-items: center;
+			margin-bottom: 30px;
+			align-self: flex-end;
+			svg {
+				margin-inline-start: 20px;
+			}
+		}
+	}
+	.slider-container {
+		position: relative;
+		height: 600px;
+		width: inherit;
 
 		.circle-img {
 			color: $gray;
@@ -57,7 +68,7 @@
 			.swiper-pagination-bullet {
 				width: 50px;
 				border-radius: 4px;
-				
+
 				&-active {
 					background-color: $primary;
 				}
@@ -83,12 +94,29 @@
 
 	.slider-footer {
 		color: $primary;
-		width: 1000px;
+		width: 800px;
 		max-width: 95%;
+		position: relative;
+		align-self: flex-start;
+		.circle-img {
+			color: $gray;
+			width: 12em;
+			height: 12em;
+			object-fit: contain;
+			animation: roll 80s ease infinite;
+			position: absolute;
+			z-index: 0;
+			top: -50px;
+			left: 100px;
+		}
 		.title {
 			font-size: 3em;
+			z-index: 1;
+			position: relative;
 		}
 		p {
+			position: relative;
+			z-index: 1;
 			font-size: 1.3em;
 		}
 	}

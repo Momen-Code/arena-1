@@ -93,6 +93,17 @@
 			.project-box {
 				cursor: pointer;
 				position: relative;
+				clip-path: circle(200% at 50% 50%);
+				transition: 0.3s ease;
+				// animation: clipBox 1.5s ease 1;
+				@keyframes clipBox {
+					0% {
+						clip-path: circle(0% at 50% 50%);
+					}
+					100% {
+						clip-path: circle(200% at 50% 50%);
+					}
+				}
 				&::after {
 					content: '';
 					position: absolute;

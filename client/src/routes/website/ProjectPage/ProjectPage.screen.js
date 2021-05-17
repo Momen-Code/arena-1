@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams, useHistory, Link } from 'react-router-dom';
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 
 import PROJECTS from '../../../util/projects';
@@ -34,6 +36,10 @@ const ProjectPage = () => {
 		<div className="project-page-container">
 			<Header />
 			<div className="page-container">
+				<Link to="/projects" className="goback-btn">
+					{t('BACK_TO_PROJECTS')}
+					{i18n.dir() == 'ltr' ? <AiOutlineArrowRight /> : <AiOutlineArrowLeft />}
+				</Link>
 				<div className="slider-container">
 					<img className="circle-img" src={CircleShape} alt="" />
 					<Swiper
@@ -60,6 +66,7 @@ const ProjectPage = () => {
 					</div>
 				</div>
 				<div className="slider-footer">
+					<img className="circle-img" src={CircleShape} alt="" />
 					<h1 className="title">{PROJECTS[selectedIndex].title}</h1>
 					<p>{PROJECTS[selectedIndex].description}</p>
 				</div>

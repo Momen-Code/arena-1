@@ -49,6 +49,7 @@ const TRANSLATION_EN = {
 	SAUDI_ARABIA: 'Saudi Arabia',
 	HOW_CAN_WE_HELP_YOU: 'How Can We Help You ?',
 	BACK_TO_SERVICES: 'Back to services',
+	BACK_TO_PROJECTS: 'Back to projects',
 	LOAD_MORE: 'Load More',
 };
 

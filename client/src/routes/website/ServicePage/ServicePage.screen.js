@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
-import { AiOutlineArrowRight,AiOutlineArrowLeft } from 'react-icons/ai';
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import servicesData from '../../../util/services';
 
 //Components
@@ -17,7 +17,7 @@ import CircleShape from '../../../assets/img/circle-shape-primary.png';
 import ServiceImage from '../../../assets/img/service-page.png';
 
 const ServicePage = () => {
-	const { t,i18n } = useTranslation('translations');
+	const { t, i18n } = useTranslation('translations');
 	const { service: serviceSlug } = useParams();
 
 	const [selectedIndex, setSelectedIndex] = useState(
@@ -32,7 +32,7 @@ const ServicePage = () => {
 			<Header />
 			<div className="page-container">
 				<div className="content-container">
-					<Link to="/our-services" className="get-quote-btn back-btn">
+					<Link to="/our-services" className="back-btn">
 						{t('BACK_TO_SERVICES')}
 						{i18n.dir() == 'ltr' ? <AiOutlineArrowRight /> : <AiOutlineArrowLeft />}
 					</Link>
