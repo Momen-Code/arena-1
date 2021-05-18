@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
-import servicesData from '../../../util/services';
+import servicesData from '../../../util/services-en';
+import { useQuoteContext } from '../../../provider';
 
 //Components
 import { Header, Footer } from '../../../components';
@@ -12,11 +13,12 @@ import './style.scss';
 
 //Assets
 // @ts-ignore
-import CircleShape from '../../../assets/img/circle-shape-primary.png';
+import CircleShape from '../../../assets/img/circle-shape-gray.png';
 // @ts-ignore
 import ServiceImage from '../../../assets/img/service-page.png';
 
 const ServicePage = () => {
+	const { setQuoteActive } = useQuoteContext();
 	const { t, i18n } = useTranslation('translations');
 	const { service: serviceSlug } = useParams();
 
@@ -50,7 +52,9 @@ const ServicePage = () => {
 							<p>{service.title}-</p>
 						))}
 					</div>
-					<button className="get-quote-btn">{t('GET_A_QUOTE')}</button>
+					<button className="get-quote-btn" onClick={() => setQuoteActive(true)}>
+						{t('GET_A_QUOTE')}
+					</button>
 				</div>
 			</div>
 			<Footer />

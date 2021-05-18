@@ -78,7 +78,7 @@ const Home = () => {
 			<div className="home-flex">
 				<div className="left-wrapper">
 					<motion.div className="info-text">
-						<motion.div
+						<motion.h5
 							initial="initial"
 							animate="in"
 							exit="out"
@@ -86,7 +86,7 @@ const Home = () => {
 							transition={lineTransitions}
 						>
 							{t('WHO_WE_ARE_TXT')}
-						</motion.div>
+						</motion.h5>
 					</motion.div>
 				</div>
 				<div className="right-wrapper">

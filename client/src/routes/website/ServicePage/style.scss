@@ -33,9 +33,9 @@
 				display: block;
 				margin: auto;
 				background-size: cover;
-				max-width: 80%;
+				max-width: 100%;
 				width: 1200px;
-				height: 500px;
+				height: auto;
 				position: relative;
 				z-index: 3;
 			}
@@ -49,10 +49,12 @@
 				z-index: 1;
 				top: -100px;
 				left: 100px;
+				opacity: 0.7;
 			}
 		}
 		.header-info {
 			width: 800px;
+			max-width: 80%;
 			position: relative;
 			top: -50px;
 			z-index: 3;
@@ -85,6 +87,8 @@
 		}
 		.get-quote-btn {
 			@include advBtn;
+			align-self: center;
+			margin-top: 20px;
 		}
 		.back-btn {
 			@include advBtn;
@@ -92,8 +96,22 @@
 			align-items: center;
 			margin-bottom: 30px;
 			align-self: flex-end;
+			position: relative;
+			z-index: 5;
 			svg {
 				margin-inline-start: 20px;
+			}
+		}
+	}
+
+	@include media(phone-lg) {
+		.content-container {
+			.content-info {
+				align-self: flex-end;
+				padding: 0;
+			}
+			.back-btn {
+				font-size: 16px;
 			}
 		}
 	}

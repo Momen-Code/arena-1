@@ -18,6 +18,7 @@
 			top: calc(-190px);
 			right: 18%;
 			animation: roll 80s ease infinite;
+			opacity: 0.7;
 		}
 	}
 
@@ -35,8 +36,8 @@
 		margin-bottom: 100px;
 		.our-projects-txt {
 			color: $primary;
-			font-size: 80px;
-			line-height: 100px;
+			font-size: 5em;
+			line-height: 1.5em;
 			transition: 0.5s ease;
 			text-transform: uppercase;
 			white-space: nowrap;
@@ -93,9 +94,10 @@
 			.project-box {
 				cursor: pointer;
 				position: relative;
-				clip-path: circle(200% at 50% 50%);
+				clip-path: circle(0% at 50% 50%);
 				transition: 0.3s ease;
-				// animation: clipBox 1.5s ease 1;
+				animation: clipBox 1.5s 0.5s ease 1;
+				animation-fill-mode: forwards;
 				@keyframes clipBox {
 					0% {
 						clip-path: circle(0% at 50% 50%);
@@ -219,13 +221,39 @@
 	@include media(tablet-sm) {
 	}
 	@include media(phone-lg) {
-	}
-	@include media(phone-md) {
-		.bottom-wrapper {
-			.projects-grid {
-				grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		.top-wrapper {
+			margin-bottom: 0px;
+			padding: 30px 20px;
+			.our-projects-txt {
+				font-size: 50px;
+				line-height: 60px;
+			}
+			.vertical-content {
+				font-size: 18px;
 			}
 		}
+		.bottom-wrapper {
+			.projects-grid {
+				grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+				column-gap: 14px;
+				row-gap: 20px;
+				.project-box {
+					height: auto;
+					.project-img {
+						border-radius: 7px;
+					}
+					.title {
+						font-size: 20px !important;
+						line-height: 40px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+				}
+			}
+		}
+	}
+	@include media(phone-md) {
 	}
 	@include media(phone-sm) {
 	}

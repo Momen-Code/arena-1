@@ -46,8 +46,10 @@ const TRANSLATION_AR = {
 	SAUDI_ARABIA: 'السعودية',
 	HOW_CAN_WE_HELP_YOU: 'كيف يمكننا مساعدتك ؟',
 	BACK_TO_SERVICES: 'العودة الي الخدمات',
-	BACK_TO_PROJECTS: 'العودة الي المشاريع',
+	BACK_TO_PROJECTS: 'معرض أعمالنا',
 	LOAD_MORE: 'تحميل المزيد',
+	BACK: 'السابق',
+	NEXT: 'التالي',
 };
 
 export default TRANSLATION_AR;

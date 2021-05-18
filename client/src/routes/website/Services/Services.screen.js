@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useHistory, useLocation, Link, useRouteMatch } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import servicesData from '../../../util/services';
+import servicesData from '../../../util/services-en';
 
 //Components
 import { Header, Footer } from '../../../components';
@@ -93,42 +93,74 @@ const Services = () => {
 			<div className="page-container">
 				<div className="left-wrapper">
 					<div className="our-services-txt">
-						{t('OUR_SERVICES')
-							.split(' ')[0]
-							.split('')
-							.map((letter, i) => (
+						{i18n.dir() == 'rtl' ? (
+							<>
 								<motion.span
 									initial="initial"
 									animate="in"
 									exit="out"
 									variants={letterVariants}
-									custom={i}
+									custom={2}
 									transition={{
 										duration: 1,
 									}}
 								>
-									{letter}
+									{t('OUR_SERVICES').split(' ')[0]}
 								</motion.span>
-							))}
-						<br />
-						{t('OUR_SERVICES').split(' ')[1] &&
-							t('OUR_SERVICES')
-								.split(' ')[1]
-								.split('')
-								.map((letter, i) => (
-									<motion.span
-										initial="initial"
-										animate="in"
-										exit="out"
-										variants={letterVariants}
-										custom={i}
-										transition={{
-											duration: 1,
-										}}
-									>
-										{letter}
-									</motion.span>
-								))}
+								<br />
+								<motion.span
+									initial="initial"
+									animate="in"
+									exit="out"
+									variants={letterVariants}
+									custom={2}
+									transition={{
+										duration: 1,
+									}}
+								>
+									{t('OUR_SERVICES').split(' ')[1]}
+								</motion.span>
+							</>
+						) : (
+							<>
+								{t('OUR_SERVICES')
+									.split(' ')[0]
+									.split('')
+									.map((letter, i) => (
+										<motion.span
+											initial="initial"
+											animate="in"
+											exit="out"
+											variants={letterVariants}
+											custom={i}
+											transition={{
+												duration: 1,
+											}}
+										>
+											{letter}
+										</motion.span>
+									))}
+								<br />
+								{t('OUR_SERVICES').split(' ')[1] &&
+									t('OUR_SERVICES')
+										.split(' ')[1]
+										.split('')
+										.map((letter, i) => (
+											<motion.span
+												initial="initial"
+												animate="in"
+												exit="out"
+												variants={letterVariants}
+												custom={i}
+												transition={{
+													duration: 1,
+												}}
+											>
+												{letter}
+											</motion.span>
+										))}
+							</>
+						)}
 					</div>
 				</div>
 				<div className="right-wrapper">
@@ -150,6 +182,10 @@ const Services = () => {
 									<div className="services-grid">
 										{service.subservices.map((subservice, i) => (
 											<Link to={`${path}/${service.slug}`} className="service-box" key={i}>
+												<img
+													alt={subservice.title}
+													src={`/images/services/${subservice.cover}`}
+												/>
 												<h1 className="title">{subservice.title}</h1>
 											</Link>
 										))}

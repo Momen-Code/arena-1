@@ -38,7 +38,7 @@ const Logo = () => {
 			},
 		}),
 		out: (i) => ({
-			y: '-150px',
+			x: '-150px',
 			opacity: 0,
 			transition: {
 				delay: (i + 1) * 0.1,

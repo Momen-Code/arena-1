@@ -1,317 +1,306 @@
-@import "../../../assets/style/global";
+@import '../../../assets/style/global';
 
 .services-container {
-  width: 100%;
-  background-color: $lightGray;
-  position: absolute;
-  .header-container {
-    padding-top: 50px;
-    .logo-container {
-      color: $primary;
-    }
-  }
-  .page-container {
-    display: flex;
-    min-height: 100vh;
-    padding: 100px 20px 70px;
-  }
-  .left-wrapper {
-    background: url("../../../assets/img/home-bg.png") no-repeat;
-    background-color: $gray;
-    min-height: 800px;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    padding-top: 60px;
-    position: relative;
-    .circle-img {
-      color: $gray;
-      width: 300px;
-      height: 300px;
-      object-fit: contain;
-      position: absolute;
-      z-index: 1;
-      bottom: -200px;
-      right: -150px;
-      animation: roll 80s ease infinite;
-    }
-    .our-services-txt {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      color: $white;
-      font-size: 80px;
-      line-height: 80px;
-      transition: 0.5s ease;
-      text-transform: uppercase;
-      white-space: nowrap;
-      position: relative;
-    }
-  }
-  .right-wrapper {
-    flex: 6;
-    position: relative;
-    background-color: $lightGray;
-    display: grid;
-    place-items: center;
-    grid-template-columns: 1fr 1fr;
-    padding: 60px 60px 80px;
-    column-gap: 30px;
-    row-gap: 30px;
-    .services-wrapper {
-    }
-    .btns-grid {
-      display: grid;
-      grid-template-columns: 280px 280px;
-      justify-items: center;
-      align-content: center;
-      column-gap: 20px;
-      row-gap: 20px;
-      margin-bottom: 20px;
-    }
-    .service-btn {
-      display: block;
-      width: 100%;
-      border-radius: 8px;
-      border: none;
-      background-color: transparent;
-      color: $primary;
-      font-size: 20px;
-      line-height: 40px;
-      font-weight: 500;
-      padding: 0 30px;
-      cursor: pointer;
-      outline: none;
-      height: max-content;
-      transition: 0.3s ease;
-      white-space: nowrap;
-      animation-fill-mode: forwards;
-      animation: clipBtn 1.5s ease 1;
-      position: relative;
-      transform: rotate(0deg);
-      overflow: hidden;
-      &.active {
-        background-color: $primary;
-        color: $white;
-      }
-      @keyframes clipBtn {
-        0% {
-          color: $primary;
-          clip-path: circle(0% at 50% 50%);
-          background-color: $primary;
-        }
-        100% {
-          color: $white;
-          clip-path: circle(100% at 50% 50%);
-          background-color: transparent;
-        }
-      }
-      &:after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background-color: $primary;
-        top: 0;
-        left: 0;
-        transition: 0.3s ease;
-        clip-path: circle(0% at 50% 50%);
-        z-index: -1;
-      }
-      &:hover {
-        color: $white;
-        // background-color: $primary;
-        &:after {
-          clip-path: circle(100% at 50% 50%);
-        }
-      }
-    }
-    .services-grid {
-      display: grid;
-      grid-auto-rows: 280px;
-      grid-template-columns: 280px 280px;
-      justify-items: center;
-      align-content: center;
-      column-gap: 20px;
-      row-gap: 20px;
-      position: relative;
+	width: 100%;
+	background-color: $lightGray;
+	position: absolute;
+	.header-container {
+		padding-top: 50px;
+		.logo-container {
+			color: $primary;
+		}
+	}
+	.page-container {
+		display: flex;
+		min-height: 100vh;
+		padding: 100px 20px 70px;
+	}
+	.left-wrapper {
+		background: url('../../../assets/img/home-bg.png') no-repeat;
+		background-color: $gray;
+		min-height: 800px;
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		padding-top: 60px;
+		position: relative;
+		.circle-img {
+			color: $gray;
+			width: 300px;
+			height: 300px;
+			object-fit: contain;
+			position: absolute;
+			z-index: 1;
+			bottom: -200px;
+			right: -150px;
+			animation: roll 80s ease infinite;
+		}
+		.our-services-txt {
+			writing-mode: vertical-rl;
+			text-orientation: mixed;
+			color: $white;
+			font-size: 80px;
+			line-height: 80px;
+			transition: 0.5s ease;
+			text-transform: uppercase;
+			white-space: nowrap;
+			position: relative;
+		}
+	}
+	.right-wrapper {
+		flex: 6;
+		position: relative;
+		background-color: $lightGray;
+		display: grid;
+		place-items: center;
+		grid-template-columns: 1fr 1fr;
+		padding: 60px 60px 80px;
+		column-gap: 30px;
+		row-gap: 30px;
+		.btns-grid {
+			display: grid;
+			grid-template-columns: 280px 280px;
+			justify-items: center;
+			align-content: center;
+			column-gap: 20px;
+			row-gap: 20px;
+			margin-bottom: 20px;
+		}
+		.service-btn {
+			@include advBtn;
+			border: none;
+			overflow: hidden;
+			animation: clipBtn 0.5s ease 1;
+			@keyframes clipBtn {
+				0% {
+					color: $primary;
+					clip-path: circle(0% at 50% 50%);
+					background-color: $primary;
+				}
+				100% {
+					color: $white;
+					clip-path: circle(100% at 50% 50%);
+					background-color: transparent;
+				}
+			}
+			&.active {
+				background-color: $primary;
+				color: $white;
+			}
+		}
+		.services-grid {
+			display: grid;
+			grid-auto-rows: 280px;
+			grid-template-columns: 280px 280px;
+			justify-items: center;
+			align-content: center;
+			column-gap: 20px;
+			row-gap: 20px;
+			position: relative;
 
-      .service-box {
-        @include serviceBox;
-        clip-path: circle(200% at 50% 50%);
-        animation: clipBox 1.5s ease 1;
-        transition: 0.3s ease;
-        &:hover {
-          transform: translateY(-10px);
-          box-shadow: 0px 8px 10px rgba($color: $primary, $alpha: 0.2);
-        }
-        @keyframes clipBox {
-          0% {
-            clip-path: circle(0% at 50% 50%);
-          }
-          100% {
-            clip-path: circle(200% at 50% 50%);
-          }
-        }
-      }
-      .triangle-shape {
-        position: absolute;
-        bottom: -150px;
-        cursor: pointer;
-        transition: 0.2s ease;
-        transform: rotateX(60deg);
-        border: 50px solid transparent;
-        border-top: 80px solid $primary;
-        &:hover {
-          border-top-color: $gray;
-        }
-      }
-    }
-    .vertical-content {
-      // writing-mode: vertical-rl;
-      // text-orientation: mixed;
-      font-size: 30px;
-      line-height: 45px;
-      display: flex;
-      flex-direction: column;
-      // transform: scale(-1);
-      display: inline;
-      & > span {
-        font-weight: 500;
-        color: $primary;
-      }
-    }
-  }
+			.service-box {
+				@include serviceBox;
+				clip-path: circle(200% at 50% 50%);
+				animation: clipBox 1.5s ease 1;
+				transition: 0.3s ease;
+				position: relative;
+				&:hover {
+					transform: translateY(-10px);
+					box-shadow: 0px 8px 10px rgba($color: $primary, $alpha: 0.2);
+				}
 
-  @include media(desktop-lg) {
-  }
-  @include media(desktop-md) {
-    .right-wrapper {
-      padding-left: 50px;
-      .vertical-content {
-        margin-left: 30px;
-      }
-    }
-  }
-  @include media(desktop-sm) {
-    .right-wrapper {
-      .vertical-content {
-        font-size: 1.5em;
-        line-height: 1.3em;
-      }
-      .btns-grid {
-        grid-template-columns: 200px 200px;
-      }
-      .service-btn {
-        font-size: 16px;
-        padding: 0 10px;
-      }
-      .services-grid {
-        grid-auto-rows: 200px 200px;
-        grid-template-columns: 200px 200px;
+				@keyframes clipBox {
+					0% {
+						clip-path: circle(0% at 50% 50%);
+					}
+					100% {
+						clip-path: circle(200% at 50% 50%);
+					}
+				}
 
-        .service-box {
-          padding: 15px;
-          h1.title {
-            font-size: 1.5em;
-          }
-        }
-        .triangle-shape {
-          bottom: -70px;
-          border: 40px solid transparent;
-          border-top: 60px solid $primary;
-        }
-      }
-    }
-  }
-  @include media(tablet-lg) {
-    .right-wrapper {
-      grid-template-columns: 1fr;
-    }
-  }
-  @include media(tablet-md) {
-    .page-container {
-      padding: 100px 0px 60px;
-    }
-    .header-container {
-      .logo-container {
-        color: $primary;
-      }
-    }
-    .page-container {
-      flex-direction: column;
-    }
-    .left-wrapper {
-      min-height: unset;
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 50px;
-      .our-services-txt {
-        height: auto;
-        writing-mode: unset;
-        text-orientation: unset;
-      }
-    }
-    .right-wrapper {
-      padding: 0;
-    }
-  }
-  @include media(tablet-sm) {
-    .right-wrapper {
-      padding: 0 20px;
-      height: max-content;
-      flex-direction: column;
-      align-items: center;
-      .btns-grid {
-        grid-template-columns: 1fr 1fr;
-        align-self: center;
-        place-items: center;
-      }
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-        margin-top: 40px;
-        .triangle-shape {
-          bottom: -100px;
-        }
-      }
-      .vertical-content {
-        margin: 0;
-        margin-top: 120px;
-        writing-mode: unset;
-        text-orientation: unset;
-        transform: none;
-      }
-    }
-  }
-  @include media(phone-lg) {
-  }
-  @include media(phone-md) {
-    .right-wrapper {
-      .btns-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .service-btn {
-        white-space: normal;
-        line-height: 26px;
-        padding: 3px 10px;
-        height: 100%;
-      }
-      .services-grid {
-        grid-auto-rows: 150px;
-        grid-template-columns: 1fr 1fr;
-        .service-box {
-          h1.title {
-            font-size: 1em;
-          }
-        }
-      }
-    }
-  }
-  @include media(phone-sm) {
-  }
-  @include media(small-height) {
-    .page-container {
-      min-height: 800px;
-    }
-  }
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+				.title {
+					position: absolute;
+					padding: 5px;
+					width: 100%;					
+				}
+			}
+			.triangle-shape {
+				position: absolute;
+				bottom: -150px;
+				cursor: pointer;
+				transition: 0.2s ease;
+				transform: rotateX(60deg);
+				border: 50px solid transparent;
+				border-top: 80px solid $primary;
+				&:hover {
+					border-top-color: $gray;
+				}
+			}
+		}
+		.vertical-content {
+			// writing-mode: vertical-rl;
+			// text-orientation: mixed;
+			font-size: 30px;
+			line-height: 45px;
+			display: flex;
+			flex-direction: column;
+			// transform: scale(-1);
+			display: inline;
+			& > span {
+				font-weight: 500;
+				color: $primary;
+			}
+		}
+	}
+
+	@include media(desktop-lg) {
+	}
+	@include media(desktop-md) {
+		.right-wrapper {
+			padding-left: 50px;
+			.vertical-content {
+				margin-left: 30px;
+			}
+		}
+	}
+	@include media(desktop-sm) {
+		.right-wrapper {
+			.vertical-content {
+				font-size: 1.5em;
+				line-height: 1.3em;
+			}
+			.btns-grid {
+				grid-template-columns: 200px 200px;
+			}
+			.service-btn {
+				font-size: 16px;
+				padding: 0 10px;
+			}
+			.services-grid {
+				grid-auto-rows: 200px 200px;
+				grid-template-columns: 200px 200px;
+
+				.service-box {
+					h1.title {
+						font-size: 1.3em;
+					}
+				}
+				.triangle-shape {
+					bottom: -70px;
+					border: 40px solid transparent;
+					border-top: 60px solid $primary;
+				}
+			}
+		}
+	}
+	@include media(tablet-lg) {
+		.right-wrapper {
+			grid-template-columns: 1fr;
+		}
+	}
+	@include media(tablet-md) {
+		.page-container {
+			padding: 100px 0px 60px;
+		}
+		.header-container {
+			.logo-container {
+				color: $primary;
+			}
+		}
+		.page-container {
+			flex-direction: column;
+		}
+		.left-wrapper {
+			min-height: unset;
+			width: 100%;
+			padding: 20px;
+			margin-bottom: 50px;
+			.our-services-txt {
+				height: auto;
+				writing-mode: unset;
+				text-orientation: unset;
+			}
+		}
+		.right-wrapper {
+			padding: 0;
+		}
+	}
+	@include media(tablet-sm) {
+		.right-wrapper {
+			padding: 0 20px;
+			height: max-content;
+			flex-direction: column;
+			align-items: center;
+			.btns-grid {
+				grid-template-columns: 1fr 1fr;
+				align-self: center;
+				place-items: center;
+			}
+			.services-grid {
+				grid-template-columns: 1fr 1fr;
+				margin-top: 40px;
+				.triangle-shape {
+					bottom: -100px;
+				}
+			}
+			.vertical-content {
+				margin: 0;
+				writing-mode: unset;
+				text-orientation: unset;
+				transform: none;
+			}
+		}
+	}
+	@include media(phone-lg) {
+		.left-wrapper {
+			justify-content: flex-start;
+			.our-services-txt {
+				font-size: 50px;
+				line-height: 55px;
+			}
+		}
+		.right-wrapper {
+			.services-grid {
+				.service-box {
+					.title {
+						font-size: 18px !important;
+					}
+				}
+			}
+		}
+	}
+	@include media(phone-md) {
+		.right-wrapper {
+			.btns-grid {
+				grid-template-columns: 1fr 1fr;
+			}
+			.service-btn {
+				white-space: normal;
+				line-height: 26px;
+				padding: 3px 10px;
+				height: 100%;
+			}
+			.services-grid {
+				grid-auto-rows: 150px;
+				grid-template-columns: 1fr 1fr;
+				.service-box {
+					h1.title {
+						font-size: 1em;
+					}
+				}
+			}
+		}
+	}
+	@include media(phone-sm) {
+	}
+	@include media(small-height) {
+		.page-container {
+			min-height: 800px;
+		}
+	}
 }

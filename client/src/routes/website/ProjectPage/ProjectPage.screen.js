@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 
-import PROJECTS from '../../../util/projects';
+import PROJECTS from '../../../util/projects-en';
 
 //Style
 import './style.scss';
@@ -27,10 +27,7 @@ const ProjectPage = () => {
 	const { project: projectSlug } = useParams();
 
 	const [selectedIndex, setSelectedIndex] = useState(PROJECTS.indexOf(PROJECTS.find((s) => s.slug == projectSlug)));
-
-	useEffect(() => {
-		if (selectedIndex == -1) window.location.href = '/our-services';
-	}, []);
+	if (selectedIndex == -1) window.location.href = '/projects';
 
 	return (
 		<div className="project-page-container">
@@ -52,7 +49,6 @@ const ProjectPage = () => {
 						autoplay={{ delay: 3000 }}
 						pagination
 						loop
-						dir={i18n.dir()}
 					>
 						{PROJECTS[selectedIndex].slides.map((slide, i) => (
 							<SwiperSlide key={i}>
@@ -60,10 +56,10 @@ const ProjectPage = () => {
 							</SwiperSlide>
 						))}
 					</Swiper>
-					<div className="btns-container">
-						<button className="back-btn">Back</button>
-						<button className="next-btn">Next</button>
-					</div>
+				</div>
+				<div className="btns-container">
+					<button className="back-btn">{t('BACK')}</button>
+					<button className="next-btn">{t('NEXT')}</button>
 				</div>
 				<div className="slider-footer">
 					<img className="circle-img" src={CircleShape} alt="" />

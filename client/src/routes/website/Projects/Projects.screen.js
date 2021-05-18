@@ -12,16 +12,15 @@ import './style.scss';
 
 //Assets
 // @ts-ignore
-import CircleShape from '../../../assets/img/circle-shape-primary.png';
+import CircleShape from '../../../assets/img/circle-shape-gray.png';
 
-import PROJECTS from '../../../util/projects';
+import PROJECTS from '../../../util/projects-en';
 
 const Projects = () => {
 	const { t, i18n } = useTranslation('translations');
 	const location = useLocation();
-
-	const [activeProjects, setActiveProjects] = useState(PROJECTS.slice(0, 3));
-	const [inActiveProjects, setInActiveProjects] = useState(PROJECTS.slice(3));
+	const [activeProjects, setActiveProjects] = useState(PROJECTS.slice(0, window.innerWidth > 576 ? 3 : 4));
+	const [inActiveProjects, setInActiveProjects] = useState(PROJECTS.slice(window.innerWidth > 576 ? 3 : 4));
 	const [isLoading, setIsLoading] = useState(false);
 
 	const letterVariants = {
@@ -53,41 +52,73 @@ const Projects = () => {
 
 				<div className="top-wrapper">
 					<div className="our-projects-txt">
-						{t('OUR_PROJECTS')
-							.split(' ')[0]
-							.split('')
-							.map((letter, i) => (
+						{i18n.dir() == 'rtl' ? (
+							<>
 								<motion.span
 									initial="initial"
 									animate="in"
 									exit="out"
 									variants={letterVariants}
-									custom={i}
+									custom={1}
 									transition={{
 										duration: 1,
 									}}
 								>
-									{letter}
+									{t('OUR_PROJECTS').split(' ')[0]}
 								</motion.span>
-							))}
-						<br />
-						{t('OUR_PROJECTS')
-							.split(' ')[1]
-							.split('')
-							.map((letter, i) => (
+								<br />
 								<motion.span
 									initial="initial"
 									animate="in"
 									exit="out"
 									variants={letterVariants}
-									custom={i}
+									custom={1}
 									transition={{
 										duration: 1,
 									}}
 								>
-									{letter}
+									{t('OUR_PROJECTS').split(' ')[1]}
 								</motion.span>
-							))}
+							</>
+						) : (
+							<>
+								{t('OUR_PROJECTS')
+									.split(' ')[0]
+									.split('')
+									.map((letter, i) => (
+										<motion.span
+											initial="initial"
+											animate="in"
+											exit="out"
+											variants={letterVariants}
+											custom={i}
+											transition={{
+												duration: 1,
+											}}
+										>
+											{letter}
+										</motion.span>
+									))}
+								<br />
+								{t('OUR_PROJECTS')
+									.split(' ')[1]
+									.split('')
+									.map((letter, i) => (
+										<motion.span
+											initial="initial"
+											animate="in"
+											exit="out"
+											variants={letterVariants}
+											custom={i}
+											transition={{
+												duration: 1,
+											}}
+										>
+											{letter}
+										</motion.span>
+									))}
+							</>
+						)}
 					</div>
 					<div className="vertical-content">{t('TEXT_INFO')}</div>
 				</div>
@@ -119,9 +150,13 @@ const Projects = () => {
 								setIsLoading(true);
 								setTimeout(() => {
 									setIsLoading(false);
-									setActiveProjects(PROJECTS.slice(0, activeProjects.length + 3));
-									setInActiveProjects(PROJECTS.slice(activeProjects.length + 3));
-								}, 1500);
+									setActiveProjects(
+										PROJECTS.slice(0, activeProjects.length + (window.innerWidth > 576 ? 3 : 4))
+									);
+									setInActiveProjects(
+										PROJECTS.slice(activeProjects.length + (window.innerWidth > 576 ? 3 : 4))
+									);
+								}, 800);
 							}}
 						>
 							<PulseLoader loading={isLoading} color="#830a0a" />

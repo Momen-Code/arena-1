@@ -3,6 +3,7 @@ import { Link, useLocation, useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { useTranslation } from 'react-i18next';
+import { useQuoteContext } from '../../../provider';
 
 //Style
 import './style.scss';
@@ -21,7 +22,8 @@ const Header = ({ getquote = true, menuOpen = false }) => {
 	const { t, i18n } = useTranslation('translations');
 
 	const { state: locationState, pathname } = useLocation();
-	const [quoteActive, setQuoteActive] = useState(false);
+	const { quoteActive, setQuoteActive } = useQuoteContext();
+
 
 	const quoteContainerRef = useRef(null);
 

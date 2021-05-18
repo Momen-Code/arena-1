@@ -51,6 +51,8 @@ const TRANSLATION_EN = {
 	BACK_TO_SERVICES: 'Back to services',
 	BACK_TO_PROJECTS: 'Back to projects',
 	LOAD_MORE: 'Load More',
+	BACK: 'Back',
+	NEXT: 'Next',
 };
 
 export default TRANSLATION_EN;

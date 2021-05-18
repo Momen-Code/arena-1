@@ -72,17 +72,17 @@
 		bottom: 0;
 		top: 0px;
 		bottom: 0px;
-		padding: 20px 0px;
+		padding: 20px 2px;
 		z-index: 15;
 		transition: 1.5s ease;
 		display: flex;
 		overflow-x: visible;
 		overflow-y: auto;
-		will-change: transform;
 		&.active {
 			right: 0;
 		}
 		.get-quote-btn {
+			will-change: transform;
 			position: fixed;
 			z-index: 1;
 			top: calc(200px + 40px);
@@ -92,7 +92,6 @@
 			border-radius: 12px 12px 0 0;
 			padding: 10px 25px 90px;
 			text-transform: uppercase;
-			width: max-content;
 			font-size: 30px;
 			line-height: 39px;
 			font-weight: 500;
@@ -229,6 +228,7 @@
 	}
 	/********************************/
 	@include media(phone-lg) {
+		padding: 50px 20px;
 	}
 	/********************************/
 	@include media(phone-md) {
