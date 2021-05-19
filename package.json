@@ -19,15 +19,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.5.1",
     "express": "^4.17.1",
-    "framer-motion": "^4.0.0",
-    "i18next": "^20.2.1",
-    "i18next-browser-languagedetector": "^6.1.0",
-    "i18next-http-backend": "^1.2.1",
-    "jquery": "^3.6.0",
     "localtunnel": "^2.0.1",
-    "nodemon": "^2.0.7",
-    "react-i18next": "^11.8.13",
-    "react-spinners": "^0.10.6",
-    "swiper": "^6.6.1"
+    "nodemon": "^2.0.7"
   }
 }
