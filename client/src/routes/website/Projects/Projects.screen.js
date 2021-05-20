@@ -127,7 +127,7 @@ const Projects = () => {
 						{activeProjects.map((project, i) => (
 							<Link to={`${location.pathname}/${project.slug}`} className="project-box" key={i}>
 								<div className="project-img">
-									<img alt="project image" src={`/images/projects/${project.thumbnail}`} />
+									<img alt="project image" src={project.thumbnail} />
 								</div>
 								<h1 className="title">{project.title}</h1>
 							</Link>
@@ -137,7 +137,7 @@ const Projects = () => {
 						{inActiveProjects.map((project, i) => (
 							<div className="project-box" key={i}>
 								<div className="project-img">
-									<img alt="project image" src={`/images/projects/${project.thumbnail}`} />
+									<img alt="project image" src={project.thumbnail} />
 								</div>
 								<h1 className="title">{project.title}</h1>
 							</div>

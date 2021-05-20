@@ -52,7 +52,7 @@ const ProjectPage = () => {
 					>
 						{PROJECTS[selectedIndex].slides.map((slide, i) => (
 							<SwiperSlide key={i}>
-								<img src={`/images/projects/${slide}`} alt={PROJECTS[selectedIndex].title} />
+								<img src={slide} alt={PROJECTS[selectedIndex].title} />
 							</SwiperSlide>
 						))}
 					</Swiper>

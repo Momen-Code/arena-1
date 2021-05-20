@@ -182,10 +182,7 @@ const Services = () => {
 									<div className="services-grid">
 										{service.subservices.map((subservice, i) => (
 											<Link to={`${path}/${service.slug}`} className="service-box" key={i}>
-												<img
-													alt={subservice.title}
-													src={`/images/services/${subservice.cover}`}
-												/>
+												<img alt={subservice.title} src={subservice.cover} />
 												<h1 className="title">{subservice.title}</h1>
 											</Link>
 										))}
