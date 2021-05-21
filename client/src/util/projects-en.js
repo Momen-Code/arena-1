@@ -35,7 +35,7 @@ const PROJECTS = [
 	{
 		title: 'Rocs',
 		slug: 'rocs',
-		thumbnail: 'https://i.ibb.co/dts1bFm/rocs-thumbnail.jpg',
+		thumbnail: 'https://i.ibb.co/dPmn8TV/THUMBNAIL.jpg',
 		slides: [
 			'https://i.ibb.co/yFcrKd4/rocs-slide-1.jpg',
 			'https://i.ibb.co/P4G3nVm/rocs-slide-2.jpg',
@@ -114,15 +114,15 @@ const PROJECTS = [
 	{
 		title: 'Block 99',
 		slug: 'block99',
-		thumbnail: 'https://i.ibb.co/3zhqJgh/block99-slide-1.jpg',
+		thumbnail: 'https://i.ibb.co/Rzdkc6M/thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/3zhqJgh/block99-slide-1.jpg',
-			'https://i.ibb.co/rvBLrdx/block99-slide-2.jpg',
-			'https://i.ibb.co/FXkHChc/Folded-Paper-Mockup-2-by-Anthony-Boyd-Graphics.jpg',
-			'https://i.ibb.co/G5ZjBTD/Dual-A4-Paper-Against-Wall-Mockup-by-Anthony-Boyd-Graphics.jpg',
-			'https://i.ibb.co/WndNhPX/Dual-A4-Paper-Against-Wall-Mockup-by-Anthony-Boyd-Graphics.jpg',
-			'https://i.ibb.co/bz7zFFR/mockups-design-com.jpg',
-			'https://i.ibb.co/BcNw2bP/mockups-design-com.jpg',
+			'https://i.ibb.co/PFmPZVq/block99-slide-2.jpg',
+			'https://i.ibb.co/YTvrwjb/block99-slide-4.jpg',
+			'https://i.ibb.co/jwrWLnB/block99-slide-5.jpg',
+			'https://i.ibb.co/PQYW1Ws/block99-slide-6.jpg',
+			'https://i.ibb.co/vPxvrkz/block99-slide-7.jpg',
+			'https://i.ibb.co/Qc6FQXY/block99-slide-9.jpg',
 		],
 		description:
 			'We are able to plan and develop a brand starting from brand/ digital strategy passing by Business consulting, completed by application development, and custom web development.',
@@ -130,7 +130,7 @@ const PROJECTS = [
 	{
 		title: 'Dexters',
 		slug: 'dexters',
-		thumbnail: 'https://i.ibb.co/pbmwkHY/dexters-slide-1.jpg',
+		thumbnail: 'https://i.ibb.co/BGQ5YTd/thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/pbmwkHY/dexters-slide-1.jpg',
 			'https://i.ibb.co/cDZnHQj/dexters-slide-2.jpg',
@@ -144,13 +144,13 @@ const PROJECTS = [
 	{
 		title: 'Frango',
 		slug: 'frango',
-		thumbnail: 'https://i.ibb.co/PrdR8yN/mockups-design-com.jpg',
+		thumbnail: 'https://i.ibb.co/tX26y0K/THUMBNAIL.jpg',
 		slides: [
-			'https://i.ibb.co/PrdR8yN/mockups-design-com.jpg',
-			'https://i.ibb.co/vVNWRj5/Folded-poster-flyer-mock-up-with-shadow-overlay-for-event-promotion-design-presentetion-self-portfol.jpg',
-			'https://i.ibb.co/gt9qKyJ/frango-slide-3.jpg',
-			'https://i.ibb.co/CvDSGSk/frango-slide-4.jpg',
-			'https://i.ibb.co/9W1RPhf/frango-slide-5.jpg',
+			'https://i.ibb.co/Z6SZbRL/frango-slide-1.jpg',
+			'https://i.ibb.co/yyFWRMS/frango-slide-2.jpg',
+			'https://i.ibb.co/M9MM6Rr/frango-slide-3.jpg',
+			'https://i.ibb.co/5TBB7yQ/frango-slide-4.jpg',
+			'https://i.ibb.co/RyTzsjj/frango-slide-5.jpg',
 		],
 		description:
 			'We are able to plan and develop a brand starting from brand/ digital strategy passing by Business consulting, completed by application development, and custom web development.',
@@ -158,7 +158,7 @@ const PROJECTS = [
 	{
 		title: 'Makatza',
 		slug: 'makatza',
-		thumbnail: 'https://i.ibb.co/gP507GG/makatza-slide-1.jpg',
+		thumbnail: 'https://i.ibb.co/hKJhCfm/THUMBNAIL.jpg',
 		slides: [
 			'https://i.ibb.co/gP507GG/makatza-slide-1.jpg',
 			'https://i.ibb.co/hK91N0F/makatza-slide-2.jpg',
@@ -172,7 +172,7 @@ const PROJECTS = [
 	{
 		title: "Nagia's",
 		slug: 'nagia',
-		thumbnail: 'https://i.ibb.co/d5v4Zwd/nagia-slide-1.jpg',
+		thumbnail: 'https://i.ibb.co/pJdfpCt/THUMBNAIL.jpg',
 		slides: [
 			'https://i.ibb.co/d5v4Zwd/nagia-slide-1.jpg',
 			'https://i.ibb.co/Nmb2681/nagia-slide-2.jpg',
@@ -190,7 +190,7 @@ const PROJECTS = [
 	{
 		title: 'Squad 10',
 		slug: 'squad10',
-		thumbnail: 'https://i.ibb.co/c6fbKqB/squad10-slide-1.jpg',
+		thumbnail: 'https://i.ibb.co/Zm5zzb1/THUMBNAIL.jpg',
 		slides: [
 			'https://i.ibb.co/c6fbKqB/squad10-slide-1.jpg',
 			'https://i.ibb.co/4TRhqcn/squad10-slide-2.jpg',

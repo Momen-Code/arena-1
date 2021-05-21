@@ -19,8 +19,8 @@ import PROJECTS from '../../../util/projects-en';
 const Projects = () => {
 	const { t, i18n } = useTranslation('translations');
 	const location = useLocation();
-	const [activeProjects, setActiveProjects] = useState(PROJECTS.slice(0, window.innerWidth > 576 ? 3 : 4));
-	const [inActiveProjects, setInActiveProjects] = useState(PROJECTS.slice(window.innerWidth > 576 ? 3 : 4));
+	const [activeProjects, setActiveProjects] = useState(PROJECTS.slice(0, window.innerWidth > 576 ? 6 : 4));
+	const [inActiveProjects, setInActiveProjects] = useState(PROJECTS.slice(window.innerWidth > 576 ? 6 : 4));
 	const [isLoading, setIsLoading] = useState(false);
 
 	const letterVariants = {
@@ -151,10 +151,10 @@ const Projects = () => {
 								setTimeout(() => {
 									setIsLoading(false);
 									setActiveProjects(
-										PROJECTS.slice(0, activeProjects.length + (window.innerWidth > 576 ? 3 : 4))
+										PROJECTS.slice(0, activeProjects.length + (window.innerWidth > 576 ? 6 : 4))
 									);
 									setInActiveProjects(
-										PROJECTS.slice(activeProjects.length + (window.innerWidth > 576 ? 3 : 4))
+										PROJECTS.slice(activeProjects.length + (window.innerWidth > 576 ? 6 : 4))
 									);
 								}, 800);
 							}}
