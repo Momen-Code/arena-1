@@ -23,7 +23,7 @@ const PROJECTS = [
 	{
 		title: 'Oxi',
 		slug: 'oxi',
-		thumbnail: 'https://i.ibb.co/x2TgMjr/oxi-thumbnail.jpg',
+		thumbnail: 'https://i.ibb.co/SrG2HV7/oxi-thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/Hq8PDvz/oxi-slide-1.jpg',
 			'https://i.ibb.co/8mN7xrt/oxi-slide-2.jpg',
@@ -48,7 +48,7 @@ const PROJECTS = [
 	{
 		title: 'Greens',
 		slug: 'greens',
-		thumbnail: 'https://i.ibb.co/56ssz8w/greens-thumbnail.jpg',
+		thumbnail: 'https://i.ibb.co/KxQrVvR/greens-thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/LRZ13wd/greens-slide-1.jpg',
 			'https://i.ibb.co/4Nc2R69/greens-slide-2.jpg',
@@ -61,7 +61,7 @@ const PROJECTS = [
 	{
 		title: 'BME - Beauty Made Easy',
 		slug: 'beauty-made-easy',
-		thumbnail: 'https://i.ibb.co/KxkKXfq/beauty-thumbnail.jpg',
+		thumbnail: 'https://i.ibb.co/mz9bqGJ/bme-thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/P9p2Ryk/bme-slide-1.jpg',
 			'https://i.ibb.co/R3YGG26/bme-slide-2.jpg',
@@ -80,7 +80,7 @@ const PROJECTS = [
 	{
 		title: 'Amigos',
 		slug: 'amigos',
-		thumbnail: 'https://i.ibb.co/YfmzGts/amigos-slide-1.jpg',
+		thumbnail: 'https://i.ibb.co/BrLxPbs/amigos-thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/YfmzGts/amigos-slide-1.jpg',
 			'https://i.ibb.co/pKkLtV1/amigos-slide-2.jpg',
