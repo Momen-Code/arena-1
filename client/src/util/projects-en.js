@@ -98,7 +98,7 @@ const PROJECTS = [
 	{
 		title: 'Atlas',
 		slug: 'atlas',
-		thumbnail: 'https://i.ibb.co/MR1fjYj/atlas-slide-1.jpg',
+		thumbnail: 'https://i.ibb.co/KrT4PMh/atlas-thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/MR1fjYj/atlas-slide-1.jpg',
 			'https://i.ibb.co/7Y0K53Z/atlas-slide-2.jpg',
