@@ -59,9 +59,10 @@
 			object-fit: contain;
 			position: absolute;
 			z-index: 1;
-			left: -30px;
-			top: -100px;
+			left: -100px;
+			top: -300px;
 			animation: roll 100s ease infinite;
+			opacity: 0.2;
 		}
 		.information {
 			text-transform: uppercase;

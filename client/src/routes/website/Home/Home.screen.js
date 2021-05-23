@@ -74,7 +74,7 @@ const Home = () => {
 			variants={pageVariants}
 			transition={{ duration: 1 }}
 		>
-			<Header />
+			<Header logoGray/>
 			<div className="home-flex">
 				<div className="left-wrapper">
 					<motion.div className="info-text">

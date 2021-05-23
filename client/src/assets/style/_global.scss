@@ -147,6 +147,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	background-color: $lightGray;
+	user-select: none;
 }
 * {
 	margin: 0;
@@ -159,15 +160,14 @@ body {
 
 //scrollbar style
 *::-webkit-scrollbar {
-	width: 2px;
-	height: 0px;
+	width: 3px;
 }
 *::-webkit-scrollbar-track {
 	background-color: $white;
 }
 *::-webkit-scrollbar-thumb {
-	background-color: $black;
-	border-radius: 10px;
+	background-color: $gray;
+	border-radius: 2px;
 }
 
 @include media(phone-lg) {

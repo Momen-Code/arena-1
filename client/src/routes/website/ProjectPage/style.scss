@@ -49,7 +49,7 @@
 			z-index: 1;
 			top: -100px;
 			right: -100px;
-			opacity: 0.7;
+			opacity: 0.2;
 		}
 	}
 	.swiper-container {
@@ -68,6 +68,8 @@
 			height: auto;
 			max-width: 100%;
 			max-height: inherit;
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
 		}
 		.swiper-pagination {
 			display: grid;
@@ -122,12 +124,13 @@
 			z-index: 0;
 			top: -50px;
 			left: 100px;
-			opacity: 0.7;
+			opacity: 0.2;
 		}
 		.title {
 			font-size: 3em;
 			z-index: 1;
 			position: relative;
+			direction: ltr;
 		}
 		p {
 			position: relative;

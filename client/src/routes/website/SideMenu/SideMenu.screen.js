@@ -10,7 +10,7 @@ import './style.scss';
 
 //Assets
 // @ts-ignore
-import CircleShape from '../../../assets/img/circle-shape-primary.png';
+import CircleShape from '../../../assets/img/circle-shape-gray.png';
 
 const SideMenu = () => {
 	const { t } = useTranslation('translations');

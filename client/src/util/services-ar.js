@@ -1,125 +1,147 @@
 const services = [
 	{
-		title: 'Planning & Development',
+		title: 'التخطيط والتطوير',
 		slug: 'planning-development',
-		cover: 'cover-1.jpg',
+		cover: 'https://i.ibb.co/8rLSxFf/PLANNING.jpg',
 		description:
-			'We are able to plan and develop a brand starting from brand/ digital strategy passing by Business consulting, completed by application development, and custom web development.',
+			'نحن قادرون على تخطيط وتطوير علامة تجارية بدءًا من العلامة التجارية / الاستراتيجية الرقمية مروراً باستشارات الأعمال ، واستكمالها من خلال تطوير التطبيقات ، وتطوير الويب المخصص.',
 		subservices: [
 			{
-				title: 'Application Development',
+				title: 'تطوير التطبيقات',
 				slug: 'application-development',
+				cover: 'https://i.ibb.co/2kZLVQd/app-design.jpg',
 			},
 			{
-				title: 'Business Consulting',
+				title: 'استشارات الاعمال',
 				slug: 'business-consulting',
+				cover: 'https://i.ibb.co/FmFzzXk/buzz-consr.jpg',
 			},
 			{
-				title: 'Brand Strategy',
+				title: 'استراتيجية العلامة التجارية',
 				slug: 'brand-startegy',
+				cover: 'https://i.ibb.co/dPxJZn5/brand-strategy-0.jpg',
 			},
 			{
-				title: 'Web Development',
+				title: 'تطوير الويب',
 				slug: 'web-development',
+				cover: 'https://i.ibb.co/gVRHcx4/web-dev-0.jpg',
 			},
 			{
-				title: 'Digital Strategy/E-commerce',
+				title: 'الإستراتيجية الرقمية / التجارة الإلكترونية',
 				slug: 'e-commerce',
+				cover: 'https://i.ibb.co/4NN6RFB/e-commerce.jpg',
 			},
 		],
 	},
 	{
-		title: 'Marketing & Advertising',
+		title: 'الاعلان التسويقي',
 		slug: 'marketing-advertising',
-		cover: 'cover-2.jpg',
+		cover: 'https://i.ibb.co/7rpysW4/MARKETING.jpg',
 		description:
-			'We Market and spread a brand with Displays, retail, in-store services, Ad campaigns, marketing automation based on analytics, we can also help in public relations, social media management.',
+			'نقوم بتسويق ونشر العلامة التجارية من خلال شاشات العرض وتجارة التجزئة والخدمات داخل المتجر والحملات الإعلانية وأتمتة التسويق القائمة على التحليلات ، ويمكننا أيضًا المساعدة في العلاقات العامة وإدارة الوسائط الاجتماعية.',
 		subservices: [
 			{
-				title: 'Ad Campaigns',
+				title: 'الحملات الإعلانية',
 				slug: 'ad-campaigns',
+				cover: 'https://i.ibb.co/wsdFV2k/ad-camp-0.jpg',
 			},
 			{
-				title: 'Analytics',
+				title: 'تحليلات',
 				slug: 'analytics',
+				cover: 'https://i.ibb.co/YRWbZfd/analytics-jpg0.jpg',
 			},
 			{
-				title: 'Retail',
+				title: 'بيع بالتجزئة',
 				slug: 'retail',
+				cover: 'https://i.ibb.co/6HDFDsh/retail-0.jpg',
 			},
 			{
-				title: 'Marketing Automation',
+				title: 'أتمتة التسويق',
 				slug: 'marketing-automation',
+				cover: 'https://i.ibb.co/YRCR6N8/marketing-automotion.jpg',
 			},
 			{
-				title: 'Public Relations',
+				title: 'علاقات عامة',
 				slug: 'public-relations',
+				cover: 'https://i.ibb.co/Gct2C4b/pr.jpg',
 			},
 			{
-				title: 'Social Media Management',
+				title: 'إدارة وسائل التواصل الاجتماعي',
 				slug: 'socialmedia-management',
+				cover: 'https://i.ibb.co/ZGCqXVN/cover-1.jpg',
 			},
 		],
 	},
 	{
-		title: 'Interior & Architecture',
+		title: 'الداخلية والعمارة',
 		slug: 'interior-architecture',
-		cover: 'cover-3.jpg',
+		cover: 'https://i.ibb.co/ZX8Fqtb/INTEROR-AND-ARCH.jpg',
 		description:
-			'We create noticeable and exactly what represents our client through architecture and interior design including landscape, urban, and furniture design while providing their production.',
+			'نحن نصنع ما يمثل عميلنا بشكل ملحوظ ودقيق من خلال الهندسة المعمارية والتصميم الداخلي بما في ذلك تصميم المناظر الطبيعية والحضرية وتصميم الأثاث أثناء توفير إنتاجهم.',
 		subservices: [
 			{
-				title: 'Architecture Design',
+				title: 'التصميم المعماري',
 				slug: 'architecture-design',
+				cover: 'https://i.ibb.co/hBmMBtm/archeticture-design-0.jpg',
 			},
 			{
-				title: 'Furniture Design & Production',
+				title: 'تصميم وإنتاج الأثاث',
 				slug: 'furniture-design',
+				cover: 'https://i.ibb.co/TL8xFkq/furniture-design-0.jpg',
 			},
 			{
-				title: 'Implementation & Production',
+				title: 'التنفيذ والإنتاج',
 				slug: 'implementaion-production',
+				cover: 'https://i.ibb.co/4g3vhLL/implementation-0.jpg',
 			},
 			{
-				title: 'Interior Design',
+				title: 'تصميم داخلي',
 				slug: 'interior-deign',
+				cover: 'https://i.ibb.co/BBtyZZn/interior-design-0.jpg',
 			},
 			{
-				title: 'Landscape Design',
+				title: 'تصميم المناظر الطبيعية',
 				slug: 'landscape-design',
+				cover: 'https://i.ibb.co/hXrs71P/landscape-design-0.jpg',
 			},
 			{
-				title: 'Urban Design',
+				title: 'التصميم الحضري',
 				slug: 'urban-design',
+				cover: 'https://i.ibb.co/0MVKqQR/urban-design-0.jpg',
 			},
 		],
 	},
 	{
-		title: 'Innovation Department',
+		title: 'قسم الابتكار',
 		slug: 'innovation-department',
-		cover: 'cover-4.jpg',
+		cover: 'https://i.ibb.co/g41YVq5/INNOVATION.jpg',
 		description:
-			'We do create and innovate Art works, manipulations, branding, packaging, commercials and content creation',
+			'نقوم بإنشاء وابتكار الأعمال الفنية والتلاعب والعلامات التجارية والتعبئة والإعلانات التجارية وإنشاء المحتوى',
 		subservices: [
 			{
-				title: 'Art Works',
+				title: 'اعمال فنية',
 				slug: 'art-works',
+				cover: 'https://i.ibb.co/dcyMrsn/art-works.jpg',
 			},
 			{
-				title: 'Branding',
+				title: 'العلامة التجارية',
 				slug: 'branding',
+				cover: 'https://i.ibb.co/DLN1zGM/branding.jpg',
 			},
 			{
-				title: 'Content Creation',
+				title: 'صناعة المحتوي',
 				slug: 'content-creation',
+				cover: 'https://i.ibb.co/r5kYCPP/content-creation-0.jpg',
 			},
 			{
-				title: 'Commercials',
+				title: 'اعلانات تجارية',
 				slug: 'commercials',
+				cover: 'https://i.ibb.co/988BSZn/commercials.jpg',
 			},
 			{
-				title: 'Packaging',
+				title: 'التعبئة والتغليف',
 				slug: 'packaging',
+				cover: 'https://i.ibb.co/TMr1f9Z/packaging.jpg',
 			},
 		],
 	},

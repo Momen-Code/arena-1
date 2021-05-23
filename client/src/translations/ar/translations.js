@@ -50,6 +50,8 @@ const TRANSLATION_AR = {
 	LOAD_MORE: 'تحميل المزيد',
 	BACK: 'السابق',
 	NEXT: 'التالي',
+	PROJECTS_QUOTE: 'جودة أعمالنا ، تتحدث عنَّا',
+	ALL: 'الكل',
 };
 
 export default TRANSLATION_AR;

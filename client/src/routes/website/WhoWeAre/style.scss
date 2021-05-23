@@ -4,11 +4,10 @@
 	width: 100%;
 	background-color: $lightGray;
 	position: absolute;
-	padding-top: 80px;
+	padding-top: 150px;
 	.page-container {
-		min-height: 100vh;
 		display: flex;
-		padding: 20px;
+		padding: 0px 20px;
 		&:nth-child(1) {
 			min-height: calc(100vh - 120px);
 		}
@@ -113,7 +112,9 @@
 		.right-wrapper {
 			margin-inline-start: 20px;
 			flex-direction: column;
+			align-items: flex-start;
 			.whoweare-big {
+				margin-inline-start: 0px;
 				span {
 					font-size: 7em;
 					line-height: 1em;
@@ -140,7 +141,7 @@
 				.right-wrapper {
 					.whoweare-big {
 						margin-inline-start: 30px;
-						align-self: center;
+						// align-self: center;
 						span {
 							font-size: 4em;
 						}
@@ -179,11 +180,5 @@
 		}
 	}
 	@include media(phone-sm) {
-	}
-
-	@include media(small-height) {
-		.page-container {
-			min-height: 800px;
-		}
 	}
 }

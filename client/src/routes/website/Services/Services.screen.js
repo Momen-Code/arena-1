@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useHistory, useLocation, Link, useRouteMatch } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import servicesData from '../../../util/services-en';
 
 //Components
 import { Header, Footer } from '../../../components';
@@ -10,8 +9,13 @@ import { Header, Footer } from '../../../components';
 //Style
 import './style.scss';
 
+import SERVICES_EN from '../../../util/services-en';
+import SERVICES_AR from '../../../util/services-ar';
+
 const Services = () => {
 	const { t, i18n } = useTranslation('translations');
+	const [SERVICES, setSERVICES] = useState(i18n.language == 'ar' ? SERVICES_AR : SERVICES_EN);
+
 	const history = useHistory();
 	const { pathname, state } = useLocation();
 	const { path } = useRouteMatch();
@@ -165,18 +169,26 @@ const Services = () => {
 				</div>
 				<div className="right-wrapper">
 					<div className="services-wrapper">
-						<div className="btns-grid">
-							{servicesData.map((service, i) => (
-								<button
-									className={`service-btn ${i == selectedService ? 'active' : ''}`}
-									key={i}
-									onClick={() => setSelectedService(i)}
-								>
-									{service.title}
-								</button>
-							))}
+						<div className="btns-container">
+							<button
+								className={`all-services-btn ${selectedService == -1 ? 'active' : ''}`}
+								onClick={() => setSelectedService(-1)}
+							>
+								{t('ALL')}
+							</button>
+							<div className="btns-grid">
+								{SERVICES.map((service, i) => (
+									<button
+										className={`service-btn ${i == selectedService ? 'active' : ''}`}
+										key={i}
+										onClick={() => setSelectedService(i)}
+									>
+										{service.title}
+									</button>
+								))}
+							</div>
 						</div>
-						{servicesData.map(
+						{SERVICES.map(
 							(service, i) =>
 								i == selectedService && (
 									<div className="services-grid">
@@ -186,13 +198,26 @@ const Services = () => {
 												<h1 className="title">{subservice.title}</h1>
 											</Link>
 										))}
-										{/* <div className="triangle-shape" /> */}
 									</div>
 								)
 						)}
+						{selectedService == -1 && (
+							<div className="services-grid">
+								{SERVICES.map((service, i) =>
+									service.subservices.map((subservice, i) => (
+										<Link to={`${path}/${service.slug}`} className="service-box" key={i}>
+											<img alt={subservice.title} src={subservice.cover} />
+											<h1 className="title">{subservice.title}</h1>
+										</Link>
+									))
+								)}
+							</div>
+						)}
 					</div>
 
-					<div className="vertical-content">{servicesData[selectedService].description}</div>
+					<div className="vertical-content">
+						{SERVICES[selectedService == -1 ? 0 : selectedService].description}
+					</div>
 				</div>
 			</div>
 

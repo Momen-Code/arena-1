@@ -5,7 +5,7 @@
 	background-color: $lightGray;
 	position: absolute;
 	.header-container {
-		padding-top: 50px;
+		padding-top: 40px;
 		.logo-container {
 			color: $primary;
 		}
@@ -57,6 +57,7 @@
 		padding: 60px 60px 80px;
 		column-gap: 30px;
 		row-gap: 30px;
+
 		.btns-grid {
 			display: grid;
 			grid-template-columns: 280px 280px;
@@ -88,6 +89,15 @@
 				color: $white;
 			}
 		}
+		.all-services-btn {
+			@extend .service-btn;
+			margin-bottom: 20px;
+			padding: 10px;
+		}
+		.btns-container {
+			display: flex;
+			flex-direction: column;
+			}
 		.services-grid {
 			display: grid;
 			grid-auto-rows: 280px;
@@ -126,7 +136,7 @@
 				.title {
 					position: absolute;
 					padding: 5px;
-					width: 100%;					
+					width: 100%;
 				}
 			}
 			.triangle-shape {

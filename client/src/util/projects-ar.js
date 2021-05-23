@@ -2,7 +2,7 @@ const PROJECTS = [
 	{
 		title: 'Amigos',
 		slug: 'amigos',
-		type: 'Innovation Department',
+		type: 'قسم الابتكار',
 		thumbnail: 'https://i.ibb.co/BrLxPbs/amigos-thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/YfmzGts/amigos-slide-1.jpg',
@@ -15,12 +15,12 @@ const PROJECTS = [
 			'https://i.ibb.co/VmvmrKj/amigos-slide-8.jpg',
 			'https://i.ibb.co/mG1rFCZ/amigos-slide-9.jpg',
 		],
-		description: 'We designed the packaging, logo, and jar’s sticker concept.',
+		description: 'لقد صممنا مفهوم العبوة والشعار وملصق الجرة.',
 	},
 	{
 		title: 'Atlas',
 		slug: 'atlas',
-		type: 'Interior & Architecture',
+		type: 'التصميم الداخلي والعمارة',
 		thumbnail: 'https://i.ibb.co/KrT4PMh/atlas-thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/MR1fjYj/atlas-slide-1.jpg',
@@ -32,12 +32,12 @@ const PROJECTS = [
 			'https://i.ibb.co/YRnNYPM/atlas-slide-7.jpg',
 		],
 		description:
-			'We renovated the place (interior/ exterior) while retouching the logo, and designed business cards and flyers.',
+			'قمنا بتجديد المكان (داخلي / خارجي) أثناء إعادة تصميم الشعار وتصميم بطاقات العمل والنشرات الإعلانية.',
 	},
 	{
 		title: 'Block 99',
 		slug: 'block99',
-		type: 'Planning & Development',
+		type: 'التخطيط والتطوير',
 		thumbnail: 'https://i.ibb.co/Rzdkc6M/thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/3zhqJgh/block99-slide-1.jpg',
@@ -48,12 +48,12 @@ const PROJECTS = [
 			'https://i.ibb.co/vPxvrkz/block99-slide-7.jpg',
 			'https://i.ibb.co/Qc6FQXY/block99-slide-9.jpg',
 		],
-		description: 'We revamped their menu and retouched the logo with city vibes.',
+		description: 'لقد جددنا قائمتهم وأعدنا لمس الشعار مع أجواء المدينة.',
 	},
 	{
 		title: "TITO's",
 		slug: 'tito',
-		type: 'Marketing & Advertising',
+		type: 'الدعاية والإعلان',
 		thumbnail: 'https://i.ibb.co/ZYFzzz8/tito-s-TN.jpg',
 		slides: [
 			'https://i.ibb.co/vP45L3G/tito-slide-1.jpg',
@@ -70,12 +70,12 @@ const PROJECTS = [
 			'https://i.ibb.co/mGTt6nB/tito-slide-12.jpg',
 			'https://i.ibb.co/9YLcTdr/tito-slide-13.jpg',
 		],
-		description: 'We create a brand character design, shelf store design, and packaging design.',
+		description: 'نقوم بإنشاء تصميم للعلامة التجارية وتصميم رفوف المتجر وتصميم العبوات.',
 	},
 	{
 		title: 'Oxi',
 		slug: 'oxi',
-		type: 'Marketing & Advertising',
+		type: 'الدعاية والإعلان',
 		thumbnail: 'https://i.ibb.co/SrG2HV7/oxi-thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/Hq8PDvz/oxi-slide-1.jpg',
@@ -83,12 +83,12 @@ const PROJECTS = [
 			'https://i.ibb.co/0YZGwKW/oxi-slide-3.jpg',
 			'https://i.ibb.co/19JdQQY/oxi-slide-4.jpg',
 		],
-		description: 'We came out with stunning packaging for Oxi white pro whitening strips.',
+		description: 'لقد قمنا بتغليف مذهل لشرائط التبييض من Oxi white.',
 	},
 	{
 		title: 'Dexters',
 		slug: 'dexters',
-		type: 'Marketing & Advertising',
+		type: 'الدعاية والإعلان',
 		thumbnail: 'https://i.ibb.co/BGQ5YTd/thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/pbmwkHY/dexters-slide-1.jpg',
@@ -98,12 +98,12 @@ const PROJECTS = [
 			'https://i.ibb.co/MGqrVtW/dexters-slide-5.jpg',
 		],
 		description:
-			'We food styled and made the photoshoot to redesign their menu, while creating social media posts,  design billboards, and reserve it.',
+			'لقد صممنا الطعام وقمنا بالتقاط الصور لإعادة تصميم قائمتهم ، أثناء إنشاء منشورات على وسائل التواصل الاجتماعي وتصميم اللوحات الإعلانية وحجزها.',
 	},
 	{
 		title: 'Rocs',
 		slug: 'rocs',
-		type: 'Marketing & Advertising',
+		type: 'الدعاية والإعلان',
 		thumbnail: 'https://i.ibb.co/dPmn8TV/THUMBNAIL.jpg',
 		slides: [
 			'https://i.ibb.co/yFcrKd4/rocs-slide-1.jpg',
@@ -111,13 +111,12 @@ const PROJECTS = [
 			'https://i.ibb.co/jLH5b7Y/rocs-slide-3.jpg',
 			'https://i.ibb.co/r6SJHPq/rocs-slide-4.jpg',
 		],
-		description:
-			'We made Social media posts and indoor designs for R.O.C.S shelf store passing by flyer designing and logo creation.',
+		description: 'قمنا بعمل منشورات على وسائل التواصل الاجتماعي وتصميمات داخلية لمتجر R.O.C.S',
 	},
 	{
 		title: 'Greens',
 		slug: 'greens',
-		type: 'Planning & Development',
+		type: 'التخطيط والتطوير',
 		thumbnail: 'https://i.ibb.co/KxQrVvR/greens-thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/LRZ13wd/greens-slide-1.jpg',
@@ -126,12 +125,12 @@ const PROJECTS = [
 			'https://i.ibb.co/N2dQx4N/greens-slide-4.jpg',
 		],
 		description:
-			'We built the brand for Greens pharmacies starting from Logo, fonts, Rollup design, business cards also giveaways, giveaways’ bag, and nametag.',
+			'قمنا ببناء العلامة التجارية لصيدليات جرينز بدءًا من الشعار والخطوط وتصميم الرول أب وبطاقات العمل أيضًا الهدايا وحقيبة الهدايا وعلامة الاسم.',
 	},
 	{
 		title: 'BME - Beauty Made Easy',
 		slug: 'beauty-made-easy',
-		type: 'Innovation Department',
+		type: 'قسم الابتكار',
 		thumbnail: 'https://i.ibb.co/mz9bqGJ/bme-thumbnail.jpg',
 		slides: [
 			'https://i.ibb.co/P9p2Ryk/bme-slide-1.jpg',
@@ -140,12 +139,12 @@ const PROJECTS = [
 			'https://i.ibb.co/M2Lj1CL/bme-2.jpg',
 			'https://i.ibb.co/P97q2b1/bme.jpg',
 		],
-		description: 'We made creative shelf store designs, and social media posts.',
+		description: 'لقد صنعنا تصميمات مبتكرة لمتجر الرفوف ، ومنشورات على وسائل التواصل الاجتماعي.',
 	},
 	{
 		title: 'Frango',
 		slug: 'frango',
-		type: 'Marketing & Advertising',
+		type: 'الدعاية والإعلان',
 		thumbnail: 'https://i.ibb.co/tX26y0K/THUMBNAIL.jpg',
 		slides: [
 			'https://i.ibb.co/Z6SZbRL/frango-slide-1.jpg',
@@ -154,16 +153,16 @@ const PROJECTS = [
 			'https://i.ibb.co/5TBB7yQ/frango-slide-4.jpg',
 			'https://i.ibb.co/RyTzsjj/frango-slide-5.jpg',
 		],
-		description: 'We revamped their menu, designed their rollups.',
+		description: 'قمنا بتجديد قائمتهم وتصميم القوائم الخاصة بهم.',
 	},
 	{
 		title: 'Elite',
 		slug: 'elite',
-		type: 'Marketing & Advertising',
+		type: 'الدعاية والإعلان',
 		thumbnail: 'https://i.ibb.co/FqfQzQ4/elite-thumbnail.jpg',
 		slides: ['https://i.ibb.co/LN6xFmJ/elite-slide-1.jpg'],
 		description:
-			'We are able to plan and develop a brand starting from brand/ digital strategy passing by Business consulting, completed by application development, and custom web development.',
+			'نحن قادرون على تخطيط وتطوير علامة تجارية بدءًا من العلامة التجارية / الاستراتيجية الرقمية مروراً باستشارات الأعمال ، واستكمالها من خلال تطوير التطبيقات ، وتطوير الويب المخصص.',
 	},
 ];
 

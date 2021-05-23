@@ -21,10 +21,14 @@ import { Header, Footer } from '../../../components';
 // @ts-ignore
 import CircleShape from '../../../assets/img/circle-shape-gray.png';
 
+import PROJECTSEN from '../../../util/projects-en';
+import PROJECTSAR from '../../../util/projects-ar';
+
 const ProjectPage = () => {
 	SwiperCore.use([Navigation, Pagination]);
 	const { t, i18n } = useTranslation('translations');
 	const { project: projectSlug } = useParams();
+	const [PROJECTS, setPROJECTS] = useState(i18n.language == 'ar' ? PROJECTSAR : PROJECTSEN);
 
 	const [selectedIndex, setSelectedIndex] = useState(PROJECTS.indexOf(PROJECTS.find((s) => s.slug == projectSlug)));
 	if (selectedIndex == -1) window.location.href = '/projects';

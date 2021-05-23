@@ -3,8 +3,14 @@ import { motion } from 'framer-motion';
 
 //Style
 import './style.scss';
+//Assets
+// @ts-ignore
+import LogoImageGray from '../../../../../assets/img/logo-gray.png';
+// @ts-ignore
+import LogoImagePrimary from '../../../../../assets/img/logo-primary.png';
 
-const Logo = () => {
+const Logo = ({gray = false}) => {
+	// @ts-ignore
 	const arenaVariants = {
 		initial: {
 			y: '-150px',
@@ -25,6 +31,7 @@ const Logo = () => {
 			},
 		}),
 	};
+	// @ts-ignore
 	const mediaProductionVariants = {
 		initial: {
 			y: '50px',
@@ -45,10 +52,37 @@ const Logo = () => {
 			},
 		}),
 	};
+	const imageVariants = {
+		initial: {
+			y: '-150px',
+			opacity: 0,
+		},
+		in: {
+			y: 0,
+			opacity: 1,
+		},
+		out: {
+			x: '-150px',
+			opacity: 0,
+		},
+	};
 
 	return (
 		<Link to="/" className="logo-container">
-			<div className="arena">
+			<motion.img
+				initial="initial"
+				animate="in"
+				exit="out"
+				variants={imageVariants}
+				transition={{
+					duration: 0.8,
+					y: { type: 'spring', stiffness: 200 },
+				}}
+				alt=""
+				// @ts-ignore
+				src={gray ? LogoImageGray : LogoImagePrimary}
+			/>
+			{/* <div className="arena">
 				{['A', 'R', 'E', 'N', 'A'].map((letter, i) => (
 					<motion.span
 						initial="initial"
@@ -101,7 +135,7 @@ const Logo = () => {
 						{letter}
 					</motion.span>
 				))}
-			</div>
+			</div> */}
 		</Link>
 	);
 };

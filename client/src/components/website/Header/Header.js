@@ -18,12 +18,11 @@ import { ReactComponent as ArFlag } from '../../../assets/img/ar-flag.svg';
 // @ts-ignore
 import { ReactComponent as EnFlag } from '../../../assets/img/en-flag.svg';
 
-const Header = ({ getquote = true, menuOpen = false }) => {
+const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
 	const { t, i18n } = useTranslation('translations');
 
 	const { state: locationState, pathname } = useLocation();
 	const { quoteActive, setQuoteActive } = useQuoteContext();
-
 
 	const quoteContainerRef = useRef(null);
 
@@ -137,7 +136,7 @@ const Header = ({ getquote = true, menuOpen = false }) => {
 
 	return (
 		<div className="header-container">
-			<Logo />
+			<Logo gray={logoGray} />
 			<Link
 				to={
 					pathname != '/menu'

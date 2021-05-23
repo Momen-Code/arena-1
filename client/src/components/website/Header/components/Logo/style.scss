@@ -3,7 +3,13 @@
 .logo-container {
 	color: $white;
 	direction: ltr;
-
+	position: relative;
+	margin-bottom: 15px;
+	img {
+		height: auto;
+		width: 9em;
+		object-fit: contain;
+	}
 	.arena {
 		span {
 			font-family: Zero;
@@ -25,5 +31,4 @@
 			display: inline-block;
 		}
 	}
-	
 }

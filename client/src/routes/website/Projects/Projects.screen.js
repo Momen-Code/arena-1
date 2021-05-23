@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -14,14 +14,41 @@ import './style.scss';
 // @ts-ignore
 import CircleShape from '../../../assets/img/circle-shape-gray.png';
 
-import PROJECTS from '../../../util/projects-en';
+import PROJECTSEN from '../../../util/projects-en';
+import PROJECTSAR from '../../../util/projects-ar';
 
 const Projects = () => {
 	const { t, i18n } = useTranslation('translations');
+	const [PROJECTS, setPROJECTS] = useState(i18n.language == 'ar' ? PROJECTSAR : PROJECTSEN);
+	const projectsTypes = PROJECTS.filter((v, i, a) => a.findIndex((t) => t.type === v.type) === i).map(
+		(project) => project.type
+	);
 	const location = useLocation();
 	const [activeProjects, setActiveProjects] = useState(PROJECTS.slice(0, window.innerWidth > 576 ? 6 : 4));
 	const [inActiveProjects, setInActiveProjects] = useState(PROJECTS.slice(window.innerWidth > 576 ? 6 : 4));
 	const [isLoading, setIsLoading] = useState(false);
+	const [selectedType, setSelectedType] = useState(-1);
+
+	useEffect(() => {}, [i18n.language]);
+
+	useEffect(() => {
+		if (selectedType == -1) {
+			setActiveProjects(PROJECTS.slice(0, window.innerWidth > 576 ? 6 : 4));
+			setInActiveProjects(PROJECTS.slice(window.innerWidth > 576 ? 6 : 4));
+		} else {
+			setActiveProjects(
+				PROJECTS.filter((project) => project.type == projectsTypes[selectedType]).slice(
+					0,
+					activeProjects.length + (window.innerWidth > 576 ? 6 : 4)
+				)
+			);
+			setInActiveProjects(
+				PROJECTS.filter((project) => project.type == projectsTypes[selectedType]).slice(
+					activeProjects.length + (window.innerWidth > 576 ? 6 : 4)
+				)
+			);
+		}
+	}, [selectedType]);
 
 	const letterVariants = {
 		initial: (i) => ({
@@ -120,7 +147,27 @@ const Projects = () => {
 							</>
 						)}
 					</div>
-					<div className="vertical-content">{t('TEXT_INFO')}</div>
+					<div className="right-items">
+						<div className="btns-container">
+							<button
+								className={`all-types-btn ${selectedType == -1 ? 'active' : ''}`}
+								onClick={() => setSelectedType(-1)}
+							>
+								{t('ALL')}
+							</button>
+							<div className="btns-grid">
+								{projectsTypes.map((type, i) => (
+									<button
+										className={`type-btn ${i == selectedType ? 'active' : ''}`}
+										onClick={() => setSelectedType(i)}
+									>
+										{type}
+									</button>
+								))}
+							</div>
+						</div>
+						<div className="vertical-content">{t('PROJECTS_QUOTE')}</div>
+					</div>
 				</div>
 				<div className="bottom-wrapper">
 					<div className="projects-grid">

@@ -4,7 +4,7 @@
 	.header-container {
 		.get-quote-container {
 			right: unset;
-			left: -1000px;
+			left: -970px;
 			&.active {
 				left: 0;
 			}
@@ -16,6 +16,10 @@
 					transform: rotate(90deg) translateY(40%);
 				}
 			}
+		}
+		.language-changer {
+			right: 3vw;
+			left: unset;
 		}
 		/********************************/
 		@include media(desktop-md) {
@@ -43,7 +47,7 @@
 		}
 		@include media(tablet-sm) {
 			.get-quote-container {
-				left: -80vw;
+				left: -74vw;
 				right: unset;
 
 				.get-quote-btn {
@@ -76,12 +80,34 @@
 		.right-wrapper {
 			.whoweare-big {
 				span {
-					line-height: 190px;
-
+					animation: none;
+					line-height: 120px;
+					font-size: 80px;
+					display: block;
+					height: 120px;
 					&::before {
 						width: 100%;
 						animation: none;
+						transition: none;
 					}
+				}
+			}
+			.vertical-content {
+				font-size: 24px;
+			}
+		}
+		@include media(phone-lg) {
+			.right-wrapper {
+				.whoweare-big {
+					span {
+						line-height: 60px;
+						font-size: 50px;
+						display: block;
+						height: 90px;
+					}
+				}
+				.vertical-content {
+					font-size: 1em;
 				}
 			}
 		}

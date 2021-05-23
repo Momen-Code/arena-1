@@ -18,10 +18,10 @@
 	}
 
 	.content-container {
-		background-image: url('../../../assets/img/careers-bg.png');
+		background-image: url('../../../assets/img/careers-bg.jpg');
 		background-repeat: no-repeat;
 		background-position: center center;
-		background-size: auto;
+		background-size: cover;
 		margin: auto;
 		max-width: 100%;
 		width: 80vw;
@@ -46,6 +46,7 @@
 			bottom: calc(50% - 150px);
 			left: -100px;
 			animation: roll 80s ease infinite;
+			opacity: 0.2;
 		}
 	}
 	.all-jobs-btn {

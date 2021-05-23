@@ -53,6 +53,8 @@ const TRANSLATION_EN = {
 	LOAD_MORE: 'Load More',
 	BACK: 'Back',
 	NEXT: 'Next',
+	PROJECTS_QUOTE: 'Well done is better than well said.',
+	ALL: 'All',
 };
 
 export default TRANSLATION_EN;
