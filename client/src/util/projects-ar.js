@@ -15,7 +15,7 @@ const PROJECTS = [
 			'https://i.ibb.co/VmvmrKj/amigos-slide-8.jpg',
 			'https://i.ibb.co/mG1rFCZ/amigos-slide-9.jpg',
 		],
-		description: 'لقد صممنا مفهوم العبوة والشعار وملصق الجرة.',
+		description: 'لقد صممنا مفهوم الشعار والشعار وملصق العبوة.',
 	},
 	{
 		title: 'Atlas',
@@ -48,7 +48,7 @@ const PROJECTS = [
 			'https://i.ibb.co/vPxvrkz/block99-slide-7.jpg',
 			'https://i.ibb.co/Qc6FQXY/block99-slide-9.jpg',
 		],
-		description: 'لقد جددنا قائمتهم وأعدنا لمس الشعار مع أجواء المدينة.',
+		description: 'لقد جددنا قائمتهم وأعدنا تصميم الشعار مع أجواء المدينة.',
 	},
 	{
 		title: "TITO's",
@@ -125,7 +125,7 @@ const PROJECTS = [
 			'https://i.ibb.co/N2dQx4N/greens-slide-4.jpg',
 		],
 		description:
-			'قمنا ببناء العلامة التجارية لصيدليات جرينز بدءًا من الشعار والخطوط وتصميم الرول أب وبطاقات العمل أيضًا الهدايا وحقيبة الهدايا وعلامة الاسم.',
+			'قمنا ببناء العلامة التجارية لصيدليات جرينز بدءًا من الشعار وتصميم الرول أب وبطاقات العمل أيضًا وحقيبة الهدايا.',
 	},
 	{
 		title: 'BME - Beauty Made Easy',
@@ -139,7 +139,7 @@ const PROJECTS = [
 			'https://i.ibb.co/M2Lj1CL/bme-2.jpg',
 			'https://i.ibb.co/P97q2b1/bme.jpg',
 		],
-		description: 'لقد صنعنا تصميمات مبتكرة لمتجر الرفوف ، ومنشورات على وسائل التواصل الاجتماعي.',
+		description: 'لقد صنعنا تصميمات مبتكرة لرفوف المتجر ، ومنشورات على وسائل التواصل الاجتماعي.',
 	},
 	{
 		title: 'Frango',

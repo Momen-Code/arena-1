@@ -32,7 +32,7 @@ const PROJECTS = [
 			'https://i.ibb.co/YRnNYPM/atlas-slide-7.jpg',
 		],
 		description:
-			'We renovated the place (interior/ exterior) while retouching the logo, and designed business cards and flyers.',
+			'We renovated the place (interior/ exterior) while retouching the logo, and also designed business cards and flyers.',
 	},
 	{
 		title: 'Block 99',
@@ -126,7 +126,7 @@ const PROJECTS = [
 			'https://i.ibb.co/N2dQx4N/greens-slide-4.jpg',
 		],
 		description:
-			'We built the brand for Greens pharmacies starting from Logo, fonts, Rollup design, business cards also giveaways, giveaways’ bag, and nametag.',
+			'We built the brand for Greens pharmacies starting from Logo, fonts, Rollup design, business cards also giveaways and giveaways’ bag.',
 	},
 	{
 		title: 'BME - Beauty Made Easy',

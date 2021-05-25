@@ -43,20 +43,27 @@ const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
 	const quoteVariants = menuOpen
 		? {
 				initial: {
-					x: i18n.dir() == 'ltr' ? 120 : -120,
+					x: 0,
 					transition: 'none',
 				},
-				in: { x: i18n.dir() == 'ltr' ? 120 : 0 },
+				in: {
+					x: 0,
+				},
 				out: {
-					x: i18n.dir() == 'ltr' ? 120 : -120,
+					x: i18n.dir() == 'rtl' ? -120 : 120,
 				},
 		  }
 		: {
 				initial: {
-					x: i18n.dir() == 'ltr' ? 120 : 0,
+					x: 0,
 				},
-				in: { x: 0 },
-				out: { x: i18n.dir() == 'ltr' ? 150 : 0, transition: 'none' },
+				in: {
+					x: 0,
+				},
+				out: {
+					x: i18n.dir() == 'rtl' ? -120 : 120,
+					transition: 'none',
+				},
 		  };
 
 	const quoteTransition = menuOpen ? {} : { duration: 0.2, x: { type: 'spring', stiffness: 200 } };

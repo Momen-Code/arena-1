@@ -105,8 +105,8 @@ const services = [
 				cover: 'https://i.ibb.co/hXrs71P/landscape-design-0.jpg',
 			},
 			{
-				title: 'Urban Design',
-				slug: 'urban-design',
+				title: 'Urban Planning',
+				slug: 'urban-planning',
 				cover: 'https://i.ibb.co/0MVKqQR/urban-design-0.jpg',
 			},
 		],

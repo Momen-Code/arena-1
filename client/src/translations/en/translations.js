@@ -28,7 +28,7 @@ const TRANSLATION_EN = {
 	DONE: 'Done',
 	CAREERS_TXT:
 		"Our people are our pride. Join the team and help us build the best products, bring innovation, and spread creative ideas which blow people's minds",
-	WE_AIM_FOR: 'We Aim For',
+	WE_AIM_FOR: 'Our Aim',
 	WHO_WE_ARE: 'Who We Are',
 	OUR_MISSION: 'Our Mission',
 	WE_AIM_FOR_TXT: `Our Aim is to create and innovate noticeable, breathtaking designs and bring it to life by
@@ -38,7 +38,7 @@ const TRANSLATION_EN = {
   production, so we decided to unite the process, by designing and producing what represent our
   client's brand.`,
 	OUR_MISSION_TXT: `Our Mission is to design and produce what is perfectly represent our client, and collaborate
-  with companies to reach thier goals.`,
+  with companies to reach their goals.`,
 	OUR_PROJECTS: 'Our Projects',
 	OUR_SERVICES: 'Our Services',
 	TEXT_INFO:

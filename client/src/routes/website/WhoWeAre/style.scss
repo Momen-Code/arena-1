@@ -29,7 +29,7 @@
 		position: relative;
 		background-color: $lightGray;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		height: 500px;
 		align-self: center;
 		align-items: center;
@@ -86,11 +86,11 @@
 		.vertical-content {
 			// writing-mode: vertical-rl;
 			// text-orientation: mixed;
-			font-size: 30px;
+			font-size: 28px;
 			font-weight: 400;
 			display: flex;
 			flex-direction: column;
-			// transform: scale(-1);
+			max-width: 700px;
 			margin-bottom: 30px;
 			& > div {
 				font-weight: 500;

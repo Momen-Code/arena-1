@@ -14,7 +14,7 @@ import './style.scss';
 import CircleShape from '../../../assets/img/circle-shape-primary.png';
 
 const Home = () => {
-	const { t } = useTranslation('translations');
+	const { t, i18n } = useTranslation('translations');
 
 	const history = useHistory();
 	const { scrollYProgress } = useViewportScroll();
@@ -74,7 +74,7 @@ const Home = () => {
 			variants={pageVariants}
 			transition={{ duration: 1 }}
 		>
-			<Header logoGray/>
+			<Header logoGray={i18n.dir() == 'rtl' ? false : true} />
 			<div className="home-flex">
 				<div className="left-wrapper">
 					<motion.div className="info-text">
