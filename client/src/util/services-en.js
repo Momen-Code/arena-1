@@ -43,7 +43,7 @@ const services = [
 			{
 				title: 'Ad Campaigns',
 				slug: 'ad-campaigns',
-				cover: 'https://i.ibb.co/wsdFV2k/ad-camp-0.jpg',
+				cover: 'https://i.ibb.co/x5zkNbs/1.jpg',
 			},
 			{
 				title: 'Analytics',
@@ -68,7 +68,7 @@ const services = [
 			{
 				title: 'Social Media Management',
 				slug: 'socialmedia-management',
-				cover: 'https://i.ibb.co/ZGCqXVN/cover-1.jpg',
+				cover: 'https://i.ibb.co/LxrvfVG/3.jpg',
 			},
 		],
 	},
@@ -92,7 +92,7 @@ const services = [
 			{
 				title: 'Implementation & Production',
 				slug: 'implementaion-production',
-				cover: 'https://i.ibb.co/4g3vhLL/implementation-0.jpg',
+				cover: 'https://i.ibb.co/QvTxK70/2.jpg',
 			},
 			{
 				title: 'Interior Design',
@@ -102,12 +102,12 @@ const services = [
 			{
 				title: 'Landscape Design',
 				slug: 'landscape-design',
-				cover: 'https://i.ibb.co/hXrs71P/landscape-design-0.jpg',
+				cover: 'https://i.ibb.co/FBgHrdc/4.jpg',
 			},
 			{
 				title: 'Urban Planning',
 				slug: 'urban-planning',
-				cover: 'https://i.ibb.co/0MVKqQR/urban-design-0.jpg',
+				cover: 'https://i.ibb.co/99qYXbJ/5.jpg',
 			},
 		],
 	},
@@ -126,7 +126,7 @@ const services = [
 			{
 				title: 'Branding',
 				slug: 'branding',
-				cover: 'https://i.ibb.co/DLN1zGM/branding.jpg',
+				cover: 'https://i.ibb.co/hftstq2/7.jpg',
 			},
 			{
 				title: 'Content Creation',
@@ -136,7 +136,7 @@ const services = [
 			{
 				title: 'Commercials',
 				slug: 'commercials',
-				cover: 'https://i.ibb.co/988BSZn/commercials.jpg',
+				cover: 'https://i.ibb.co/9c7z4Bc/8.jpg',
 			},
 			{
 				title: 'Packaging',
