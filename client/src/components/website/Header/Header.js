@@ -1,25 +1,25 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useHistory } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { AiFillCloseCircle } from 'react-icons/ai';
-import { useTranslation } from 'react-i18next';
-import { useQuoteContext } from '../../../provider';
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation, useHistory } from "react-router-dom";
+import { motion } from "framer-motion";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
+import { useQuoteContext } from "../../../provider";
 
 //Style
-import './style.scss';
+import "./style.scss";
 
 //Components
-import GetQuotePaper from './components/GetQuotePaper/GetQuotePaper';
-import Logo from './components/Logo/Logo';
+import GetQuotePaper from "./components/GetQuotePaper/GetQuotePaper";
+import Logo from "./components/Logo/Logo";
 
 //Assets
 // @ts-ignore
-import { ReactComponent as ArFlag } from '../../../assets/img/ar-flag.svg';
+import { ReactComponent as ArFlag } from "../../../assets/img/ar-flag.svg";
 // @ts-ignore
-import { ReactComponent as EnFlag } from '../../../assets/img/en-flag.svg';
+import { ReactComponent as EnFlag } from "../../../assets/img/en-flag.svg";
 
 const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
-	const { t, i18n } = useTranslation('translations');
+	const { t, i18n } = useTranslation("translations");
 
 	const { state: locationState, pathname } = useLocation();
 	const { quoteActive, setQuoteActive } = useQuoteContext();
@@ -27,9 +27,9 @@ const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
 	const quoteContainerRef = useRef(null);
 
 	useEffect(() => {
-		window.addEventListener('mouseup', quoteContainerHandler);
+		window.addEventListener("mouseup", quoteContainerHandler);
 
-		return () => window.removeEventListener('mouseup', quoteContainerHandler);
+		return () => window.removeEventListener("mouseup", quoteContainerHandler);
 	}, []);
 
 	const quoteContainerHandler = (e) => {
@@ -44,13 +44,13 @@ const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
 		? {
 				initial: {
 					x: 0,
-					transition: 'none',
+					transition: "none",
 				},
 				in: {
 					x: 0,
 				},
 				out: {
-					x: i18n.dir() == 'rtl' ? -120 : 120,
+					x: i18n.dir() == "rtl" ? -120 : 120,
 				},
 		  }
 		: {
@@ -61,33 +61,33 @@ const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
 					x: 0,
 				},
 				out: {
-					x: i18n.dir() == 'rtl' ? -120 : 120,
-					transition: 'none',
+					x: i18n.dir() == "rtl" ? -120 : 120,
+					transition: "none",
 				},
 		  };
 
-	const quoteTransition = menuOpen ? {} : { duration: 0.2, x: { type: 'spring', stiffness: 200 } };
+	const quoteTransition = menuOpen ? {} : { duration: 0.2, x: { type: "spring", stiffness: 200 } };
 
 	const burgerMenuVariants = menuOpen
 		? {
 				initial: {
 					y: 0,
-					x: '120vw',
-					transition: 'none',
+					x: "120vw",
+					transition: "none",
 				},
 				in: {
 					y: 0,
 					x: 0,
 				},
 				out: {
-					transition: 'none',
-					y: '-150vh',
-					x: '150vw',
+					transition: "none",
+					y: "-150vh",
+					x: "150vw",
 				},
 		  }
 		: {
 				initial: {
-					transition: 'none',
+					transition: "none",
 
 					opacity: 0,
 					translateX: 100,
@@ -99,7 +99,7 @@ const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
 					translateY: 0,
 				},
 				out: {
-					transition: 'none',
+					transition: "none",
 					translateX: 100,
 					opacity: 0,
 				},
@@ -111,20 +111,20 @@ const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
 					rotate: i * 90,
 					translateX: i * -150,
 					translateY: i * -150,
-					width: 'calc(100% + 16px)',
+					width: "calc(100% + 16px)",
 				}),
 				in: (i) => ({
 					rotate: i == 1 ? 0 : i == 2 ? -75 : i == 3 ? -75 : 0,
 					translateX: i == 1 ? 0 : i == 2 ? -14 : i == 3 ? 14 : -2,
 					translateY: i == 1 ? 0 : i == 2 ? 2 : i == 3 ? -8 : -8,
-					width: 'calc(100% + 16px)',
+					width: "calc(100% + 16px)",
 					scale: 1.1,
 				}),
 				out: (i) => ({
 					rotate: i * 90,
 					translateX: i * -150,
 					translateY: i * -150,
-					width: 'calc(100% + 16px)',
+					width: "calc(100% + 16px)",
 				}),
 		  }
 		: {
@@ -146,16 +146,16 @@ const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
 			<Logo gray={logoGray} />
 			<Link
 				to={
-					pathname != '/menu'
-						? { pathname: '/menu', state: { prevPath: pathname } }
+					pathname != "/menu"
+						? { pathname: "/menu", state: { prevPath: pathname } }
 						: {
-								pathname: (locationState && locationState.prevState) || '/',
+								pathname: (locationState && locationState.prevState) || "/",
 								state: { prevPath: pathname },
 						  }
 				}
 			>
 				<motion.div
-					className={`burger-menu ${menuOpen ? 'open' : ''}`}
+					className={`burger-menu ${menuOpen ? "open" : ""}`}
 					initial="initial"
 					animate="in"
 					exit="out"
@@ -170,27 +170,24 @@ const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
 							animate="in"
 							exit="out"
 							variants={burgerSpanVariants}
-							transition={{ type: 'spring', stiffness: 200 }}
+							transition={{ type: "spring", stiffness: 200 }}
 						></motion.span>
 					))}
 				</motion.div>
 			</Link>
 			<motion.div
 				ref={quoteContainerRef}
-				className={`get-quote-container ${quoteActive ? ' active' : ''}`}
+				className={`get-quote-container ${quoteActive ? " active" : ""}`}
 				initial="initial"
 				animate="in"
 				exit="out"
 				variants={quoteVariants}
 				transition={quoteTransition}
 			>
-				<div
-					className={`get-quote-btn ${quoteActive ? ' active' : ''}`}
-					onClick={() => setQuoteActive(!quoteActive)}
-				>
-					{t('GET_A_QUOTE')}
+				<div className={`get-quote-btn ${quoteActive ? " active" : ""}`} onClick={() => setQuoteActive(!quoteActive)}>
+					{t("GET_A_QUOTE")}
 				</div>
-				<div className={`get-quote-wrapper ${quoteActive ? ' active' : ''}`}>
+				<div className={`get-quote-wrapper ${quoteActive ? " active" : ""}`}>
 					<AiFillCloseCircle className="close-icon" onClick={() => setQuoteActive(false)} />
 					<GetQuotePaper />
 				</div>
@@ -198,14 +195,14 @@ const Header = ({ getquote = true, menuOpen = false, logoGray = false }) => {
 			{!menuOpen && (
 				<div className="language-changer">
 					<div
-						className={`language-flag ${i18n.language == 'ar' ? 'active' : ''}`}
-						onClick={() => i18n.changeLanguage('ar')}
+						className={`language-flag ${i18n.language == "ar" ? "active" : ""}`}
+						onClick={() => i18n.changeLanguage("ar")}
 					>
 						<ArFlag />
 					</div>
 					<div
-						className={`language-flag ${i18n.language == 'en' ? 'active' : ''}`}
-						onClick={() => i18n.changeLanguage('en')}
+						className={`language-flag ${i18n.language == "en" ? "active" : ""}`}
+						onClick={() => i18n.changeLanguage("en")}
 					>
 						<EnFlag />
 					</div>

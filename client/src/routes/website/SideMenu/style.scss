@@ -1,4 +1,4 @@
-@import '../../../assets/style/global';
+@import "../../../assets/style/global";
 
 .sidemenu-container {
 	margin: auto;
@@ -73,7 +73,7 @@
 				}
 			}
 			&:after {
-				content: '';
+				content: "";
 				display: block;
 				width: 100%;
 				height: 100%;
@@ -96,7 +96,7 @@
 	.left-wrapper {
 		width: 200px;
 		height: auto;
-		background-image: url('../../../assets/img/home-bg.png');
+		background-image: url("../../../assets/img/home-bg.png");
 		background-repeat: no-repeat;
 		background-size: cover;
 		margin-inline-end: 100px;
@@ -129,7 +129,7 @@
 				margin-top: 0;
 			}
 			&::after {
-				content: '';
+				content: "";
 				display: none;
 				opacity: 0;
 				position: absolute;

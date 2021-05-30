@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { useEffect } from "react";
+import { Redirect, Route, Switch, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 //Routes
 import {
@@ -18,14 +18,14 @@ import {
 	ResetPassword,
 	Users,
 	Page404,
-} from './routes';
+} from "./routes";
 
 //Components
-import { Header, Footer } from './components';
+import { Header, Footer } from "./components";
 
 //Style
-import './assets/style/_global.scss';
-import './assets/style/rtl.scss';
+import "./assets/style/_global.scss";
+import "./assets/style/rtl.scss";
 
 const App = () => {
 	const { i18n } = useTranslation();
@@ -34,9 +34,9 @@ const App = () => {
 	useEffect(() => {
 		//Localization
 		document.dir = i18n.dir(i18n.language);
-		if (i18n.language == 'ar') document.getElementsByTagName('body')[0].classList.add('rtl-layout');
-		else document.getElementsByTagName('body')[0].classList.remove('rtl-layout');
-		i18n.on('languageChanged', (lang) => {
+		if (i18n.language == "ar") document.getElementsByTagName("body")[0].classList.add("rtl-layout");
+		else document.getElementsByTagName("body")[0].classList.remove("rtl-layout");
+		i18n.on("languageChanged", (lang) => {
 			window.location.reload();
 		});
 	}, []);
@@ -62,7 +62,6 @@ const App = () => {
 					<Redirect to="/404" />
 				</Switch>
 			</AnimatePresence>
-			{/* <Footer /> */}
 		</div>
 	);
 };

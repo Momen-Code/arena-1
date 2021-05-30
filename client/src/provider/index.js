@@ -1,4 +1,4 @@
-import { useState, useContext, createContext } from 'react';
+import { useState, useContext, createContext } from "react";
 
 const AppContext = createContext(null);
 const QuoteContext = createContext(null);
@@ -11,7 +11,7 @@ export const AppProvider = ({ children }) => {
 
 	return (
 		<AppContext.Provider value={{}}>
-			<QuoteContext.Provider value={{ quoteActive, setQuoteActive }}>{children}</QuoteContext.Provider>)
+			<QuoteContext.Provider value={{ quoteActive, setQuoteActive }}>{children}</QuoteContext.Provider>
 		</AppContext.Provider>
 	);
 };

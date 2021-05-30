@@ -1,20 +1,20 @@
-import { useEffect } from 'react';
-import { motion, useViewportScroll } from 'framer-motion';
-import { useHistory } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { useEffect } from "react";
+import { motion, useViewportScroll } from "framer-motion";
+import { useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 //Components
-import { Header, Footer } from '../../../components';
+import { Header, Footer } from "../../../components";
 
 //Style
-import './style.scss';
+import "./style.scss";
 
 //Assets
 // @ts-ignore
-import CircleShape from '../../../assets/img/circle-shape-primary.png';
+import CircleShape from "../../../assets/img/circle-shape-primary.png";
 
 const Home = () => {
-	const { t, i18n } = useTranslation('translations');
+	const { t, i18n } = useTranslation("translations");
 
 	const history = useHistory();
 	const { scrollYProgress } = useViewportScroll();
@@ -48,7 +48,7 @@ const Home = () => {
 
 	const lineVariants = {
 		initial: {
-			x: '-50px',
+			x: "-50px",
 			opacity: 0,
 		},
 		in: {
@@ -56,7 +56,7 @@ const Home = () => {
 			opacity: 1,
 		},
 		out: {
-			x: '100%',
+			x: "100%",
 			opacity: 0,
 		},
 	};
@@ -74,18 +74,12 @@ const Home = () => {
 			variants={pageVariants}
 			transition={{ duration: 1 }}
 		>
-			<Header logoGray={i18n.dir() == 'rtl' ? false : true} />
+			<Header logoGray={i18n.dir() == "rtl" ? false : true} />
 			<div className="home-flex">
 				<div className="left-wrapper">
 					<motion.div className="info-text">
-						<motion.h5
-							initial="initial"
-							animate="in"
-							exit="out"
-							variants={lineVariants}
-							transition={lineTransitions}
-						>
-							{t('WHO_WE_ARE_TXT')}
+						<motion.h5 initial="initial" animate="in" exit="out" variants={lineVariants} transition={lineTransitions}>
+							{t("WHO_WE_ARE_TXT")}
 						</motion.h5>
 					</motion.div>
 				</div>
