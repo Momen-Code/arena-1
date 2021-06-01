@@ -5,6 +5,7 @@
 	background-color: $lightGray;
 	position: absolute;
 	padding-top: 150px;
+	user-select: none;
 	.page-container {
 		display: flex;
 		padding: 0px 20px;

@@ -8,6 +8,7 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	user-select: none;
 
 	.header-container {
 		.logo-container {

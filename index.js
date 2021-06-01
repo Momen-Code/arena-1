@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 5002;
 app.use(cors());
 app.use(express.json());
 
+
+
+
 //For the react app
 if (process.env.NODE_ENV == 'production') {
 	app.use(express.static(path.join(__dirname, 'client', 'build')));

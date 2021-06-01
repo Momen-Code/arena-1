@@ -28,12 +28,6 @@ const Footer = () => {
 						<a>{t("WALLPAPER")}</a>
 						<a onClick={() => setQuoteActive(true)}>{t("GET_A_QUOTE")}</a>
 					</div>
-					{/* <div>
-						<a>{t('THE_PRESS')}</a>
-						<a>{t('CONTACT_US')}</a>
-						<a>{t('PARTNER_PROGRAM')}</a>
-						<a>{t('CAREERS')}</a>
-					</div> */}
 				</div>
 			</div>
 			<div className="address-container">

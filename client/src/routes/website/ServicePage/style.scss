@@ -4,6 +4,7 @@
 	width: 100%;
 	background-color: $lightGray;
 	position: absolute;
+	user-select: none;
 	.header-container {
 		padding-top: 50px;
 		.logo-container {

@@ -5,6 +5,7 @@
 	width: 100%;
 	background-color: $lightGray;
 	position: absolute;
+	user-select: none;
 
 	.menu-container {
 		display: flex;

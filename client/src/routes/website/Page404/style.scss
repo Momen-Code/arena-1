@@ -4,6 +4,7 @@
 	width: 100%;
 	background-color: $lightGray;
 	position: relative;
+	user-select: none;
 
 	.page-container {
 		min-height: 100vh;
