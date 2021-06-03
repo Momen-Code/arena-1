@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useAuthContext } from "./provider";
 
 //Routes
 import {
@@ -16,20 +17,23 @@ import {
 	Careers,
 	Login,
 	ResetPassword,
-	Users,
+	UsersAdmin,
+	ServicesAdmin,
 	Page404,
 } from "./routes";
 
 //Components
-import { Header, Footer } from "./components";
+import { Loader } from "./components";
 
 //Style
 import "./assets/style/_global.scss";
 import "./assets/style/rtl.scss";
+import "react-notifications/lib/notifications.css";
 
 const App = () => {
 	const { i18n } = useTranslation();
 	const location = useLocation();
+	const { isLoggedIn } = useAuthContext();
 
 	useEffect(() => {
 		//Localization
@@ -43,6 +47,7 @@ const App = () => {
 
 	return (
 		<div className="app-container" data-test="hello">
+			<Loader />
 			<AnimatePresence exitBeforeEnter>
 				<Switch location={location} key={location.pathname}>
 					<Route exact path="/" component={Home} />
@@ -54,11 +59,27 @@ const App = () => {
 					<Route path="/projects" component={Projects} />
 					<Route exact path="/menu" component={SideMenu} />
 					<Route exact path="/careers" component={Careers} />
-					<Route exact path="/admin" component={() => <Redirect to="/admin/login" />} />
-					<Route exact path="/admin/login" component={Login} />
-					<Route exact path="/admin/reset-password" component={ResetPassword} />
-					<Route exact path="/admin/users" component={Users} />
+					<Route
+						exact
+						path="/admin"
+						component={() => <Redirect to={isLoggedIn ? "/admin/projects" : "/admin/login"} />}
+					/>
 					<Route exact path="/404" component={Page404} />
+					{isLoggedIn ? (
+						<Switch>
+							<Route exact path="/admin/projects" component={UsersAdmin} />
+							<Route exact path="/admin/services" component={ServicesAdmin} />
+							<Route exact path="/admin/users" component={UsersAdmin} />
+							<Route exact path="/admin/bills" component={UsersAdmin} />
+							<Redirect to="/admin/users" />
+						</Switch>
+					) : (
+						<Switch>
+							<Route exact path="/admin/reset-password" component={ResetPassword} />
+							<Route exact path="/admin/login" component={Login} />
+							<Redirect to="/404" />
+						</Switch>
+					)}
 					<Redirect to="/404" />
 				</Switch>
 			</AnimatePresence>

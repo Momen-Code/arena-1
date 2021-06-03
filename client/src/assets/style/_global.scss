@@ -169,6 +169,11 @@ body {
 	border-radius: 2px;
 }
 
+.notification-container {
+	top: unset !important;
+	bottom: 30px !important;
+}
+
 @include media(phone-lg) {
 	h1 {
 		font-size: 40px !important;
@@ -252,6 +257,28 @@ body {
 	}
 }
 
+@mixin normalBtn {
+	margin: 20px auto;
+	background: linear-gradient(59deg, $primary 0%, $purple 100%);
+	box-shadow: 0px 3px 6px #00000029;
+	border-radius: 8px;
+	opacity: 1;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	font-size: 18px;
+	color: $white;
+	padding: 7px 30px;
+	cursor: pointer;
+	transition: 0.3s ease;
+	&:hover {
+		opacity: 0.9;
+	}
+	&:active {
+		transition: none;
+		transform: scale(0.95);
+	}
+}
 @mixin tableContainer {
 	box-shadow: 0px 3px 6px $light-grey;
 	overflow: hidden;
@@ -316,8 +343,18 @@ body {
 				margin-right: 20px;
 				padding: 5px;
 				border-radius: 6px;
+				cursor: pointer;
+				transition: 0.3s ease;
+				&:hover {
+					opacity: 0.8;
+				}
+				&:active {
+					transition: none;
+					transform: scale(0.95);
+				}
 				svg {
-					color: $white;
+					height: 20px;
+					width: 20px;
 				}
 			}
 		}

@@ -11,4 +11,5 @@ export { default as Careers } from './website/Careers/Careers.screen';
 export { default as Page404 } from './website/Page404/Page404.screen';
 export { default as Login } from './admin/Login/Login.screen';
 export { default as ResetPassword } from './admin/ResetPassword/ResetPassword.screen';
-export { default as Users } from './admin/Users/Users.screen';
+export { default as UsersAdmin } from './admin/Users/Users.screen';
+export { default as ServicesAdmin } from './admin/Services/Services.screen';

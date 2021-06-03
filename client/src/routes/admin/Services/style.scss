@@ -1,0 +1,12 @@
+@import "../../../assets/style/global";
+
+.users-container {
+  .add-btn {
+    @include normalBtn;
+    width: max-content;
+  }
+  .table-container {
+    @include tableContainer;
+    margin-top: 70px;
+  }
+}

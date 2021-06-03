@@ -14,6 +14,9 @@ app.use(cookieParser());
 //DB
 require("./db");
 
+//API
+app.use("/api", require("./api"));
+
 //For the react app
 if (process.env.NODE_ENV == "production") {
 	app.use(express.static(path.join(__dirname, "client", "build")));

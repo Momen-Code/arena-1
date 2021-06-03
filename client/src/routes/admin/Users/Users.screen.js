@@ -2,7 +2,7 @@
 import "./style.scss";
 
 //Components
-import { NavBar } from "../../../components/admin";
+import { NavBar } from "../../../components";
 
 //Assets
 import { ReactComponent as DeleteIcon } from "../../../assets/img/delete-icon.svg";
@@ -22,7 +22,6 @@ const Users = () => {
               <th>#</th>
               <th>Username</th>
               <th>Email</th>
-              <th>Position</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -32,7 +31,6 @@ const Users = () => {
                 <td>1</td>
                 <td>mahmoud</td>
                 <td>elashmawydev@gmail.com</td>
-                <td>Operation</td>
                 <td className="action-btns">
                   <button className="icon-btn">
                     <DeleteIcon />

@@ -4,4 +4,4 @@ const isValidURL = (string) => {
 	);
 	return res !== null;
 };
-export default isValidURL;
+module.exports = isValidURL;
