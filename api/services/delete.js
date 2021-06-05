@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
 		/******************************************/
 
 		//Validation
-		if (!_id) return res.json({ status: false, message: "You must choose which project to delete" });
+		if (!_id) return res.json({ status: false, message: "You must choose which service to delete" });
 
 		/******************************************/
 
@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
 
 		/******************************************/
 	} catch (e) {
-		console.log(`Error in /projects/delete, ${e.message}`, e);
+		console.log(`Error in /services/delete, ${e.message}`, e);
 		if (!res.headersSent) return res.json({ status: false, message: "Error occured" });
 	}
 });

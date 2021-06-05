@@ -20,8 +20,7 @@ module.exports = {
 				(req.headers["authorization"] && req.headers["authorization"].split(" ")[1]) || req.cookies["access_token"];
 
 			if (!token) {
-				req.user = null;
-				return next();
+				return res.json({ status: false, message: "You don't have access to these information" });
 			}
 
 			const user = await jwt.verify(token, ACCESS_TOKEN);
@@ -32,8 +31,7 @@ module.exports = {
 				req.user = searchUser;
 				return next();
 			} else {
-				req.user = null;
-				return next();
+				return res.json({ status: false, message: "You don't have access to these information" });
 			}
 		} catch (e) {
 			console.log(e);

@@ -4,18 +4,25 @@ const ProjectModel = require("../../models/Project.model");
 
 router.post("/", async (req, res) => {
 	try {
-		const { _id } = req.body;
+		const { slug } = req.body;
 
 		/******************************************/
 
 		//Get from DB
-		const projectsSearch = await ProjectModel.find({ ...(_id && { _id }) });
-
-		return res.json({ status: true, message: "Data retreived successfully", data: projectsSearch });
+		if (!slug) {
+			const projectsSearch = await ProjectModel.find({});
+			return res.json({ status: true, message: "Data retreived successfully", data: projectsSearch });
+		} else {
+			const projectSearch = await ProjectModel.findOne({ slug });
+			if (!projectSearch) {
+				return res.json({ status: false, message: "There is no project with this url" });
+			}
+			return res.json({ status: true, message: "Data retreived successfully", data: projectSearch });
+		}
 
 		/******************************************/
 	} catch (e) {
-		console.log(`Error in /projects/delete, ${e.message}`, e);
+		console.log(`Error in /projects/get, ${e.message}`, e);
 		if (!res.headersSent) return res.json({ status: false, message: "Error occured" });
 	}
 });

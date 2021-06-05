@@ -10,20 +10,20 @@ router.post("/", async (req, res) => {
 		if (!user)
 			return res.json({
 				status: false,
-				message: "يجب كتابة اسم المستخدم أو البريد الالكتروني",
+				message: "You must type username or email",
 			});
 
 		let userSearch = await UserModel.findOne({
 			$or: [{ email: user }, { username: user }],
 		});
 
-		if (!userSearch) return res.json({ status: false, message: "هذا المستخدم غير موجود" });
+		if (!userSearch) return res.json({ status: false, message: "This user doesn't exist" });
 
 		/********************************************************/
 
 		return res.json({
 			status: true,
-			message: "تم ارسال كلمة المرور الجديدة الي حسابك",
+			message: "A new password was sent to your email",
 		});
 
 		/********************************************************/

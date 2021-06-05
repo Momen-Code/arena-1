@@ -1,1 +1,1 @@
-export { default as isUrl } from "./isUrl";
+module.exports.isUrl = require("./isUrl");
