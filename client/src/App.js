@@ -19,6 +19,7 @@ import {
 	ResetPassword,
 	UsersAdmin,
 	ServicesAdmin,
+	ProjectsAdmin,
 	Page404,
 } from "./routes";
 
@@ -67,11 +68,11 @@ const App = () => {
 					<Route exact path="/404" component={Page404} />
 					{isLoggedIn ? (
 						<Switch>
-							<Route exact path="/admin/projects" component={UsersAdmin} />
+							<Route exact path="/admin/projects" component={ProjectsAdmin} />
 							<Route exact path="/admin/services" component={ServicesAdmin} />
 							<Route exact path="/admin/users" component={UsersAdmin} />
 							<Route exact path="/admin/bills" component={UsersAdmin} />
-							<Redirect to="/admin/users" />
+							<Redirect to="/admin/projects" />
 						</Switch>
 					) : (
 						<Switch>

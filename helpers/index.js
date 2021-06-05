@@ -1,1 +1,1 @@
-module.exports.isUrl = "./isUrl";
+module.exports.isUrl = require("./isUrl");

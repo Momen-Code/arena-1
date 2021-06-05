@@ -6,16 +6,14 @@ autoIncreament.initialize(mongoose.connection);
 
 const SubServiceSchema = new mongoose.Schema({
 	title: { type: String, required: true },
-	slug: { type: String, required: true, unique: true },
 	cover: { type: String, required: true },
 });
 
 const ServiceSchema = new mongoose.Schema({
 	title: { type: String, unique: true },
-	slug: { type: String, unique: true },
 	cover: String,
 	description: String,
-	subservices: { type: [SubServiceSchema], minlength: 1 },
+	subservices: { type: [SubServiceSchema] },
 	createDate: {
 		type: Date,
 		default: Date.now(),
@@ -30,8 +28,9 @@ const finalSchema = new mongoose.Schema({
 		type: ServiceSchema,
 		required: true,
 	},
+	slug: { type: String, unique: true },
 });
 
-ServiceSchema.plugin(autoIncreament.plugin, { model: "Service", startAt: 1 });
+finalSchema.plugin(autoIncreament.plugin, { model: "Service", startAt: 1 });
 
 module.exports = mongoose.model("Service", finalSchema, "serivces");

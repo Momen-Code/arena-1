@@ -6,11 +6,7 @@ autoIncreament.initialize(mongoose.connection);
 
 const ProjectSchema = new mongoose.Schema({
 	title: String,
-	slug: { type: String, unique: true },
-	type: { type: String },
-	thumbnail: String,
 	description: String,
-	slides: [String],
 	createDate: {
 		type: Date,
 		default: Date.now(),
@@ -25,6 +21,10 @@ const finalSchema = new mongoose.Schema({
 		type: ProjectSchema,
 		required: true,
 	},
+	slug: { type: String, unique: true },
+	type: { type: String },
+	slides: [String],
+	thumbnail: String,
 });
 
 ProjectSchema.plugin(autoIncreament.plugin, { model: "Project", startAt: 1 });

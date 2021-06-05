@@ -56,31 +56,7 @@ const useHooks = () => {
 
 	/******************AUTH END**********************/
 
-	/******************SERVICES START**********************/
-
-	const getServices = async () => {
-		try {
-			setIsLoading(true);
-
-			let response = await axios.post("/api/services/get");
-			let data = await response.data;
-
-			console.log(data);
-			if (!data.status) {
-				createNotification(data.message, "error");
-				return [];
-			}
-			// createNotification(data.message, "success");
-			return data.data;
-		} catch (e) {
-			alert(e.message);
-		} finally {
-			setIsLoading(false);
-		}
-	};
-	/******************SERVICES END**********************/
-
-	return { login, resetPassword, getServices };
+	return { login, resetPassword };
 };
 
 export default useHooks;

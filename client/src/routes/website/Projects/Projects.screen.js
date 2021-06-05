@@ -1,25 +1,26 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import PulseLoader from 'react-spinners/PulseLoader';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import PulseLoader from "react-spinners/PulseLoader";
+
+//Hooks
+import useProjectsHook from "../hooks";
 
 //Components
-import { Header, Footer } from '../../../components';
+import { Header, Footer } from "../../../components";
 
 //Style
-import './style.scss';
+import "./style.scss";
 
 //Assets
 // @ts-ignore
-import CircleShape from '../../../assets/img/circle-shape-gray.png';
-
-import PROJECTSEN from '../../../util/projects-en';
-import PROJECTSAR from '../../../util/projects-ar';
+import CircleShape from "../../../assets/img/circle-shape-gray.png";
 
 const Projects = () => {
-	const { t, i18n } = useTranslation('translations');
-	const [PROJECTS, setPROJECTS] = useState(i18n.language == 'ar' ? PROJECTSAR : PROJECTSEN);
+	const { getProjects } = useProjectsHook();
+	const { t, i18n } = useTranslation("translations");
+	const [PROJECTS, setPROJECTS] = useState([]);
 	const projectsTypes = PROJECTS.filter((v, i, a) => a.findIndex((t) => t.type === v.type) === i).map(
 		(project) => project.type
 	);
@@ -29,7 +30,14 @@ const Projects = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [selectedType, setSelectedType] = useState(-1);
 
-	useEffect(() => {}, [i18n.language]);
+	useEffect(() => {
+		(async () => {
+			const projects = await getProjects({ slug: "" });
+			setPROJECTS(projects);
+			setActiveProjects(projects.slice(0, window.innerWidth > 576 ? 6 : 4));
+			setInActiveProjects(projects.slice(window.innerWidth > 576 ? 6 : 4));
+		})();
+	}, []);
 
 	useEffect(() => {
 		if (selectedType == -1) {
@@ -79,7 +87,7 @@ const Projects = () => {
 
 				<div className="top-wrapper">
 					<div className="our-projects-txt">
-						{i18n.dir() == 'rtl' ? (
+						{i18n.dir() == "rtl" ? (
 							<>
 								<motion.span
 									initial="initial"
@@ -91,7 +99,7 @@ const Projects = () => {
 										duration: 1,
 									}}
 								>
-									{t('OUR_PROJECTS').split(' ')[0]}
+									{t("OUR_PROJECTS").split(" ")[0]}
 								</motion.span>
 								<br />
 								<motion.span
@@ -104,14 +112,14 @@ const Projects = () => {
 										duration: 1,
 									}}
 								>
-									{t('OUR_PROJECTS').split(' ')[1]}
+									{t("OUR_PROJECTS").split(" ")[1]}
 								</motion.span>
 							</>
 						) : (
 							<>
-								{t('OUR_PROJECTS')
-									.split(' ')[0]
-									.split('')
+								{t("OUR_PROJECTS")
+									.split(" ")[0]
+									.split("")
 									.map((letter, i) => (
 										<motion.span
 											initial="initial"
@@ -127,9 +135,9 @@ const Projects = () => {
 										</motion.span>
 									))}
 								<br />
-								{t('OUR_PROJECTS')
-									.split(' ')[1]
-									.split('')
+								{t("OUR_PROJECTS")
+									.split(" ")[1]
+									.split("")
 									.map((letter, i) => (
 										<motion.span
 											initial="initial"
@@ -150,15 +158,15 @@ const Projects = () => {
 					<div className="right-items">
 						<div className="btns-container">
 							<button
-								className={`all-types-btn ${selectedType == -1 ? 'active' : ''}`}
+								className={`all-types-btn ${selectedType == -1 ? "active" : ""}`}
 								onClick={() => setSelectedType(-1)}
 							>
-								{t('ALL')}
+								{t("ALL")}
 							</button>
 							<div className="btns-grid">
 								{projectsTypes.map((type, i) => (
 									<button
-										className={`type-btn ${i == selectedType ? 'active' : ''}`}
+										className={`type-btn ${i == selectedType ? "active" : ""}`}
 										onClick={() => setSelectedType(i)}
 									>
 										{type}
@@ -166,7 +174,7 @@ const Projects = () => {
 								))}
 							</div>
 						</div>
-						<div className="vertical-content">{t('PROJECTS_QUOTE')}</div>
+						<div className="vertical-content">{t("PROJECTS_QUOTE")}</div>
 					</div>
 				</div>
 				<div className="bottom-wrapper">
@@ -176,7 +184,7 @@ const Projects = () => {
 								<div className="project-img">
 									<img alt="project image" src={project.thumbnail} />
 								</div>
-								<h1 className="title">{project.title}</h1>
+								<h1 className="title">{i18n.language == "ar" ? project.ar.title : project.en.title}</h1>
 							</Link>
 						))}
 					</div>
@@ -186,7 +194,7 @@ const Projects = () => {
 								<div className="project-img">
 									<img alt="project image" src={project.thumbnail} />
 								</div>
-								<h1 className="title">{project.title}</h1>
+								<h1 className="title">{i18n.language == "ar" ? project.ar.title : project.en.title}</h1>
 							</div>
 						))}
 					</div>
@@ -197,17 +205,13 @@ const Projects = () => {
 								setIsLoading(true);
 								setTimeout(() => {
 									setIsLoading(false);
-									setActiveProjects(
-										PROJECTS.slice(0, activeProjects.length + (window.innerWidth > 576 ? 6 : 4))
-									);
-									setInActiveProjects(
-										PROJECTS.slice(activeProjects.length + (window.innerWidth > 576 ? 6 : 4))
-									);
+									setActiveProjects(PROJECTS.slice(0, activeProjects.length + (window.innerWidth > 576 ? 6 : 4)));
+									setInActiveProjects(PROJECTS.slice(activeProjects.length + (window.innerWidth > 576 ? 6 : 4)));
 								}, 800);
 							}}
 						>
 							<PulseLoader loading={isLoading} color="#830a0a" />
-							{!isLoading && t('LOAD_MORE')}
+							{!isLoading && t("LOAD_MORE")}
 						</button>
 					)}
 				</div>
