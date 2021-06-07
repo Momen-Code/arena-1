@@ -26,10 +26,10 @@ const useProjectHook = () => {
 		}
 	};
 
-	const addProject = async (serviceObj) => {
+	const addProject = async (projectObj) => {
 		try {
 			setIsLoading(true);
-			let response = await axios.post("/api/projects/create", serviceObj);
+			let response = await axios.post("/api/projects/create", projectObj);
 			let data = await response.data;
 
 			console.log(data);
@@ -46,10 +46,10 @@ const useProjectHook = () => {
 		}
 	};
 
-	const editProject = async (serviceObj) => {
+	const editProject = async (projectObj) => {
 		try {
 			setIsLoading(true);
-			let response = await axios.post("/api/projects/edit", serviceObj);
+			let response = await axios.post("/api/projects/edit", projectObj);
 			let data = await response.data;
 
 			console.log(data);
@@ -68,7 +68,7 @@ const useProjectHook = () => {
 
 	const deleteProject = async (_id) => {
 		try {
-			if (!window.confirm("Are you sure to delete this service & it's sub-projects ?")) {
+			if (!window.confirm("Are you sure to delete this project ?")) {
 				return false;
 			}
 

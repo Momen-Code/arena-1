@@ -1,9 +1,12 @@
 @import "../../../assets/style/global";
 
-.users-container {
+.services-container {
 	.add-btn {
 		@include normalBtn;
 		width: max-content;
+	}
+	.multi-tap {
+		@include multiTap;
 	}
 	.table-container {
 		@include tableContainer;

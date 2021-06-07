@@ -28,7 +28,7 @@ const Projects = () => {
 	const [services, setServices] = useState([]);
 	const [isAddBoxVisible, setIsAddBoxVisible] = useState(false);
 	const [isEditMode, setIsEditMode] = useState(false);
-	const [projectObj, setProjectObj] = useState({
+	const defaultProjectObj = {
 		en: {
 			title: "",
 			description: "",
@@ -40,37 +40,22 @@ const Projects = () => {
 		type: "",
 		thumbnail: "",
 		slides: [""],
-	});
+	};
+	const [projectObj, setProjectObj] = useState(defaultProjectObj);
 	const [activeLanguage, setActiveLanguage] = useState("en");
 
 	const addBoxRef = useOnClickOutside(() => {
 		setIsAddBoxVisible(false);
 		setIsEditMode(false);
-		setProjectObj({
-			en: {
-				title: "",
-				description: "",
-			},
-			ar: {
-				title: "",
-				description: "",
-			},
-			type: "",
-			thumbnail: "",
-			slides: [""],
-		});
+		setProjectObj(defaultProjectObj);
 	});
 
 	useEffect(() => {
 		(async () => {
 			setProjects(await getProjects());
-			setServices(await getServices());
+			setServices(await getServices(false));
 		})();
 	}, []);
-
-	useEffect(() => {
-		console.log(projectObj.slides);
-	}, [projectObj]);
 
 	return (
 		<div className="projects-container">
@@ -155,7 +140,7 @@ const Projects = () => {
 							<span></span>
 						</div>
 						<form onSubmit={(e) => e.preventDefault()}>
-							<h3>Add a new Project</h3>
+							<h3>{isEditMode ? "Edit Project" : "Add a new Project"}</h3>
 							<div className="input-items">
 								<div className="select-item">
 									<select
@@ -273,6 +258,7 @@ const Projects = () => {
 												if (project) {
 													setProjects([...projects, project]);
 													setIsAddBoxVisible(false);
+													setProjectObj(defaultProjectObj);
 													setProjects(await getProjects());
 												}
 											}

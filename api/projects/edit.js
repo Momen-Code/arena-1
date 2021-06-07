@@ -10,7 +10,6 @@ router.post("/", async (req, res) => {
 		const { _id, ar, en, type, slides, thumbnail } = req.body;
 		/******************************************/
 
-		console.log(req.body);
 		const { title: titleEn, description: descriptionEn } = en;
 		const { title: titleAr, description: descriptionAr } = ar;
 		/******************************************/

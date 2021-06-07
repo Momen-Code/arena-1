@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useAppContext } from "../../../../provider";
 
-const useServiceHook = () => {
+const useUserHook = () => {
 	const { createNotification, setIsLoading } = useAppContext();
 
-	const getServices = async (loader = true) => {
+	const getUsers = async () => {
 		try {
-			loader && setIsLoading(true);
+			setIsLoading(true);
 
-			let response = await axios.post("/api/services/get");
+			let response = await axios.post("/api/users/get");
 			let data = await response.data;
 
 			console.log(data);
@@ -21,14 +21,14 @@ const useServiceHook = () => {
 		} catch (e) {
 			alert(e.message);
 		} finally {
-			loader && setIsLoading(false);
+			setIsLoading(false);
 		}
 	};
 
-	const addService = async (serviceObj) => {
+	const addUser = async (userObj) => {
 		try {
 			setIsLoading(true);
-			let response = await axios.post("/api/services/create", serviceObj);
+			let response = await axios.post("/api/users/add", userObj);
 			let data = await response.data;
 
 			console.log(data);
@@ -45,14 +45,10 @@ const useServiceHook = () => {
 		}
 	};
 
-	const deleteService = async (_id) => {
+	const editUser = async (userObj) => {
 		try {
-			if (!window.confirm("Are you sure to delete this service & it's sub-services ?")) {
-				return false;
-			}
-
 			setIsLoading(true);
-			let response = await axios.post("/api/services/delete", { _id });
+			let response = await axios.post("/api/users/edit", userObj);
 			let data = await response.data;
 
 			console.log(data);
@@ -69,10 +65,14 @@ const useServiceHook = () => {
 		}
 	};
 
-	const editService = async (serviceObj) => {
+	const deleteUser = async (_id) => {
 		try {
+			if (!window.confirm("Are you sure to delete this user ?")) {
+				return false;
+			}
+
 			setIsLoading(true);
-			let response = await axios.post("/api/services/edit", serviceObj);
+			let response = await axios.post("/api/users/delete", { _id });
 			let data = await response.data;
 
 			console.log(data);
@@ -89,7 +89,7 @@ const useServiceHook = () => {
 		}
 	};
 
-	return { getServices, addService, deleteService, editService };
+	return { getUsers, addUser, deleteUser, editUser };
 };
 
-export default useServiceHook;
+export default useUserHook;
