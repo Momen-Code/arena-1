@@ -140,7 +140,7 @@ const Projects = () => {
 							<span></span>
 						</div>
 						<form onSubmit={(e) => e.preventDefault()}>
-							<h3>Add a new Project</h3>
+							<h3>{isEditMode ? "Edit Project" : "Add a new Project"}</h3>
 							<div className="input-items">
 								<div className="select-item">
 									<select

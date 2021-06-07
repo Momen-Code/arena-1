@@ -1,8 +1,18 @@
 @import "../../../assets/style/global";
 
 .users-container {
-  .table-container {
-    @include tableContainer;
-    margin-top: 70px;
-  }
+	.add-btn {
+		@include normalBtn;
+		width: max-content;
+	}
+	.multi-tap {
+		@include multiTap;
+	}
+	.table-container {
+		@include tableContainer;
+		margin-top: 70px;
+	}
+	.floating-box-container {
+		@include floatingBoxContainer;
+	}
 }

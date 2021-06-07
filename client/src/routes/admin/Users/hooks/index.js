@@ -1,15 +1,14 @@
 import axios from "axios";
-import { useAppContext, useAuthContext } from "../../../../provider";
+import { useAppContext } from "../../../../provider";
 
-const useProjectHook = () => {
+const useUserHook = () => {
 	const { createNotification, setIsLoading } = useAppContext();
-	const { setIsLoggedIn } = useAuthContext();
 
-	const getProjects = async () => {
+	const getUsers = async () => {
 		try {
 			setIsLoading(true);
 
-			let response = await axios.post("/api/projects/get");
+			let response = await axios.post("/api/users/get");
 			let data = await response.data;
 
 			console.log(data);
@@ -26,10 +25,10 @@ const useProjectHook = () => {
 		}
 	};
 
-	const addProject = async (projectObj) => {
+	const addUser = async (userObj) => {
 		try {
 			setIsLoading(true);
-			let response = await axios.post("/api/projects/create", projectObj);
+			let response = await axios.post("/api/users/add", userObj);
 			let data = await response.data;
 
 			console.log(data);
@@ -46,10 +45,10 @@ const useProjectHook = () => {
 		}
 	};
 
-	const editProject = async (projectObj) => {
+	const editUser = async (userObj) => {
 		try {
 			setIsLoading(true);
-			let response = await axios.post("/api/projects/edit", projectObj);
+			let response = await axios.post("/api/users/edit", userObj);
 			let data = await response.data;
 
 			console.log(data);
@@ -66,14 +65,14 @@ const useProjectHook = () => {
 		}
 	};
 
-	const deleteProject = async (_id) => {
+	const deleteUser = async (_id) => {
 		try {
-			if (!window.confirm("Are you sure to delete this project ?")) {
+			if (!window.confirm("Are you sure to delete this user ?")) {
 				return false;
 			}
 
 			setIsLoading(true);
-			let response = await axios.post("/api/projects/delete", { _id });
+			let response = await axios.post("/api/users/delete", { _id });
 			let data = await response.data;
 
 			console.log(data);
@@ -90,7 +89,7 @@ const useProjectHook = () => {
 		}
 	};
 
-	return { getProjects, addProject, deleteProject, editProject };
+	return { getUsers, addUser, deleteUser, editUser };
 };
 
-export default useProjectHook;
+export default useUserHook;

@@ -135,7 +135,7 @@ const Services = () => {
 							<span></span>
 						</div>
 						<form onSubmit={(e) => e.preventDefault()}>
-							<h3>Add a new Service</h3>
+							<h3> {isEditMode ? "Edit Service" : "Add a new Service"}</h3>
 							<div className="input-items">
 								<div className="multi-tap">
 									<div className={activeLanguage == "en" ? "active" : ""} onClick={() => setActiveLanguage("en")}>
