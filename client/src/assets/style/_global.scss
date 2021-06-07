@@ -511,6 +511,10 @@ body {
 					transform-origin: 6px 4px;
 				}
 			}
+			.line {
+				height: 2px;
+				border-radius: 5px;
+			}
 			.btn-container {
 				display: flex;
 				margin: auto;

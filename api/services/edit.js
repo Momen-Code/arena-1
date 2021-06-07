@@ -5,19 +5,19 @@ const { isUrl } = require("../../helpers");
 
 router.post("/", async (req, res) => {
 	try {
-		const { _id, title, slug, type, cover, subservices, description } = req.body;
+		const { _id, en, ar, slug, cover } = req.body;
 
 		/******************************************/
 
+		const { title: titleEn, description: descriptionEn, subservices: subservicesEn } = en;
+		const { title: titleAr, description: descriptionAr, subservices: subservicesAr } = ar;
+		/******************************************/
+
 		//Validation
-		if (!_id) return res.json({ status: false, message: "You must select which service you need to edit" });
-		if (!title) return res.json({ status: false, message: "You must add a title to the service" });
-		if (!type) return res.json({ status: false, message: "You must choose the type of the service" });
-		if (!slug) return res.json({ status: false, message: "You must specify the slug of the service" });
-		if (!cover) return res.json({ status: false, message: "You must set a cover to the service" });
-		if (!subservices)
-			return res.json({ status: false, message: "You must add at least one sub-service to the service" });
-		if (!description) return res.json({ status: false, message: "You must add a description to the service" });
+		if (!_id) return res.json({ status: false, message: "Error occurred, please contact ARCHAOS Developement Team" });
+		if (!titleEn || !titleAr) return res.json({ status: false, message: "You must add a title to the service" });
+		if (!descriptionEn || !descriptionAr)
+			return res.json({ status: false, message: "You must add a description to the service" });
 
 		//Validate URLs
 		if (!isUrl(cover)) return res.json({ status: false, message: "Cover must be a photo url" });
@@ -25,10 +25,10 @@ router.post("/", async (req, res) => {
 		/******************************************/
 
 		//Update on DB
-		await ServiceModel.updateOne({ _id }, { title, type, slug, cover, subservices, description });
+		await ServiceModel.updateOne({ _id }, { slug, cover, en, ar });
 		const serviceSearch = await ServiceModel.findOne({ _id });
 
-		return res.json({ status: true, message: "Data retreived successfully", data: serviceSearch });
+		return res.json({ status: true, message: "Service updated successfully", data: serviceSearch });
 
 		/******************************************/
 	} catch (e) {

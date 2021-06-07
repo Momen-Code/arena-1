@@ -1,13 +1,12 @@
 import axios from "axios";
-import { useAppContext, useAuthContext } from "../../../../provider";
+import { useAppContext } from "../../../../provider";
 
 const useServiceHook = () => {
 	const { createNotification, setIsLoading } = useAppContext();
-	const { setIsLoggedIn } = useAuthContext();
 
-	const getServices = async () => {
+	const getServices = async (loader = true) => {
 		try {
-			setIsLoading(true);
+			loader && setIsLoading(true);
 
 			let response = await axios.post("/api/services/get");
 			let data = await response.data;
@@ -22,7 +21,7 @@ const useServiceHook = () => {
 		} catch (e) {
 			alert(e.message);
 		} finally {
-			setIsLoading(false);
+			loader && setIsLoading(false);
 		}
 	};
 
@@ -70,7 +69,27 @@ const useServiceHook = () => {
 		}
 	};
 
-	return { getServices, addService, deleteService };
+	const editService = async (serviceObj) => {
+		try {
+			setIsLoading(true);
+			let response = await axios.post("/api/services/edit", serviceObj);
+			let data = await response.data;
+
+			console.log(data);
+			if (!data.status) {
+				createNotification(data.message, "error");
+				return false;
+			}
+			createNotification(data.message, "success");
+			return data.data;
+		} catch (e) {
+			alert(e.message);
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
+	return { getServices, addService, deleteService, editService };
 };
 
 export default useServiceHook;

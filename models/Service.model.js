@@ -1,8 +1,4 @@
 const mongoose = require("mongoose");
-const autoIncreament = require("mongoose-auto-increment");
-
-//Init auto increament
-autoIncreament.initialize(mongoose.connection);
 
 const SubServiceSchema = new mongoose.Schema({
 	title: { type: String, required: true },
@@ -11,7 +7,6 @@ const SubServiceSchema = new mongoose.Schema({
 
 const ServiceSchema = new mongoose.Schema({
 	title: { type: String, unique: true },
-	cover: String,
 	description: String,
 	subservices: { type: [SubServiceSchema] },
 	createDate: {
@@ -29,8 +24,7 @@ const finalSchema = new mongoose.Schema({
 		required: true,
 	},
 	slug: { type: String, unique: true },
+	cover: String,
 });
-
-finalSchema.plugin(autoIncreament.plugin, { model: "Service", startAt: 1 });
 
 module.exports = mongoose.model("Service", finalSchema, "serivces");

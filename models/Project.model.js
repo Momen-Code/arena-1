@@ -1,8 +1,4 @@
 const mongoose = require("mongoose");
-const autoIncreament = require("mongoose-auto-increment");
-
-//Init auto increament
-autoIncreament.initialize(mongoose.connection);
 
 const ProjectSchema = new mongoose.Schema({
 	title: String,
@@ -26,7 +22,5 @@ const finalSchema = new mongoose.Schema({
 	slides: [String],
 	thumbnail: String,
 });
-
-ProjectSchema.plugin(autoIncreament.plugin, { model: "Project", startAt: 1 });
 
 module.exports = mongoose.model("Project", finalSchema, "projects");

@@ -67,19 +67,23 @@ const App = () => {
 					/>
 					<Route exact path="/404" component={Page404} />
 					{isLoggedIn ? (
-						<Switch>
-							<Route exact path="/admin/projects" component={ProjectsAdmin} />
-							<Route exact path="/admin/services" component={ServicesAdmin} />
-							<Route exact path="/admin/users" component={UsersAdmin} />
-							<Route exact path="/admin/bills" component={UsersAdmin} />
-							<Redirect to="/admin/projects" />
-						</Switch>
+						<div dir="ltr">
+							<Switch>
+								<Route exact path="/admin/projects" component={ProjectsAdmin} />
+								<Route exact path="/admin/services" component={ServicesAdmin} />
+								<Route exact path="/admin/users" component={UsersAdmin} />
+								<Route exact path="/admin/bills" component={UsersAdmin} />
+								<Redirect to="/admin/projects" />
+							</Switch>
+						</div>
 					) : (
-						<Switch>
-							<Route exact path="/admin/reset-password" component={ResetPassword} />
-							<Route exact path="/admin/login" component={Login} />
-							<Redirect to="/404" />
-						</Switch>
+						<div dir="ltr">
+							<Switch>
+								<Route exact path="/admin/reset-password" component={ResetPassword} />
+								<Route exact path="/admin/login" component={Login} />
+								<Redirect to="/404" />
+							</Switch>
+						</div>
 					)}
 					<Redirect to="/404" />
 				</Switch>
