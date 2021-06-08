@@ -115,8 +115,8 @@ const Services = () => {
 										</button>
 										<button
 											className="icon-btn"
-											onClick={() => {
-												deleteService(item._id);
+											onClick={async () => {
+												(await deleteService(item._id)) && setServices(await getServices());
 											}}
 										>
 											<DeleteIcon />

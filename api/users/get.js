@@ -4,6 +4,9 @@ const UserModel = require("../../models/User.model");
 
 router.post("/", async (req, res) => {
 	try {
+		if (req.user.role != "administrator")
+			return res.json({ status: false, message: "You don't have access to this data" });
+
 		let usersSearch = await UserModel.find({});
 
 		if (usersSearch.length === 0) {

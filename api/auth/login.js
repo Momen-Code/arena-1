@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
 		/********************************************************/
 
 		//Send the jwt token with the success response
-		const accessToken = await createToken({ _id: userSearch._id });
+		const accessToken = await createToken({ _id: userSearch._id, role: userSearch.role });
 
 		res.cookie("access_token", accessToken, { maxAge: 86400 * 1000 });
 		res.cookie("user_data", JSON.stringify(userSearch), {

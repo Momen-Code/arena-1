@@ -61,7 +61,7 @@ const useServiceHook = () => {
 				return false;
 			}
 			createNotification(data.message, "success");
-			return data.data;
+			return true;
 		} catch (e) {
 			alert(e.message);
 		} finally {

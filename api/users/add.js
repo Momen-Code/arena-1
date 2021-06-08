@@ -5,7 +5,10 @@ const bcrypt = require("bcrypt");
 
 router.post("/", async (req, res) => {
 	try {
-		const { username, email, password, passwordConfirm } = req.body;
+		if (req.user.role != "administrator")
+			return res.json({ status: false, message: "You don't have access to this data" });
+
+		const { username, email, password, passwordConfirm, role } = req.body;
 
 		//Validation
 		if (!username)
@@ -33,6 +36,8 @@ router.post("/", async (req, res) => {
 				status: false,
 				message: "Password & password confirmation must be identical",
 			});
+		if (!["administrator", "user"].includes(role))
+			return res.json({ status: false, message: "You must select the role of the user" });
 
 		let userSearch = await UserModel.findOne({
 			$or: [{ email }, { username }],
@@ -50,6 +55,7 @@ router.post("/", async (req, res) => {
 			username,
 			email,
 			password: hashedPassword,
+			role,
 		});
 
 		//Delete unwanted data

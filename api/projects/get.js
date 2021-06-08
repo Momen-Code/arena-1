@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
 
 		//Get from DB
 		if (!slug) {
-			const projectsSearch = await ProjectModel.find({});
+			const projectsSearch = await ProjectModel.find({}).sort({ id: 1 });
 			return res.json({ status: true, message: "Data retreived successfully", data: projectsSearch });
 		} else {
 			const projectSearch = await ProjectModel.findOne({ slug });

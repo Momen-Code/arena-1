@@ -6,14 +6,12 @@ router.post("/", async (req, res) => {
 	try {
 		const { firstId, secondId } = req.body;
 
-		//Set the first item to a temporary random number over 1000000
 		let firstItemTempId = Math.floor(Math.random() * (1000000 - 100000 + 1) + 100000);
+		// let secondItemTempId = Math.floor(Math.random() * (1000000 - 100000 + 1) + 100000);
 
-		await ProjectModel.updateOne({ _id: firstId }, { _id: firstItemTempId });
-
-		await ProjectModel.updateOne({ _id: secondId }, { _id: firstId });
-
-		await ProjectModel.updateOne({ _id: firstItemTempId }, { _id: secondId });
+		await ProjectModel.updateOne({ id: firstId }, { $set: { id: firstItemTempId } });
+		await ProjectModel.updateOne({ id: secondId }, { $set: { id: firstId } });
+		await ProjectModel.updateOne({ id: firstItemTempId }, { $set: { id: secondId } });
 
 		return res.json({ status: true, message: "swapped index successfully" });
 	} catch (e) {

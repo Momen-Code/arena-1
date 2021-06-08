@@ -15,7 +15,7 @@ const NavBar = () => {
 	const [sidebarActive, setSidebarActive] = useState(false);
 	const [visible, setVisible] = useState(false);
 	const { setIsLoggedIn } = useAuthContext();
-	const { createNotification } = useAppContext();
+	const { createNotification, userData } = useAppContext();
 
 	const sidebarRef = useRef(null);
 
@@ -57,9 +57,11 @@ const NavBar = () => {
 						<Link to="/admin/services" className={location.pathname == "/admin/services" ? "active" : ""}>
 							Services
 						</Link>
-						<Link to="/admin/users" className={location.pathname == "/admin/users" ? "active" : ""}>
-							Users
-						</Link>
+						{userData.role == "administrator" && (
+							<Link to="/admin/users" className={location.pathname == "/admin/users" ? "active" : ""}>
+								Users
+							</Link>
+						)}
 						<Link to="/admin/bills" className={location.pathname == "/admin/bill" ? "active" : ""}>
 							Bills
 						</Link>

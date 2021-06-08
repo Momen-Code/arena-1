@@ -81,7 +81,7 @@ const useUserHook = () => {
 				return false;
 			}
 			createNotification(data.message, "success");
-			return data.data;
+			return true;
 		} catch (e) {
 			alert(e.message);
 		} finally {

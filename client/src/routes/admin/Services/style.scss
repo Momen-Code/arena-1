@@ -4,13 +4,14 @@
 	.add-btn {
 		@include normalBtn;
 		width: max-content;
+		margin-bottom: 50px;
 	}
 	.multi-tap {
 		@include multiTap;
 	}
 	.table-container {
 		@include tableContainer;
-		margin-top: 70px;
+		margin-top: 20px;
 	}
 	.floating-box-container {
 		@include floatingBoxContainer;

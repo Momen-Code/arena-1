@@ -44,7 +44,10 @@ const Login = () => {
 					</div>
 				</div>
 				<div className="btn-container">
-					<button type="submit" onClick={() => login({ user, password })}>
+					<button
+						type="submit"
+						onClick={async () => (await login({ user, password })) && history.push("/admin/projects")}
+					>
 						Login
 					</button>
 				</div>
