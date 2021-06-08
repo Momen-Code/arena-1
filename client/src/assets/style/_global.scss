@@ -312,6 +312,7 @@ body {
 					text-align: left;
 					padding: 15px 0px;
 					padding-right: 30px;
+					position: relative;
 					p {
 						white-space: nowrap;
 					}
@@ -326,6 +327,27 @@ body {
 					background-color: rgba($mid-grey, 0.7);
 					td {
 						color: $white;
+					}
+				}
+			}
+			.arrow-change-index {
+				position: absolute;
+				left: 10px;
+				top: 50%;
+				transform: translateY(-50%);
+				display: flex;
+				flex-direction: column;
+				svg {
+					cursor: pointer;
+					transition: 0.3s ease;
+					&:nth-child(1) {
+						margin-bottom: 10px;
+					}
+					&:nth-child(2) {
+						margin-top: 10px;
+					}
+					&:hover {
+						color: $primary;
 					}
 				}
 			}

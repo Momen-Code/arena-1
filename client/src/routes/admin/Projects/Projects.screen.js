@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
+
 //Hooks
 import useProjectHook from "./hooks";
 import useServiceHook from "../Services/hooks";
@@ -22,7 +24,7 @@ import { ReactComponent as DeleteIcon } from "../../../assets/img/delete-icon.sv
 import { ReactComponent as EditIcon } from "../../../assets/img/edit-icon.svg";
 
 const Projects = () => {
-	const { getProjects, addProject, deleteProject, editProject } = useProjectHook();
+	const { getProjects, addProject, deleteProject, editProject, changeIndex } = useProjectHook();
 	const { getServices } = useServiceHook();
 	const [projects, setProjects] = useState([]);
 	const [services, setServices] = useState([]);
@@ -40,6 +42,7 @@ const Projects = () => {
 		type: "",
 		thumbnail: "",
 		slides: [""],
+		id: 0,
 	};
 	const [projectObj, setProjectObj] = useState(defaultProjectObj);
 	const [activeLanguage, setActiveLanguage] = useState("en");
@@ -91,7 +94,25 @@ const Projects = () => {
 						{projects &&
 							projects.map((item, index) => (
 								<tr key={index}>
-									<td>{index + 1}</td>
+									<td>
+										<div className="arrow-change-index">
+											<FaArrowAltCircleUp
+												style={{ ...(index == 0 && { display: "none" }) }}
+												onClick={async () => {
+													(await changeIndex({ firstId: item.id, secondId: projects[index - 1].id })) &&
+														setProjects(await getProjects());
+												}}
+											/>
+											<FaArrowAltCircleDown
+												style={{ ...(index == projects.length - 1 && { display: "none" }) }}
+												onClick={async () => {
+													(await changeIndex({ firstId: item.id, secondId: projects[index + 1].id })) &&
+														setProjects(await getProjects());
+												}}
+											/>
+										</div>
+										{item.id}
+									</td>
 									<td>{activeLanguage == "ar" ? item.ar.title : item.en.title}</td>
 									<td>{activeLanguage == "ar" ? item.ar.description : item.en.description}</td>
 									<td>{item.type}</td>
@@ -120,8 +141,8 @@ const Projects = () => {
 										</button>
 										<button
 											className="icon-btn"
-											onClick={() => {
-												deleteProject(item._id);
+											onClick={async () => {
+												(await deleteProject(item._id)) && setProjects(await getProjects());
 											}}
 										>
 											<DeleteIcon />

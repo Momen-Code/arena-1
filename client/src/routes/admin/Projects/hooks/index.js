@@ -65,6 +65,26 @@ const useProjectHook = () => {
 			setIsLoading(false);
 		}
 	};
+	const changeIndex = async ({ firstId, secondId }) => {
+		try {
+			console.log({ firstId, secondId });
+			setIsLoading(true);
+			let response = await axios.post("/api/projects/changeIndex", { firstId, secondId });
+			let data = await response.data;
+
+			console.log(data);
+			if (!data.status) {
+				createNotification(data.message, "error");
+				return false;
+			}
+			createNotification(data.message, "success");
+			return true;
+		} catch (e) {
+			alert(e.message);
+		} finally {
+			setIsLoading(false);
+		}
+	};
 
 	const deleteProject = async (_id) => {
 		try {
@@ -82,7 +102,7 @@ const useProjectHook = () => {
 				return false;
 			}
 			createNotification(data.message, "success");
-			return data.data;
+			return true;
 		} catch (e) {
 			alert(e.message);
 		} finally {
@@ -90,7 +110,7 @@ const useProjectHook = () => {
 		}
 	};
 
-	return { getProjects, addProject, deleteProject, editProject };
+	return { getProjects, addProject, deleteProject, editProject, changeIndex };
 };
 
 export default useProjectHook;

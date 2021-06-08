@@ -20,10 +20,11 @@ const useHooks = () => {
 			console.log(data);
 			if (!data.status) {
 				createNotification(data.message, "error");
-				return;
+				return false;
 			}
 			setIsLoggedIn(true);
 			createNotification(data.message, "success");
+			return true;
 		} catch (e) {
 			alert(e.message);
 		} finally {

@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Redirect } from "react-router-dom";
+import { useAppContext } from "../../../provider";
+
 //Hooks
 import useUserHook from "./hooks";
 import { useOnClickOutside } from "../../../hooks";
 
 //Style
 import "./style.scss";
-import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
-import "swiper/components/pagination/pagination.scss";
-import "swiper/components/scrollbar/scrollbar.scss";
 
 //Components
 import { NavBar } from "../../../components";
@@ -22,6 +20,7 @@ import { ReactComponent as EditIcon } from "../../../assets/img/edit-icon.svg";
 
 const Users = () => {
 	const { getUsers, addUser, deleteUser, editUser } = useUserHook();
+	const { userData } = useAppContext();
 	const [users, setUsers] = useState([]);
 	const [isAddBoxVisible, setIsAddBoxVisible] = useState(false);
 	const [isEditMode, setIsEditMode] = useState(false);
@@ -30,6 +29,7 @@ const Users = () => {
 		email: "",
 		password: "",
 		passwordConfirm: "",
+		role: "",
 	};
 
 	const [userObj, setUserObj] = useState(defaultUserObj);
@@ -48,6 +48,7 @@ const Users = () => {
 
 	return (
 		<div className="users-container">
+			{userData.role != "administrator" && <Redirect to="/admin/projects" />}
 			<div className="navbar-container">
 				<NavBar />
 			</div>
@@ -62,6 +63,7 @@ const Users = () => {
 							<th>#</th>
 							<th>Username</th>
 							<th>Email</th>
+							<th>Role</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -72,6 +74,7 @@ const Users = () => {
 									<td>{index + 1}</td>
 									<td>{item.username}</td>
 									<td>{item.email}</td>
+									<td>{item.role}</td>
 									<td className="action-btns">
 										<button
 											className="icon-btn"
@@ -85,8 +88,8 @@ const Users = () => {
 										</button>
 										<button
 											className="icon-btn"
-											onClick={() => {
-												deleteUser(item._id);
+											onClick={async () => {
+												(await deleteUser(item._id)) && setUsers(await getUsers());
 											}}
 										>
 											<DeleteIcon />
@@ -107,6 +110,18 @@ const Users = () => {
 						<form onSubmit={(e) => e.preventDefault()}>
 							<h3>{isEditMode ? "Edit User" : "Add a new User"}</h3>
 							<div className="input-items">
+								<div className="select-item">
+									<select
+										onChange={(e) => setUserObj({ ...userObj, role: e.target.value })}
+										value={userObj.type}
+									>
+										<option value="">Select Role</option>
+										<option value="administrator">Administrator</option>
+										<option value="user">User</option>
+
+									</select>
+									<span></span>
+								</div>
 								<div className="input-item">
 									<input
 										placeholder="Username"

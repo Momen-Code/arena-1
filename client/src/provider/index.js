@@ -1,6 +1,7 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { NotificationManager, NotificationContainer } from "react-notifications";
+import { useHistory } from "react-router-dom";
 
 const AppContext = createContext(null);
 const AuthContext = createContext(null);

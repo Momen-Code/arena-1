@@ -4,7 +4,10 @@ const UserModel = require("../../models/User.model");
 
 router.post("/", async (req, res) => {
 	try {
-		const { _id, username, email } = req.body;
+		if (req.user.role != "administrator")
+			return res.json({ status: false, message: "You don't have access to this data" });
+
+		const { _id, username, email, role } = req.body;
 
 		//Validation
 		if (!username)
@@ -17,6 +20,8 @@ router.post("/", async (req, res) => {
 				status: false,
 				message: "You must write the email",
 			});
+		if (!["administrator", "user"].includes(role))
+			return res.json({ status: false, message: "You must select the role of the user" });
 
 		let userSearch = await UserModel.findOne({
 			_id: { $ne: _id },
@@ -33,6 +38,7 @@ router.post("/", async (req, res) => {
 			{
 				username,
 				email,
+				role,
 			}
 		);
 
