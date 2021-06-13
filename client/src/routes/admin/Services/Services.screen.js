@@ -29,12 +29,22 @@ const Services = () => {
 		en: {
 			title: "",
 			description: "",
-			subservices: [],
+			subservices: [
+				{
+					title: "",
+					cover: "",
+				},
+			],
 		},
 		ar: {
 			title: "",
 			description: "",
-			subservices: [],
+			subservices: [
+				{
+					title: "",
+					cover: "",
+				},
+			],
 		},
 		slug: "",
 		cover: "",

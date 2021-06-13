@@ -20,6 +20,7 @@ import {
 	UsersAdmin,
 	ServicesAdmin,
 	ProjectsAdmin,
+	InvoicesAdmin,
 	Page404,
 } from "./routes";
 
@@ -72,7 +73,7 @@ const App = () => {
 								<Route exact path="/admin/projects" component={ProjectsAdmin} />
 								<Route exact path="/admin/services" component={ServicesAdmin} />
 								<Route exact path="/admin/users" component={UsersAdmin} />
-								<Route exact path="/admin/bills" component={UsersAdmin} />
+								<Route exact path="/admin/invoices" component={InvoicesAdmin} />
 								<Redirect to="/admin/projects" />
 							</Switch>
 						</div>
