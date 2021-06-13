@@ -62,8 +62,8 @@ const NavBar = () => {
 								Users
 							</Link>
 						)}
-						<Link to="/admin/bills" className={location.pathname == "/admin/bill" ? "active" : ""}>
-							Bills
+						<Link to="/admin/invoices" className={location.pathname == "/admin/invoices" ? "active" : ""}>
+							Invoices
 						</Link>
 					</div>
 				</aside>

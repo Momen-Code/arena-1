@@ -14,3 +14,4 @@ export { default as ResetPassword } from "./admin/ResetPassword/ResetPassword.sc
 export { default as UsersAdmin } from "./admin/Users/Users.screen";
 export { default as ServicesAdmin } from "./admin/Services/Services.screen";
 export { default as ProjectsAdmin } from "./admin/Projects/Projects.screen";
+export { default as InvoicesAdmin } from "./admin/Invoices/Invoices.screen";
