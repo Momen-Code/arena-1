@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 //Components
 import { Header, Footer } from "../../../components";
 import AboutUs from "./components/AboutUs";
+import OurServices from "./components/OurServices";
 
 //Style
 import "./style.scss";
@@ -96,6 +97,7 @@ const Home = () => {
         </div>
       </div>
       <AboutUs />
+      <OurServices />
       <Footer />
     </motion.div>
   );

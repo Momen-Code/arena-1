@@ -33,14 +33,6 @@ const AboutUs = () => {
     []
   );
 
-  useEffect(() => {
-    const changeCover = () =>
-      setTimeout(() => {
-        setActiveSlide(Math.random() * 2);
-        changeCover();
-      }, Math.floor(Math.random() * (3000 - 1000) + 1000));
-  }, []);
-
   return (
     <div className="about-us-container">
       <div className="content">
@@ -69,7 +61,10 @@ const AboutUs = () => {
         </div>
         <div className="tabs-container">
           {slides.map((_, i) => (
-            <span className={`tab ${activeSlide == i ? "active" : ""}`}></span>
+            <span
+              className={`tab ${activeSlide == i ? "active" : ""}`}
+              onClick={() => setActiveSlide(i)}
+            ></span>
           ))}
         </div>
       </div>
@@ -84,7 +79,7 @@ const AboutUs = () => {
             key={i}
             className={`cover-slide ${activeSlide == i ? "active" : ""}`}
           >
-            <img src={slide.cover} alt={slide.title}/>
+            <img src={slide.cover} alt={slide.title} />
           </div>
         ))}
       </div>

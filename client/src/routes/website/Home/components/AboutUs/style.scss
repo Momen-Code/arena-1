@@ -29,6 +29,8 @@
     animation: hideSlide 0.8s ease 0s 1 forwards;
     position: absolute;
     top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &.active {
       display: block;
       animation: showSlide 0.8s ease 0s 1 forwards;
@@ -76,6 +78,7 @@
       background-color: $gray;
       transition: 0.3s ease;
       margin-inline-end: 5px;
+      cursor: pointer;
       &.active {
         background-color: $primary;
         width: 35px;
@@ -83,20 +86,43 @@
     }
   }
 
-  @keyframes showSlide {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
+  @include media(desktop-lg) {
+  }
+  @include media(desktop-md) {
+  }
+  @include media(desktop-sm) {
+  }
+  @include media(tablet-lg) {
+  }
+  @include media(tablet-md) {
+    flex-direction: column;
+    .content, .cover-container {
+      width: 100%;
     }
   }
-  @keyframes hideSlide {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+  @include media(tablet-sm) {
+  }
+  @include media(phone-lg) {
+  }
+  @include media(phone-md) {
+  }
+  @include media(phone-sm) {
+  }
+}
+
+@keyframes showSlide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hideSlide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
