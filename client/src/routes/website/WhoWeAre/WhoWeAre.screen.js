@@ -61,7 +61,7 @@ const WhoWeAre = () => {
 			variants={pageVariants}
 			transition={{ duration: 2 }}
 		>
-			<Header />
+			{/* <Header /> */}
 			<div className="page-container">
 				<div className="left-wrapper"></div>
 				<div className="right-wrapper">

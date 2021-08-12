@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
 import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -21,6 +22,7 @@ import {
 	ServicesAdmin,
 	ProjectsAdmin,
 	InvoicesAdmin,
+	Bill,
 	Page404,
 } from "./routes";
 
@@ -45,6 +47,8 @@ const App = () => {
 		i18n.on("languageChanged", (lang) => {
 			window.location.reload();
 		});
+
+		//Paypal
 	}, []);
 
 	return (
@@ -61,6 +65,7 @@ const App = () => {
 					<Route path="/projects" component={Projects} />
 					<Route exact path="/menu" component={SideMenu} />
 					<Route exact path="/careers" component={Careers} />
+					<Route exact path="/pay-bill/:id" component={Bill} />
 					<Route
 						exact
 						path="/admin"

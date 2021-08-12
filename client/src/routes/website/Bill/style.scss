@@ -1,0 +1,210 @@
+@import "../../../assets/style/global";
+
+.bill-container {
+	width: 100%;
+	background-color: $lightGray;
+	position: relative;
+	user-select: none;
+	.page-container {
+		min-height: 95vh;
+		padding: 20px;
+		padding-top: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.error-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex: 1;
+			.error-box {
+				border-radius: 12px;
+				color: black;
+				font-size: 20px;
+				padding: 15px 40px;
+				font-weight: 700;
+				background-color: $primary;
+				color: $white;
+				max-width: 95%;
+			}
+		}
+		.bill-container {
+			display: flex;
+			justify-content: space-between;
+			.dashed-line {
+				display: block;
+				margin: 15px auto;
+				background-image: linear-gradient(to right, $primary 55%, rgba(255, 255, 255, 0) 50%);
+				background-position: bottom;
+				background-size: 6% 2px;
+				background-repeat: repeat-x;
+				width: 100%;
+				height: 2px;
+			}
+			.payment-methods {
+				border: 2px solid $primary;
+				border-radius: 8px;
+				flex: 2;
+				margin-inline-end: 30px;
+				padding: 15px 20px;
+				.select-text {
+					margin-bottom: 15px;
+				}
+				.payment-option {
+					label {
+						font-size: 18px;
+						display: flex;
+						align-items: center;
+					}
+					input {
+						vertical-align: middle;
+						width: 15px;
+						height: 15px;
+						border-radius: 10px;
+						background: none;
+						border: 0;
+						box-shadow: inset 0 0 0 1px $primary;
+						box-shadow: inset 0 0 0 1.5px $primary;
+						appearance: none;
+						padding: 0;
+						margin: 0;
+						transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
+						pointer-events: none;
+						margin-inline-end: 7px;
+						&:focus {
+							outline: none;
+						}
+						&:checked {
+							box-shadow: inset 0 0 0 6px $primary;
+						}
+					}
+				}
+				.payment-box {
+					height: 0px;
+					transition: height 400ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
+					overflow: hidden;
+					&.active {
+						height: auto;
+					}
+					span {
+						font-size: 12px;
+					}
+				}
+				.pay-btn {
+					display: flex;
+					flex-direction: column;
+					margin: 20px auto 10px;
+					span {
+						text-align: center;
+						font-size: 12px;
+					}
+					button {
+						@include advBtn;
+						font-size: 16px;
+						&:active {
+							transition: none;
+							transform: scale(0.95);
+						}
+						&.not-active {
+							border-color: $gray;
+							color: $gray;
+							&::after {
+								background-color: $gray;
+							}
+							&:hover {
+								color: $white;
+							}
+						}
+					}
+				}
+			}
+			.payment-details {
+				border: 2px solid $primary;
+				border-radius: 8px;
+				flex: 3;
+				height: max-content;
+				padding: 15px 20px;
+				margin-inline-end: 70px;
+
+				.details-header {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					.print-icon {
+						cursor: pointer;
+						transition: 0.3s ease;
+						&:hover {
+							color: $primary;
+						}
+						&:active {
+							transition: none;
+							transform: scale(0.95);
+						}
+					}
+				}
+				table {
+					border-collapse: collapse;
+					border-radius: 10px;
+					td,
+					th {
+						border: 1.5px solid $primary;
+						text-align: center;
+						padding: 5px 10px;
+						&.borderless {
+							border: none;
+						}
+						&.bold {
+							font-weight: 600;
+							white-space: nowrap;
+						}
+					}
+				}
+			}
+		}
+	}
+	.header-container {
+		.logo-container {
+			color: $primary;
+		}
+	}
+
+	@include media(desktop-lg) {
+	}
+	@include media(desktop-md) {
+	}
+	@include media(desktop-sm) {
+	}
+	@include media(tablet-lg) {
+		.page-container {
+			padding-top: 140px;
+			.bill-container {
+				flex-direction: column-reverse;
+				padding-inline-end: 70px;
+				.payment-methods {
+					margin: 0;
+				}
+				.payment-details {
+					margin: 0;
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+	@include media(tablet-md) {
+	}
+	@include media(tablet-sm) {
+		.page-container {
+			.bill-container {
+				padding-inline-end: 50px;
+
+			}
+		}
+	}
+	@include media(phone-lg) {
+	}
+	@include media(phone-md) {
+	}
+	@include media(phone-sm) {
+	}
+}

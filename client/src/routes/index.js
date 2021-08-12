@@ -8,6 +8,7 @@ export { default as Projects } from "./website/Projects/Projects.screen";
 export { default as ProjectPage } from "./website/ProjectPage/ProjectPage.screen";
 export { default as SideMenu } from "./website/SideMenu/SideMenu.screen";
 export { default as Careers } from "./website/Careers/Careers.screen";
+export { default as Bill } from "./website/Bill/Bill.screen";
 export { default as Page404 } from "./website/Page404/Page404.screen";
 export { default as Login } from "./admin/Login/Login.screen";
 export { default as ResetPassword } from "./admin/ResetPassword/ResetPassword.screen";
