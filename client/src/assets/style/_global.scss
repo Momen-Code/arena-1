@@ -18,23 +18,23 @@ $light-green: #2ecc71;
 
 //Fonts
 @font-face {
-	src: url("../font/saved-by-zero-rg.ttf");
-	font-family: Zero;
+  src: url("../font/saved-by-zero-rg.ttf");
+  font-family: Zero;
 }
 @font-face {
-	src: url("../font/Cairo-Regular.ttf");
-	font-family: Cairo;
-	font-weight: 400;
+  src: url("../font/Cairo-Regular.ttf");
+  font-family: Cairo;
+  font-weight: 400;
 }
 @font-face {
-	src: url("../font/Cairo-SemiBold.ttf");
-	font-family: Cairo;
-	font-weight: 500;
+  src: url("../font/Cairo-SemiBold.ttf");
+  font-family: Cairo;
+  font-weight: 500;
 }
 @font-face {
-	src: url("../font/Cairo-Bold.ttf");
-	font-family: Cairo;
-	font-weight: 600;
+  src: url("../font/Cairo-Bold.ttf");
+  font-family: Cairo;
+  font-weight: 600;
 }
 
 //Fonts
@@ -46,56 +46,56 @@ $light-green: #2ecc71;
 
 //Media Queries
 @mixin media($breakpoint) {
-	@if $breakpoint == phone-sm {
-		@media only screen and (max-width: 320px) {
-			@content;
-		}
-	}
-	@if $breakpoint == phone-md {
-		@media only screen and (max-width: 480px) {
-			@content;
-		}
-	}
-	@if $breakpoint == phone-lg {
-		@media only screen and (max-width: 576px) {
-			@content;
-		}
-	}
-	@if $breakpoint == tablet-sm {
-		@media only screen and (max-width: 798px) {
-			@content;
-		}
-	}
-	@if $breakpoint == tablet-md {
-		@media only screen and (max-width: 900px) {
-			@content;
-		}
-	}
-	@if $breakpoint == tablet-lg {
-		@media only screen and (max-width: 1024px) {
-			@content;
-		}
-	}
-	@if $breakpoint == desktop-sm {
-		@media only screen and (max-width: 1200px) {
-			@content;
-		}
-	}
-	@if $breakpoint == desktop-md {
-		@media only screen and (max-width: 1366px) {
-			@content;
-		}
-	}
-	@if $breakpoint == desktop-lg {
-		@media only screen and (max-width: 1680px) {
-			@content;
-		}
-	}
-	@if $breakpoint == small-height {
-		@media only screen and (max-height: 800px) {
-			@content;
-		}
-	}
+  @if $breakpoint == phone-sm {
+    @media only screen and (max-width: 320px) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone-md {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone-lg {
+    @media only screen and (max-width: 576px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-sm {
+    @media only screen and (max-width: 798px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-md {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-lg {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-sm {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-md {
+    @media only screen and (max-width: 1366px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-lg {
+    @media only screen and (max-width: 1680px) {
+      @content;
+    }
+  }
+  @if $breakpoint == small-height {
+    @media only screen and (max-height: 800px) {
+      @content;
+    }
+  }
 }
 
 /*
@@ -136,474 +136,479 @@ $light-green: #2ecc71;
 
 // Global Styles
 html {
-	height: 100%;
-	width: 100%;
+  height: 100%;
+  width: 100%;
 }
 body {
-	margin: 0;
-	padding: 0;
-	font-family: Cairo, sans-serif;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	background-color: $lightGray;
+  margin: 0;
+  padding: 0;
+  font-family: Cairo, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $lightGray;
+	overflow:auto;
+	overflow-x: hidden;
+	&::-webkit-scrollbar {
+		width: 0px;
+	}
 }
 * {
-	margin: 0;
-	padding: 0;
-	font-family: Cairo, sans-serif;
-	box-sizing: border-box;
-	text-decoration: none;
-	-webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-family: Cairo, sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 //scrollbar style
 *::-webkit-scrollbar {
-	width: 20px;
+  width: 15px;
 }
 *::-webkit-scrollbar-track {
-	background-color: $white;
+  background-color: $white;
 }
 *::-webkit-scrollbar-thumb {
-	background-color: $gray;
-	border-radius: 2px;
+  background-color: $primary;
+  border-radius: 2px;
 }
 
 .notification-container {
-	top: unset !important;
-	bottom: 30px !important;
+  top: unset !important;
+  bottom: 30px !important;
 }
 
 @include media(phone-lg) {
-	h1 {
-		font-size: 40px !important;
-	}
-	h3 {
-		font-size: 20px !important;
-	}
-	h5 {
-		font-weight: normal !important;
-	}
-	p {
-		font-size: 16px !important;
-	}
-	button {
-		font-size: 20px !important;
-	}
+  h1 {
+    font-size: 40px !important;
+  }
+  h3 {
+    font-size: 20px !important;
+  }
+  h5 {
+    font-weight: normal !important;
+  }
+  p {
+    font-size: 16px !important;
+  }
+  button {
+    font-size: 20px !important;
+  }
 }
 
 #root,
 .app-container {
-	display: flex;
-	flex-direction: column;
-	background-color: $lightGray;
-	min-height: 100vh;
-	position: relative;
-	overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: $lightGray;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
 /********************************************************/
 
 //Globals
 @mixin serviceBox {
-	cursor: pointer;
-	width: 100%;
-	height: 100%;
-	background-color: $gray;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	h1.title {
-		font-weight: 400;
-		color: $lightGray;
-		background-color: $primary;
-		font-size: 26px;
-		line-height: 26px;
-		text-transform: uppercase;
-	}
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: $gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  h1.title {
+    font-weight: 400;
+    color: $lightGray;
+    background-color: $primary;
+    font-size: 26px;
+    line-height: 26px;
+    text-transform: uppercase;
+  }
 }
 @mixin advBtn {
-	border-radius: 8px;
-	border: 2px solid $primary;
-	background-color: transparent;
-	color: $primary;
-	transform: scale(1);
-	font-size: 30px;
-	font-weight: 400;
-	padding: 0 30px;
-	line-height: 40px;
-	cursor: pointer;
-	outline: none;
-	transition: 0.3s ease;
-	position: relative;
-	&:after {
-		content: "";
-		display: block;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		background-color: $primary;
-		top: 0;
-		left: 0;
-		transition: 0.3s ease;
-		clip-path: circle(0% at 50% 50%);
-		z-index: -1;
-	}
-	&:hover {
-		color: $white;
-		&:after {
-			clip-path: circle(100% at 50% 50%);
-		}
-	}
+  border-radius: 8px;
+  border: 2px solid $primary;
+  background-color: transparent;
+  color: $primary;
+  transform: scale(1);
+  font-size: 30px;
+  font-weight: 400;
+  padding: 0 30px;
+  line-height: 40px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s ease;
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: $primary;
+    top: 0;
+    left: 0;
+    transition: 0.3s ease;
+    clip-path: circle(0% at 50% 50%);
+    z-index: -1;
+  }
+  &:hover {
+    color: $white;
+    &:after {
+      clip-path: circle(100% at 50% 50%);
+    }
+  }
 }
 
 @mixin normalBtn {
-	margin: 20px auto;
-	background: linear-gradient(59deg, $primary 0%, $purple 100%);
-	box-shadow: 0px 3px 6px #00000029;
-	border-radius: 8px;
-	opacity: 1;
-	outline: none;
-	border: none;
-	background-color: transparent;
-	font-size: 18px;
-	color: $white;
-	padding: 7px 30px;
-	cursor: pointer;
-	transition: 0.3s ease;
-	&:hover {
-		opacity: 0.9;
-	}
-	&:active {
-		transition: none;
-		transform: scale(0.95);
-	}
+  margin: 20px auto;
+  background: linear-gradient(59deg, $primary 0%, $purple 100%);
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  opacity: 1;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  color: $white;
+  padding: 7px 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active {
+    transition: none;
+    transform: scale(0.95);
+  }
 }
 @mixin tableContainer {
-	box-shadow: 0px 3px 6px $light-grey;
-	overflow: hidden;
-	overflow-x: auto;
-	margin: 50px auto;
-	border-radius: 15px;
-	max-width: 95%;
-	table {
-		text-align: center;
-		border-collapse: collapse;
-		width: 100%;
-		thead {
-			th {
-				border-bottom: 1px solid $grey;
-				padding: 5px;
-				padding-left: 0px;
-				padding-right: 30px;
-				font-size: 18px;
-				font-weight: 500;
-				color: $grey;
-				white-space: nowrap;
-				text-align: left;
-				&:nth-child(1) {
-					padding-left: 40px;
-				}
-			}
-		}
-		tbody {
-			tr {
-				td {
-					text-align: left;
-					padding: 15px 0px;
-					padding-right: 30px;
-					position: relative;
-					p {
-						white-space: nowrap;
-					}
-					&:nth-child(1) {
-						padding-left: 40px;
-					}
-					&:nth-last-child(1) {
-						padding-right: 0px;
-					}
-				}
-				&:nth-child(even) {
-					background-color: rgba($mid-grey, 0.7);
-					td {
-						color: $white;
-					}
-				}
-			}
-			.arrow-change-index {
-				position: absolute;
-				left: 10px;
-				top: 50%;
-				transform: translateY(-50%);
-				display: flex;
-				flex-direction: column;
-				svg {
-					cursor: pointer;
-					transition: 0.3s ease;
-					&:nth-child(1) {
-						margin-bottom: 10px;
-					}
-					&:nth-child(2) {
-						margin-top: 10px;
-					}
-					&:hover {
-						color: $primary;
-					}
-				}
-			}
-			.action-btns {
-				display: flex;
-				align-items: center;
-				button {
-					border: none;
-					outline: none;
-					background: linear-gradient(59deg, $primary 0%, $purple 100%);
-					box-shadow: 0px 3px 10px rgba($color: #000000, $alpha: 0.3);
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					margin-right: 20px;
-					padding: 5px 20px;
-					font-size: 16px;
-					color: $white;
-					border-radius: 6px;
-					cursor: pointer;
-					transition: 0.3s ease;
-					&:hover {
-						opacity: 0.8;
-					}
-					&:active {
-						transition: none;
-						transform: scale(0.95);
-					}
-					svg {
-						height: 20px;
-						width: 20px;
-					}
-					&.icon-btn {
-						width: 35px;
-						height: 35px;
-						padding: 5px;
-					}
-				}
-			}
+  box-shadow: 0px 3px 6px $light-grey;
+  overflow: hidden;
+  overflow-x: auto;
+  margin: 50px auto;
+  border-radius: 15px;
+  max-width: 95%;
+  table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    thead {
+      th {
+        border-bottom: 1px solid $grey;
+        padding: 5px;
+        padding-left: 0px;
+        padding-right: 30px;
+        font-size: 18px;
+        font-weight: 500;
+        color: $grey;
+        white-space: nowrap;
+        text-align: left;
+        &:nth-child(1) {
+          padding-left: 40px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          text-align: left;
+          padding: 15px 0px;
+          padding-right: 30px;
+          position: relative;
+          p {
+            white-space: nowrap;
+          }
+          &:nth-child(1) {
+            padding-left: 40px;
+          }
+          &:nth-last-child(1) {
+            padding-right: 0px;
+          }
+        }
+        &:nth-child(even) {
+          background-color: rgba($mid-grey, 0.7);
+          td {
+            color: $white;
+          }
+        }
+      }
+      .arrow-change-index {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        svg {
+          cursor: pointer;
+          transition: 0.3s ease;
+          &:nth-child(1) {
+            margin-bottom: 10px;
+          }
+          &:nth-child(2) {
+            margin-top: 10px;
+          }
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+      .action-btns {
+        display: flex;
+        align-items: center;
+        button {
+          border: none;
+          outline: none;
+          background: linear-gradient(59deg, $primary 0%, $purple 100%);
+          box-shadow: 0px 3px 10px rgba($color: #000000, $alpha: 0.3);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 20px;
+          padding: 5px 20px;
+          font-size: 16px;
+          color: $white;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: 0.3s ease;
+          &:hover {
+            opacity: 0.8;
+          }
+          &:active {
+            transition: none;
+            transform: scale(0.95);
+          }
+          svg {
+            height: 20px;
+            width: 20px;
+          }
+          &.icon-btn {
+            width: 35px;
+            height: 35px;
+            padding: 5px;
+          }
+        }
+      }
 
-			img {
-				height: auto;
-				max-height: 150px;
-				width: 250px;
-				object-fit: cover;
-				border-radius: 8px;
-				box-shadow: 0px 0px 10px rgba($color: $black, $alpha: 0.2);
-			}
-			.swiper-container {
-				height: auto;
-				max-height: 150px;
-				cursor: pointer;
-				box-shadow: 0px 0px 10px rgba($color: $black, $alpha: 0.5);
-				margin: 0;
-				border-radius: 8px;
-				width: 250px;
-				td:has(.swiper-container) {
-					text-overflow: none;
-				}
-			}
-		}
-	}
+      img {
+        height: auto;
+        max-height: 150px;
+        width: 250px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba($color: $black, $alpha: 0.2);
+      }
+      .swiper-container {
+        height: auto;
+        max-height: 150px;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px rgba($color: $black, $alpha: 0.5);
+        margin: 0;
+        border-radius: 8px;
+        width: 250px;
+        td:has(.swiper-container) {
+          text-overflow: none;
+        }
+      }
+    }
+  }
 }
 
 @mixin floatingBoxContainer {
-	width: 100%;
-	height: 100%;
-	min-height: 100vh;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	z-index: 200;
-	display: flex;
-	justify-content: center;
-	background-color: rgba($black, 0.7);
-	@include box-animate;
-	.closing {
-		cursor: pointer;
-		margin: 10px;
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		& > span {
-			display: block;
-			width: 20px;
-			height: 5px;
-			border-radius: 10px;
-			background-color: $dark-green;
-			transform-origin: center;
-			position: relative;
-			&:nth-child(1) {
-				transform: rotate(45deg);
-				top: 5px;
-			}
-			&:nth-child(2) {
-				transform: rotate(-45deg);
-			}
-		}
-		&:hover {
-			opacity: 0.8;
-		}
-	}
-	.data-box {
-		position: relative;
-		padding-top: 25px;
-		margin-top: 50px;
-		max-width: 90%;
-		width: 450px;
-		height: max-content;
-		background-color: $white;
-		border-radius: 10px;
-		padding: 5px;
-		text-align: center;
-		h3,
-		h4 {
-			text-align: center;
-			font-size: 25px;
-			font-weight: 500;
-			color: $dark-green;
-		}
-		h4 {
-			font-size: 20px;
-		}
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  background-color: rgba($black, 0.7);
+  @include box-animate;
+  .closing {
+    cursor: pointer;
+    margin: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    & > span {
+      display: block;
+      width: 20px;
+      height: 5px;
+      border-radius: 10px;
+      background-color: $dark-green;
+      transform-origin: center;
+      position: relative;
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        top: 5px;
+      }
+      &:nth-child(2) {
+        transform: rotate(-45deg);
+      }
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .data-box {
+    position: relative;
+    padding-top: 25px;
+    margin-top: 50px;
+    max-width: 90%;
+    width: 450px;
+    height: max-content;
+    background-color: $white;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    h3,
+    h4 {
+      text-align: center;
+      font-size: 25px;
+      font-weight: 500;
+      color: $dark-green;
+    }
+    h4 {
+      font-size: 20px;
+    }
 
-		form {
-			padding: 5%;
-			.sub-inputs {
-				margin-top: 20px;
-				&::before {
-					content: "";
-					display: block;
-					height: 2px;
-					width: 80%;
-					background-color: $dark-grey;
-					margin: auto;
-				}
-			}
-			.input-items {
-				width: 95%;
-			}
-			.input-item {
-				margin: 20px auto;
-				input,
-				textarea {
-					padding: 10px 22px;
-					box-shadow: 0px 3px 6px $dark-grey;
-					border-radius: 10px;
-					background-color: $white;
-					width: 100%;
-					height: 100%;
-					border: 1px solid transparent;
-					outline: none;
-					transition: 0.3s ease;
-					&:focus {
-						border: 1px solid $primary;
-					}
-				}
-			}
-			.select-item {
-				background-color: $dark-green;
-				width: 95%;
-				box-shadow: 0px 3px 6px $dark-grey;
-				margin: 20px auto;
-				position: relative;
-				border-radius: 10px;
+    form {
+      padding: 5%;
+      .sub-inputs {
+        margin-top: 20px;
+        &::before {
+          content: "";
+          display: block;
+          height: 2px;
+          width: 80%;
+          background-color: $dark-grey;
+          margin: auto;
+        }
+      }
+      .input-items {
+        width: 95%;
+      }
+      .input-item {
+        margin: 20px auto;
+        input,
+        textarea {
+          padding: 10px 22px;
+          box-shadow: 0px 3px 6px $dark-grey;
+          border-radius: 10px;
+          background-color: $white;
+          width: 100%;
+          height: 100%;
+          border: 1px solid transparent;
+          outline: none;
+          transition: 0.3s ease;
+          &:focus {
+            border: 1px solid $primary;
+          }
+        }
+      }
+      .select-item {
+        background-color: $dark-green;
+        width: 95%;
+        box-shadow: 0px 3px 6px $dark-grey;
+        margin: 20px auto;
+        position: relative;
+        border-radius: 10px;
 
-				select {
-					cursor: pointer;
-					border-radius: 10px;
-					padding: 10px;
-					background-color: $dark-green;
-					text-align-last: center;
-					color: $white;
-					width: 100%;
-					height: 100%;
-					border: none;
-					outline: none;
-					-webkit-appearance: none;
-				}
-				span {
-					position: absolute;
-					left: 5%;
-					top: 55%;
-					display: block;
-					transform: translateY(-5px) rotate(0deg);
-					border: 6px solid transparent;
-					border-top: 8px solid $white;
-					transition: 0.3s ease;
-					transform-origin: 6px 4px;
-				}
-			}
-			.line {
-				height: 2px;
-				border-radius: 5px;
-			}
-			.btn-container {
-				display: flex;
-				margin: auto;
-				width: auto;
-				button {
-					@include normalBtn;
-					&.plus-btn {
-						min-width: none;
-						width: max-content;
-						font-size: 20px;
-						font-weight: 500;
-						padding: 5px 20px;
-						margin: auto 10px;
-					}
-				}
-			}
-		}
-	}
+        select {
+          cursor: pointer;
+          border-radius: 10px;
+          padding: 10px;
+          background-color: $dark-green;
+          text-align-last: center;
+          color: $white;
+          width: 100%;
+          height: 100%;
+          border: none;
+          outline: none;
+          -webkit-appearance: none;
+        }
+        span {
+          position: absolute;
+          left: 5%;
+          top: 55%;
+          display: block;
+          transform: translateY(-5px) rotate(0deg);
+          border: 6px solid transparent;
+          border-top: 8px solid $white;
+          transition: 0.3s ease;
+          transform-origin: 6px 4px;
+        }
+      }
+      .line {
+        height: 2px;
+        border-radius: 5px;
+      }
+      .btn-container {
+        display: flex;
+        margin: auto;
+        width: auto;
+        button {
+          @include normalBtn;
+          &.plus-btn {
+            min-width: none;
+            width: max-content;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 5px 20px;
+            margin: auto 10px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @mixin multiTap {
-	display: flex;
-	margin: 20px auto;
-	max-width: 90%;
-	width: max-content;
-	border-radius: 8px;
-	overflow: hidden;
-	& > div {
-		color: $white;
-		padding: 10px 20px;
-		background-color: rgba($color: $mid-grey, $alpha: 1);
-		cursor: pointer;
-		&.active {
-			transition: 0.3s ease;
-			background-color: $primary;
-		}
-	}
+  display: flex;
+  margin: 20px auto;
+  max-width: 90%;
+  width: max-content;
+  border-radius: 8px;
+  overflow: hidden;
+  & > div {
+    color: $white;
+    padding: 10px 20px;
+    background-color: rgba($color: $mid-grey, $alpha: 1);
+    cursor: pointer;
+    &.active {
+      transition: 0.3s ease;
+      background-color: $primary;
+    }
+  }
 }
 
 /********************************************************/
 
 //Animations
 @keyframes roll {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @mixin box-animate {
-	animation: box 0.3s ease 1;
+  animation: box 0.3s ease 1;
 }
 @keyframes box {
-	0% {
-		opacity: 0;
-		transform: translateY(-30px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(unset);
-	}
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(unset);
+  }
 }

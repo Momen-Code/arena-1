@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 //Components
 import { Header, Footer } from "../../../components";
-import { WhoWeAre } from "../../";
+import AboutUs from "./components/AboutUs";
 
 //Style
 import "./style.scss";
@@ -74,6 +74,7 @@ const Home = () => {
       exit="out"
       variants={pageVariants}
       transition={{ duration: 1 }}
+      style={{ direction: i18n.language == "ar" ? "rtl" : "ltr" }}
     >
       <Header logoGray={i18n.dir() == "rtl" ? false : true} />
       <div className="home-flex">
@@ -86,7 +87,7 @@ const Home = () => {
               variants={lineVariants}
               transition={lineTransitions}
             >
-              {t("WHO_WEs_ARE_TXT")}
+              {/* {t("WHO_WE_ARE_TXT")} */}
             </motion.h5>
           </motion.div>
         </div>
@@ -94,7 +95,7 @@ const Home = () => {
           <img className="circle-img" src={CircleShape} alt="" />
         </div>
       </div>
-
+      <AboutUs />
       <Footer />
     </motion.div>
   );
