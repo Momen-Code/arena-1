@@ -1,0 +1,103 @@
+@import "../../../../../assets/style/global";
+
+.our-services-container {
+  margin: 40px auto;
+  padding: 0px 10vw;
+  .services {
+    display: flex;
+  }
+
+  .service {
+    width: 25%;
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    margin: 0px 10px;
+    transition: 0.3s ease;
+    padding: 15px;
+    &:hover {
+      background-color: $primary;
+      .letter {
+        color: $gray;
+      }
+      .title,
+      .subtitle {
+        color: $white;
+      }
+    }
+    &.clicked {
+      animation: clickLink 1.5s ease 0s 1 forwards;
+    }
+    .letter {
+      font-size: 10em;
+      color: $primary;
+      line-height: 1em;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: 500;
+    }
+  }
+  @include media(desktop-lg) {
+  }
+  @include media(desktop-md) {
+    .service {
+      white-space: nowrap;
+      .letter {
+        font-size: 8em;
+      }
+      .title {
+        font-size: 18px;
+      }
+      .subtitle {
+        font-size: 12px;
+      }
+    }
+  }
+  @include media(desktop-sm) {
+  }
+  @include media(tablet-lg) {
+  }
+  @include media(tablet-md) {
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+      row-gap: 30px;
+      justify-items: center;
+    }
+    .service {
+      width: 100%;
+      margin: 0px;
+    }
+  }
+  @include media(tablet-sm) {
+  }
+  @include media(phone-lg) {
+    .services {
+      grid-template-columns: 1fr;
+    }
+    .service {
+      .letter {
+        font-size: 5em !important;
+      }
+    }
+  }
+  @include media(phone-md) {
+  }
+  @include media(phone-sm) {
+  }
+}
+
+@keyframes clickLink {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(3);
+  }
+}
