@@ -8,7 +8,7 @@ const useInvoiceHook = () => {
 		try {
 			setIsLoading(true);
 
-			let response = await axios.post("/api/invoices/get");
+			let response = await axios.post("/api/paypalInvoices/get");
 			let data = await response.data;
 
 			console.log(data);
@@ -28,7 +28,7 @@ const useInvoiceHook = () => {
 	const addInvoice = async (invoiceObj) => {
 		try {
 			setIsLoading(true);
-			let response = await axios.post("/api/invoices/create", invoiceObj);
+			let response = await axios.post("/api/paypalInvoices/create", invoiceObj);
 			let data = await response.data;
 
 			console.log(data);
@@ -51,7 +51,7 @@ const useInvoiceHook = () => {
 				return false;
 			}
 			setIsLoading(true);
-			let response = await axios.post("/api/invoices/send", { invoiceId });
+			let response = await axios.post("/api/paypalInvoices/send", { invoiceId });
 			let data = await response.data;
 
 			console.log(data);
@@ -75,7 +75,7 @@ const useInvoiceHook = () => {
 			}
 
 			setIsLoading(true);
-			let response = await axios.post("/api/invoices/delete", { invoiceId });
+			let response = await axios.post("/api/paypalInvoices/delete", { invoiceId });
 			let data = await response.data;
 
 			console.log(data);
@@ -99,7 +99,7 @@ const useInvoiceHook = () => {
 			}
 
 			setIsLoading(true);
-			let response = await axios.post("/api/invoices/remind", { invoiceId });
+			let response = await axios.post("/api/paypalInvoices/remind", { invoiceId });
 			let data = await response.data;
 
 			console.log(data);
@@ -122,7 +122,7 @@ const useInvoiceHook = () => {
 			}
 
 			setIsLoading(true);
-			let response = await axios.post("/api/invoices/cancel", { invoiceId });
+			let response = await axios.post("/api/paypalInvoices/cancel", { invoiceId });
 			let data = await response.data;
 
 			console.log(data);

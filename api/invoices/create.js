@@ -1,75 +1,79 @@
-require("dotenv/config");
 const express = require("express");
 const router = express.Router();
-const paypal = require("paypal-rest-sdk");
-const { PAYPAL_EMAIL } = process.env;
+const nodemailer = require("nodemailer");
+const InvoiceModel = require("../../models/Invoice.model");
 
 router.post("/", async (req, res) => {
-	try {
-		/******************************************/
-		const { clientEmail, firstName, lastName, description, amount } = req.body;
-		//Validation
-		if (!clientEmail) return res.json({ status: false, message: "You must write the client email" });
-		if (!firstName) return res.json({ status: false, message: "You must write the first name of the client" });
-		if (!lastName) return res.json({ status: false, message: "You must write the last name of the client" });
-		if (!description) return res.json({ status: false, message: "You must write a description for the invoice" });
-		if (!amount) return res.json({ status: false, message: "You must write the amount you need to collect" });
+  try {
+    const { CustomerName, email, InvoiceItems } = req.body;
 
-		/******************************************/
-		paypal.invoice.create(
-			{
-				merchant_info: {
-					email: PAYPAL_EMAIL,
-					business_name: "Arena Media",
-					address: {
-						line1: "32 Husayn Channam St, Al-Hamraa Dist",
-						city: "Jeddah",
-						state: "Jeddah",
-						postal_code: "4995",
-						country_code: "SA",
-					},
-				},
-				billing_info: [
-					{
-						email: clientEmail,
-						first_name: firstName,
-						last_name: lastName,
-					},
-				],
-				items: [
-					{
-						name: description,
-						quantity: 1,
-						unit_price: {
-							currency: "USD",
-							value: amount,
-						},
-					},
-				],
-			},
-			{},
-			(err, response) => {
-				if (err) {
-					return res.json({
-						status: false,
-						message: "Error occurred, please contact Archaos' development team",
-						error: err,
-					});
-				}
+    if (!CustomerName)
+      return res.json({
+        status: false,
+        message: "You must type the client name",
+      });
+    if (!email)
+      return res.json({
+        status: false,
+        message: "You must type the client email",
+      });
+    if (
+      !InvoiceItems ||
+      !Array.isArray(InvoiceItems) ||
+      InvoiceItems.length == 0
+    )
+      return res.json({
+        status: false,
+        message: "You must add items to the invoice",
+      });
 
-				res.json({
-					status: true,
-					message: `Invoice #${response.number} was created successfully, to let the client know, you must send it first`,
-					data: response,
-				});
-			}
-		);
+    /*********************************************/
+    //Calculate invoice value
+    let InvoiceValue = 0;
 
-		/******************************************/
-	} catch (e) {
-		console.log(`Error in /invoices/get, ${e.message}`, e);
-		if (!res.headersSent) return res.json({ status: false, message: "Error occured" });
-	}
+    InvoiceItems.map((item) => {
+      InvoiceValue += item.UnitPrice * item.Quantity;
+    });
+
+    const invoice = await InvoiceModel.create({
+      CustomerName,
+      email,
+      InvoiceItems,
+      InvoiceValue,
+    });
+
+    //Send email to the client
+    const transporter = nodemailer.createTransport({
+      host: "premium35.web-hosting.com",
+      port: 465,
+      auth: {
+        user: "sales@arenahub.co",
+        pass: "arena$admin",
+      },
+    });
+
+    await transporter.sendMail({
+      from: "sales@arenahub.co",
+      to: email,
+      subject: "Arena Media: Pay your Bill",
+      html: `
+			<p>Hello, ${CustomerName}</p>
+			<br/>
+			<p>You have a new invoice to pay,</p>
+			<p>Amount: <h3>${InvoiceValue} SAR</h3></p>
+			<br/><a href="${req.protocol}://192.168.1.102:3006/pay-invoice/${invoice._id}">Click here to pay</a>`,
+    });
+
+    return res.json({
+      status: true,
+      message: "Invoice create successfully",
+      data: invoice,
+    });
+  } catch (e) {
+    console.log(`Error in /invoices/create, ${e.message}`, e);
+    if (!res.headersSent)
+      return res.json({ status: false, message: "Error occured" });
+  }
 });
 
 module.exports = router;
