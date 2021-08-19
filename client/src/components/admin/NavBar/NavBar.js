@@ -62,8 +62,8 @@ const NavBar = () => {
 								Users
 							</Link>
 						)}
-						<Link to="/admin/invoices" className={location.pathname == "/admin/invoices" ? "active" : ""}>
-							Invoices
+						<Link to="/admin/paypal-invoices" className={location.pathname == "/admin/paypal-invoices" ? "active" : ""}>
+							Paypal Invoices
 						</Link>
 					</div>
 				</aside>

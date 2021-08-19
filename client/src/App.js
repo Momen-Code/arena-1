@@ -21,8 +21,8 @@ import {
   UsersAdmin,
   ServicesAdmin,
   ProjectsAdmin,
-  InvoicesAdmin,
-  Bill,
+  PaypalInvoicesAdmin,
+  Invoice,
   Page404,
 } from "./routes";
 
@@ -72,7 +72,7 @@ const App = () => {
           <Route path="/projects" component={Projects} />
           <Route exact path="/menu" component={SideMenu} />
           <Route exact path="/careers" component={Careers} />
-          <Route exact path="/pay-bill/:id" component={Bill} />
+          <Route exact path="/pay-invoice/:id" component={Invoice} />
           <Route
             exact
             path="/admin"
@@ -87,7 +87,7 @@ const App = () => {
                 <Route exact path="/admin/projects" component={ProjectsAdmin} />
                 <Route exact path="/admin/services" component={ServicesAdmin} />
                 <Route exact path="/admin/users" component={UsersAdmin} />
-                <Route exact path="/admin/invoices" component={InvoicesAdmin} />
+                <Route exact path="/admin/paypal-invoices" component={PaypalInvoicesAdmin} />
                 <Redirect to="/admin/projects" />
               </Switch>
             </div>
