@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
         PaymentMethodId,
         CustomerName: invoice.CustomerName,
         DisplayCurrencyIso: invoice.DisplayCurrencyIso,
-        Language: req.header["Accept-Language"]?.toUpperCase() || "EN",
+        Language: req.header["Accept-Language"] ? req.header["Accept-Language"].toUpperCase() : "EN",
         CallbackUrl: "https://arenahub.co/",
         ErrorUrl: "https://arenahub.co/",
         InvoiceItems: [
