@@ -90,10 +90,12 @@ const Bill = () => {
                   : `Pay 
                 ${
                   invoice.InvoiceItems &&
-                  invoice.InvoiceItems.reduce(
-                    (acc, curr) => curr.Quantity * curr.UnitPrice + acc,
-                    0
-                  ) * 1.15
+                  (
+                    invoice.InvoiceItems.reduce(
+                      (acc, curr) => curr.Quantity * curr.UnitPrice + acc,
+                      0
+                    ) * 1.15
+                  ).toFixed(2)
                 }
                 SAR`}
               </button>
@@ -148,10 +150,12 @@ const Bill = () => {
                 <td className="bold">Total with Vat 15%</td>
                 <td className="bold">
                   {invoice.InvoiceItems &&
-                    invoice.InvoiceItems.reduce(
-                      (acc, curr) => curr.Quantity * curr.UnitPrice + acc,
-                      0
-                    ) * 1.15}{" "}
+                    (
+                      invoice.InvoiceItems.reduce(
+                        (acc, curr) => curr.Quantity * curr.UnitPrice + acc,
+                        0
+                      ) * 1.15
+                    ).toFixed(2)}{" "}
                   SAR
                 </td>
               </tr>

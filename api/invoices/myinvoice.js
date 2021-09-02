@@ -17,11 +17,23 @@ router.post("/", async (req, res) => {
 
     let invoice = await InvoiceModel.findById(_id).lean();
 
+    //Validation
     if (!invoice)
       return res.json({
         status: false,
         message:
           "Please open the invoice from the link that was sent to you via email",
+      });
+    if (invoice.status == "paid")
+      return res.json({
+        status: true,
+        message: `You have already paid the invoice ${invoice.referenceId}`,
+      });
+
+    if (invoice.status == "canceled")
+      return res.json({
+        status: true,
+        message: `Sorry, Invoice ${invoice.referenceId} has been canceled.`,
       });
 
     //Call the InitiatePayment to get available payment methods from myfatoorah
@@ -46,11 +58,11 @@ router.post("/", async (req, res) => {
 
     return res.json({
       status: true,
-      message: "Invoice create successfully",
+      message: "Invoice retreived successfully",
       data: invoice,
     });
   } catch (e) {
-    console.log(`Error in /invoices/create, ${e.message}`, e);
+    console.log(`Error in /invoices/myinvoice, ${e.message}`, e);
     if (!res.headersSent)
       return res.json({ status: false, message: "Error occured" });
   }

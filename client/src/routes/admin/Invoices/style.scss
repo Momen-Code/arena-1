@@ -11,6 +11,7 @@
 	.table-container {
 		@include tableContainer;
 		margin-top: 70px;
+		
 	}
 	.floating-box-container {
 		@include floatingBoxContainer;

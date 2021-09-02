@@ -5,6 +5,12 @@ const InvoiceSchema = new mongoose.Schema({
   CustomerName: String,
   email: String,
   DisplayCurrencyIso: { type: String, default: "SAR" },
+  referenceId: { type: String, required: true },
+  status: {
+    type: String,
+    enum: ["unpaid", "paid", "canceled"],
+    default: "unpaid",
+  },
   InvoiceItems: [
     {
       ItemName: {

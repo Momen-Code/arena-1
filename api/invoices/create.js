@@ -5,7 +5,7 @@ const InvoiceModel = require("../../models/Invoice.model");
 
 router.post("/", async (req, res) => {
   try {
-    const { CustomerName, email, InvoiceItems } = req.body;
+    const { CustomerName, email, InvoiceItems, referenceId } = req.body;
 
     if (!CustomerName)
       return res.json({
@@ -16,6 +16,11 @@ router.post("/", async (req, res) => {
       return res.json({
         status: false,
         message: "You must type the client email",
+      });
+    if (!referenceId)
+      return res.json({
+        status: false,
+        message: "You must type a reference id for the invoice",
       });
     if (
       !InvoiceItems ||
@@ -40,6 +45,7 @@ router.post("/", async (req, res) => {
       email,
       InvoiceItems,
       InvoiceValue,
+      referenceId
     });
 
     //Send email to the client
