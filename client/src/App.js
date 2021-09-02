@@ -24,6 +24,7 @@ import {
   PaypalInvoicesAdmin,
   Invoice,
   Page404,
+  BillsAdmin
 } from "./routes";
 
 //Components
@@ -87,7 +88,8 @@ const App = () => {
                 <Route exact path="/admin/projects" component={ProjectsAdmin} />
                 <Route exact path="/admin/services" component={ServicesAdmin} />
                 <Route exact path="/admin/users" component={UsersAdmin} />
-                <Route exact path="/admin/paypal-invoices" component={PaypalInvoicesAdmin} />
+                <Route exact path="/admin/paypal-bills" component={PaypalInvoicesAdmin} />
+                <Route exact path="/admin/invoices" component={BillsAdmin} />
                 <Redirect to="/admin/projects" />
               </Switch>
             </div>
