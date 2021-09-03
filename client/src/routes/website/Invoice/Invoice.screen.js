@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useReactToPrint } from "react-to-print";
 
 //Hooks
 import useInvoiceHook from "./hooks/index";
@@ -20,6 +21,10 @@ const Bill = () => {
   const [invoice, setInvoice] = useState({});
   const [paymentMethod, setPaymentMethod] = useState();
   const [error, setError] = useState("");
+
+  const tableRef = useRef(null);
+
+  const printTable = useReactToPrint({ content: () => tableRef.current });
 
   useEffect(() => {
     (async () => {
@@ -105,7 +110,9 @@ const Bill = () => {
           <div className="payment-details">
             <div className="details-header">
               <h2>Details</h2>
+
               <MdLocalPrintshop
+                onClick={() => printTable()}
                 size={34}
                 color="#4b4b4b"
                 className="print-icon"
@@ -113,7 +120,7 @@ const Bill = () => {
             </div>
             <span className="dashed-line"></span>
 
-            <table>
+            <table ref={tableRef}>
               <tr>
                 <th>ID</th>
                 <th>Description</th>

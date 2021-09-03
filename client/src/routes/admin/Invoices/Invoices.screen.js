@@ -121,7 +121,7 @@ const Invoices = () => {
                   <td className="action-btns">
                     {item.status == "unpaid" && (
                       <>
-                        <button
+                        <a
                           title={
                             window.location.protocol +
                             "//" +
@@ -129,19 +129,17 @@ const Invoices = () => {
                             "/pay-invoice/" +
                             item._id
                           }
-                          onClick={() =>
-                            window.open(
-                              window.location.protocol +
-                                "//" +
-                                window.location.host +
-                                "/pay-invoice/" +
-                                item._id,
-                              "_blank"
-                            )
+                          href={
+                            window.location.protocol +
+                            "//" +
+                            window.location.host +
+                            "/pay-invoice/" +
+                            item._id
                           }
+													target="_blank"
                         >
                           Open Invoice
-                        </button>
+                        </a>
                         <button
                           style={{ background: "red" }}
                           onClick={async () =>
