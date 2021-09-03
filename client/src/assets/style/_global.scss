@@ -132,6 +132,14 @@ $light-green: #2ecc71;
 
 */
 
+//For Printing
+@media print {
+  @page {
+    size: portrait;
+    margin: 50px !important;
+  }
+}
+
 /********************************************************/
 
 // Global Styles
@@ -147,11 +155,11 @@ body {
   display: flex;
   flex-direction: column;
   background-color: $lightGray;
-	overflow:auto;
-	overflow-x: hidden;
-	&::-webkit-scrollbar {
-		width: 0px;
-	}
+  overflow: auto;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
 }
 * {
   margin: 0;
@@ -359,7 +367,8 @@ body {
       .action-btns {
         display: flex;
         align-items: center;
-        button {
+        button,
+        a {
           border: none;
           outline: none;
           background: linear-gradient(59deg, $primary 0%, $purple 100%);
@@ -374,6 +383,8 @@ body {
           border-radius: 6px;
           cursor: pointer;
           transition: 0.3s ease;
+          user-select: none;
+          white-space: nowrap;
           &:hover {
             opacity: 0.8;
           }
@@ -415,6 +426,7 @@ body {
       }
     }
   }
+
 }
 
 @mixin floatingBoxContainer {
@@ -426,7 +438,7 @@ body {
   overflow-y: auto;
   top: 0;
   bottom: 0;
-  padding-bottom:100px;
+  padding-bottom: 100px;
   z-index: 200;
   display: flex;
   justify-content: center;
@@ -514,8 +526,7 @@ body {
           }
         }
         input {
-          max-height:50px;
-
+          max-height: 50px;
         }
       }
       .select-item {
