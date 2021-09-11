@@ -1,19 +1,78 @@
 @import "../../../assets/style/global";
 
 .invoices-container {
-	.add-btn {
-		@include normalBtn;
-		width: max-content;
-	}
-	.multi-tap {
-		@include multiTap;
-	}
-	.table-container {
-		@include tableContainer;
-		margin-top: 70px;
-		
-	}
-	.floating-box-container {
-		@include floatingBoxContainer;
-	}
+  .add-btn {
+    @include normalBtn;
+    width: max-content;
+  }
+  .multi-tap {
+    @include multiTap;
+  }
+  .table-container {
+    @include tableContainer;
+    margin-top: 70px;
+    .copy-link {
+      margin-inline-end: 30px;
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+      position: relative;
+      &.active {
+        &:after {
+					display: flex;
+          animation: showBox 2s ease 0s 1 forwards;
+        }
+      }
+      &:hover {
+        opacity: 0.8;
+        &:after {
+          opacity: 1;
+        }
+      }
+      &:active {
+        transform: scale(0.9);
+      }
+
+      &:after {
+        content: "Link Copied";
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -25px;
+        left: -30px;
+        font-size: 12px;
+        white-space: nowrap;
+        background-color: black;
+        color: white;
+        width: 70px;
+        height: 20px;
+        border-radius: 5px;
+      }
+      @keyframes showBox {
+        0% {
+          transform: translateY(10px);
+          opacity: 0;
+          display: flex;
+        }
+        20% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+        80% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(10px);
+          opacity: 0;
+          display: none;
+        }
+      }
+    }
+  }
+  .floating-box-container {
+    @include floatingBoxContainer;
+  }
 }

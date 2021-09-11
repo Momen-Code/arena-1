@@ -39,10 +39,7 @@ const Bill = () => {
 
   if (!!error)
     return (
-      <div
-        className="invoice-container"
-        style={{ direction: i18n.language == "ar" ? "rtl" : "ltr" }}
-      >
+      <div className="invoice-container" style={{ direction: i18n.language == "ar" ? "rtl" : "ltr" }}>
         <Header />
         <div className="page-container">
           <div className="error-container">
@@ -54,10 +51,7 @@ const Bill = () => {
     );
 
   return (
-    <div
-      className="invoice-container"
-      style={{ direction: i18n.language == "ar" ? "rtl" : "ltr" }}
-    >
+    <div className="invoice-container" style={{ direction: i18n.language == "ar" ? "rtl" : "ltr" }}>
       <Header />
       <div className="page-container">
         <div className="invoice-container">
@@ -75,9 +69,8 @@ const Bill = () => {
                       checked={paymentMethod == payment.PaymentMethodId}
                       onChange={() => setPaymentMethod(payment.PaymentMethodId)}
                     />
-                    {i18n.language == "en"
-                      ? payment.PaymentMethodEn
-                      : payment.PaymentMethodAr}
+                    <img src={payment.ImageUrl} alt="" />
+                    {i18n.language == "ar" ? payment.PaymentMethodAr : payment.PaymentMethodEn}
                   </label>
                 </div>
               ))}
@@ -86,21 +79,16 @@ const Bill = () => {
               <span>Click here to pay</span>
               <button
                 className={!!!paymentMethod ? "not-active" : ""}
-                onClick={() =>
-                  paymentMethod && payInvoice({ _id: id, paymentMethod })
-                }
+                onClick={() => paymentMethod && payInvoice({ _id: id, paymentMethod })}
               >
                 {!!!paymentMethod
                   ? "Select a payment method first"
                   : `Pay 
                 ${
                   invoice.InvoiceItems &&
-                  (
-                    invoice.InvoiceItems.reduce(
-                      (acc, curr) => curr.Quantity * curr.UnitPrice + acc,
-                      0
-                    ) * 1.15
-                  ).toFixed(2)
+                  (invoice.InvoiceItems.reduce((acc, curr) => curr.Quantity * curr.UnitPrice + acc, 0) * 1.15).toFixed(
+                    2
+                  )
                 }
                 SAR`}
               </button>
@@ -111,12 +99,7 @@ const Bill = () => {
             <div className="details-header">
               <h2>Details</h2>
 
-              <MdLocalPrintshop
-                onClick={() => printTable()}
-                size={34}
-                color="#4b4b4b"
-                className="print-icon"
-              />
+              <MdLocalPrintshop onClick={() => printTable()} size={34} color="#4b4b4b" className="print-icon" />
             </div>
             <span className="dashed-line"></span>
 
@@ -144,10 +127,7 @@ const Bill = () => {
                 <td className="bold">VAT 15%</td>
                 <td className="bold">
                   {invoice.InvoiceItems &&
-                    invoice.InvoiceItems.reduce(
-                      (acc, curr) => curr.Quantity * curr.UnitPrice + acc,
-                      0
-                    )}{" "}
+                    invoice.InvoiceItems.reduce((acc, curr) => curr.Quantity * curr.UnitPrice + acc, 0)}{" "}
                   SAR
                 </td>
               </tr>
@@ -158,10 +138,7 @@ const Bill = () => {
                 <td className="bold">
                   {invoice.InvoiceItems &&
                     (
-                      invoice.InvoiceItems.reduce(
-                        (acc, curr) => curr.Quantity * curr.UnitPrice + acc,
-                        0
-                      ) * 1.15
+                      invoice.InvoiceItems.reduce((acc, curr) => curr.Quantity * curr.UnitPrice + acc, 0) * 1.15
                     ).toFixed(2)}{" "}
                   SAR
                 </td>

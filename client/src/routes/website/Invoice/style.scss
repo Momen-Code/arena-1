@@ -57,6 +57,12 @@
           margin-bottom: 15px;
         }
         .payment-option {
+          margin-bottom: 5px;
+          img {
+            height: 25px;
+            margin-inline-start: 10px;
+            margin-inline-end: 10px;
+          }
           label {
             font-size: 18px;
             display: flex;

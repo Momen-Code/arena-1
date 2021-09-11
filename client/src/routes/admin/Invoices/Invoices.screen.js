@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useAppContext } from "../../../provider";
+import { FiCopy } from "react-icons/fi";
 
 //Hooks
 import useInvoiceHook from "./hooks";
@@ -19,8 +20,7 @@ import { ReactComponent as DeleteIcon } from "../../../assets/img/delete-icon.sv
 import { ReactComponent as EditIcon } from "../../../assets/img/edit-icon.svg";
 
 const Invoices = () => {
-  const { getInvoices, createInvoice, remindClient, cancelInvoice } =
-    useInvoiceHook();
+  const { getInvoices, createInvoice, remindClient, cancelInvoice } = useInvoiceHook();
   const { userData } = useAppContext();
   const [invoices, setInvoices] = useState([]);
   const [isAddBoxVisible, setIsAddBoxVisible] = useState(false);
@@ -87,11 +87,7 @@ const Invoices = () => {
                   <td>{item.email}</td>
                   <td>{item.referenceId}</td>
                   <td>{item.InvoiceValue + " " + item.DisplayCurrencyIso}</td>
-                  <td>
-                    {(item.InvoiceValue * 1.15).toFixed(2) +
-                      " " +
-                      item.DisplayCurrencyIso}
-                  </td>
+                  <td>{(item.InvoiceValue * 1.15).toFixed(2) + " " + item.DisplayCurrencyIso}</td>
                   <td>
                     {item.InvoiceItems.map((subItem) => (
                       <p>• {subItem.ItemName}</p>
@@ -99,13 +95,7 @@ const Invoices = () => {
                   </td>
                   <td>
                     {item.InvoiceItems.map((subItem) => (
-                      <p>
-                        {subItem.Quantity +
-                          " x " +
-                          subItem.UnitPrice +
-                          " " +
-                          item.DisplayCurrencyIso}
-                      </p>
+                      <p>{subItem.Quantity + " x " + subItem.UnitPrice + " " + item.DisplayCurrencyIso}</p>
                     ))}
                   </td>
                   <td>
@@ -121,39 +111,40 @@ const Invoices = () => {
                   <td className="action-btns">
                     {item.status == "unpaid" && (
                       <>
+                        <div
+                          className="copy-link"
+                          id={`copyLink${index}`}
+                          onClick={(e) => {
+                            document.getElementById(`copyLink${index}`).classList.add("active");
+                            setTimeout(() => {
+                              document.getElementById(`copyLink${index}`).classList.remove("active");
+                            }, 1800);
+                            const elem = document.createElement("textarea");
+                            elem.value =
+                              window.location.protocol + "//" + window.location.host + "/pay-invoice/" + item._id;
+                            document.body.appendChild(elem);
+                            elem.select();
+                            document.execCommand("copy");
+                            document.body.removeChild(elem);
+                          }}
+                        >
+                          <FiCopy />
+                        </div>
                         <a
-                          title={
-                            window.location.protocol +
-                            "//" +
-                            window.location.host +
-                            "/pay-invoice/" +
-                            item._id
-                          }
-                          href={
-                            window.location.protocol +
-                            "//" +
-                            window.location.host +
-                            "/pay-invoice/" +
-                            item._id
-                          }
-													target="_blank"
+                          title={window.location.protocol + "//" + window.location.host + "/pay-invoice/" + item._id}
+                          href={window.location.protocol + "//" + window.location.host + "/pay-invoice/" + item._id}
+                          target="_blank"
                         >
                           Open Invoice
                         </a>
                         <button
                           style={{ background: "red" }}
-                          onClick={async () =>
-                            (await cancelInvoice(item._id)) &&
-                            setInvoices(await getInvoices())
-                          }
+                          onClick={async () => (await cancelInvoice(item._id)) && setInvoices(await getInvoices())}
                         >
                           Cancel Invoice
                         </button>
                       </>
                     )}
-                    {/* {item.status == "PAID" && (
-                      <button onClick={() => null}>Refund Money</button>
-                    )} */}
                   </td>
                 </tr>
               ))}
@@ -215,11 +206,7 @@ const Invoices = () => {
                     <span className="line">
                       <hr />
                     </span>
-                    <div
-                      key={index}
-                      className="input-item"
-                      style={{ display: "flex" }}
-                    >
+                    <div key={index} className="input-item" style={{ display: "flex" }}>
                       <input
                         placeholder={`Item ${index + 1} Description`}
                         type="text"
@@ -239,10 +226,7 @@ const Invoices = () => {
                             onClick={() => {
                               setInvoiceObj({
                                 ...invoiceObj,
-                                InvoiceItems: [
-                                  ...InvoiceItems,
-                                  { ItemName: "", Quantity: 1, UnitPrice: 1 },
-                                ],
+                                InvoiceItems: [...InvoiceItems, { ItemName: "", Quantity: 1, UnitPrice: 1 }],
                               });
                             }}
                           >
@@ -274,9 +258,7 @@ const Invoices = () => {
                           min={1}
                           style={{ textAlign: "center" }}
                           onChange={(e) => {
-                            InvoiceItems[index].Quantity = Number(
-                              e.target.value
-                            );
+                            InvoiceItems[index].Quantity = Number(e.target.value);
                             setInvoiceObj({
                               ...invoiceObj,
 
@@ -295,9 +277,7 @@ const Invoices = () => {
                           value={item.UnitPrice}
                           min={1}
                           onChange={(e) => {
-                            InvoiceItems[index].UnitPrice = Number(
-                              e.target.value
-                            );
+                            InvoiceItems[index].UnitPrice = Number(e.target.value);
                             setInvoiceObj({
                               ...invoiceObj,
 
