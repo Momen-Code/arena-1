@@ -54,7 +54,7 @@ router.post("/", async (req, res) => {
         <br/>
         <p>You have a new invoice to pay,</p>
         <p>Amount: <h3>${InvoiceValue} SAR</h3></p>
-        <br/><a href="${req.protocol}://${req.hostname}/pay-invoice/${invoice._id}">Click here to pay</a>`,
+        <br/><a href="${req.protocol}://arenahub.co/pay-invoice/${invoice._id}">Click here to pay</a>`,
       });
     }
 

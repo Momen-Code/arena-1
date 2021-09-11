@@ -1,7 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useReactToPrint } from "react-to-print";
+import html2pdf from "html2pdf.js";
+import html2canvas from "html2canvas";
+import { Preview, print } from "react-html2pdf";
+import jsPDF from "jspdf";
 
 //Hooks
 import useInvoiceHook from "./hooks/index";
@@ -21,13 +25,40 @@ const Bill = () => {
   const [invoice, setInvoice] = useState({});
   const [paymentMethod, setPaymentMethod] = useState();
   const [error, setError] = useState("");
+  const doc = useMemo(() => new jsPDF({ orientation: "portrait", unit: "px" }), []);
 
   const tableRef = useRef(null);
 
-  const printTable = useReactToPrint({ content: () => tableRef.current });
+  const addScript = (url) => {
+    var script = document.createElement("script");
+    script.type = "application/javascript";
+    script.src = url;
+    document.head.appendChild(script);
+  };
+
+  // useReactToPrint({ content: () => tableRef.current });
+  const printTable = () => {
+    // const options = {
+    //   margin: 1,
+    //   filename: `${invoice.CustomerName ?? "Invoice"}.pdf`,
+    //   image: { type: "jpeg", quality: 0.98 },
+    //   html2canvas: { scale: 2 },
+    //   jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    // };
+    // html2pdf(tableRef.current, options);
+
+    doc.html(tableRef.current, { callback: (doc) => doc.save() });
+
+    console.log("Printing...");
+    // print(invoice.CustomerName ?? "Invoice", "invoice-table");
+  };
 
   useEffect(() => {
+    window.html2canvas = html2canvas;
     (async () => {
+      //Add html2pdf
+      // addScript("https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js");
+
       const data = await getMyInvoice({ _id: id });
       if (data && data.status) {
         setInvoice(data.data);
@@ -95,15 +126,15 @@ const Bill = () => {
             </div>
           </div>
 
-          <div className="payment-details">
+          <div className="payment-details" ref={tableRef}>
             <div className="details-header">
               <h2>Details</h2>
 
               <MdLocalPrintshop onClick={() => printTable()} size={34} color="#4b4b4b" className="print-icon" />
             </div>
+            {/* <Preview id="invoice-table"> */}
             <span className="dashed-line"></span>
-
-            <table ref={tableRef}>
+            <table>
               <tr>
                 <th>ID</th>
                 <th>Description</th>
@@ -139,11 +170,12 @@ const Bill = () => {
                   {invoice.InvoiceItems &&
                     (
                       invoice.InvoiceItems.reduce((acc, curr) => curr.Quantity * curr.UnitPrice + acc, 0) * 1.15
-                    ).toFixed(2)}{" "}
+                    ).toFixed(2)}
                   SAR
                 </td>
               </tr>
             </table>
+            {/* </Preview> */}
           </div>
         </div>
       </div>
