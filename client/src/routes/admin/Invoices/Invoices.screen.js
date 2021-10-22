@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useAppContext } from "../../../provider";
 import { FiCopy } from "react-icons/fi";
+import DatePicker from "react-datepicker";
 
 //Hooks
 import useInvoiceHook from "./hooks";
@@ -9,6 +10,7 @@ import { useOnClickOutside } from "../../../hooks";
 
 //Style
 import "./style.scss";
+import "react-datepicker/dist/react-datepicker.css";
 
 //Components
 import { NavBar } from "../../../components";
@@ -20,14 +22,17 @@ import { ReactComponent as DeleteIcon } from "../../../assets/img/delete-icon.sv
 import { ReactComponent as EditIcon } from "../../../assets/img/edit-icon.svg";
 
 const Invoices = () => {
-  const { getInvoices, createInvoice, remindClient, cancelInvoice } = useInvoiceHook();
+  const { getInvoices, createInvoice, remindClient, cancelInvoice, editInvoice } = useInvoiceHook();
   const { userData } = useAppContext();
   const [invoices, setInvoices] = useState([]);
   const [isAddBoxVisible, setIsAddBoxVisible] = useState(false);
+  const [isEditDateBoxVisible, setIsEditDateBoxVisible] = useState(false);
   const defaultInvoiceObj = {
+    _id: "",
     email: "",
     CustomerName: "",
     referenceId: "",
+    createDate: new Date(),
     InvoiceItems: [
       {
         ItemName: "",
@@ -41,6 +46,11 @@ const Invoices = () => {
 
   const addBoxRef = useOnClickOutside(() => {
     setIsAddBoxVisible(false);
+    setInvoiceObj(defaultInvoiceObj);
+  });
+
+  const editBoxRef = useOnClickOutside(() => {
+    setIsEditDateBoxVisible(false);
     setInvoiceObj(defaultInvoiceObj);
   });
 
@@ -143,6 +153,15 @@ const Invoices = () => {
                         >
                           Cancel Invoice
                         </button>
+                        <button
+                          style={{ background: "green" }}
+                          onClick={() => {
+                            setInvoiceObj(item);
+                            setIsEditDateBoxVisible(true);
+                          }}
+                        >
+                          Edit Date
+                        </button>
                       </>
                     )}
                   </td>
@@ -197,6 +216,18 @@ const Invoices = () => {
                       setInvoiceObj({
                         ...invoiceObj,
                         referenceId: e.target.value,
+                      })
+                    }
+                  />
+                </div>
+                <div className="input-item">
+                  <DatePicker
+                    selected={invoiceObj.createDate}
+                    placeholderText="Invoice Date"
+                    onChange={(date) =>
+                      setInvoiceObj({
+                        ...invoiceObj,
+                        createDate: date,
                       })
                     }
                   />
@@ -313,6 +344,47 @@ const Invoices = () => {
                     }}
                   >
                     Create Invoice
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+      {isEditDateBoxVisible && (
+        <div className="floating-box-container">
+          <div className="data-box" ref={editBoxRef}>
+            <div className="closing" onClick={() => setIsEditDateBoxVisible(false)}>
+              <span></span>
+              <span></span>
+            </div>
+            <form onSubmit={(e) => e.preventDefault()}>
+              <h3>Create an Invoice</h3>
+              <div className="input-items">
+                <div className="input-item">
+                  <DatePicker
+                    selected={new Date(invoiceObj.createDate)}
+                    placeholderText="Invoice Date"
+                    onChange={(date) =>
+                      setInvoiceObj({
+                        ...invoiceObj,
+                        createDate: date,
+                      })
+                    }
+                  />
+                </div>
+                <div className="btn-container">
+                  <button
+                    onClick={async () => {
+                      const invoice = await editInvoice(invoiceObj);
+                      if (invoice) {
+                        const invoices = await getInvoices();
+                        if (invoices) setInvoices(invoices.reverse());
+                        setIsEditDateBoxVisible(false);
+                      }
+                    }}
+                  >
+                    Edit Invoice
                   </button>
                 </div>
               </div>

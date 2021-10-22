@@ -7,5 +7,6 @@ router.use("/all", checkToken, require("./all"));
 router.use("/cancel", checkToken, require("./cancel"));
 router.use("/myinvoice", require("./myinvoice"));
 router.use("/pay", require("./pay"));
+router.use("/edit", require("./edit"));
 
 module.exports = router;

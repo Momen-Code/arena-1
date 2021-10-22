@@ -1,15 +1,10 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useReactToPrint } from "react-to-print";
-import html2pdf from "html2pdf.js";
-import html2canvas from "html2canvas";
-import { Preview, print } from "react-html2pdf";
-import jsPDF from "jspdf";
+import QRCode from "react-qr-code";
 
 //Hooks
 import useInvoiceHook from "./hooks/index";
-import { useAppContext } from "../../../provider";
 
 //Components
 import { Header, Footer } from "../../../components";
@@ -25,40 +20,15 @@ const Bill = () => {
   const [invoice, setInvoice] = useState({});
   const [paymentMethod, setPaymentMethod] = useState();
   const [error, setError] = useState("");
-  const doc = useMemo(() => new jsPDF({ orientation: "portrait", unit: "px" }), []);
 
   const tableRef = useRef(null);
 
-  const addScript = (url) => {
-    var script = document.createElement("script");
-    script.type = "application/javascript";
-    script.src = url;
-    document.head.appendChild(script);
-  };
-
-  // useReactToPrint({ content: () => tableRef.current });
-  const printTable = () => {
-    // const options = {
-    //   margin: 1,
-    //   filename: `${invoice.CustomerName ?? "Invoice"}.pdf`,
-    //   image: { type: "jpeg", quality: 0.98 },
-    //   html2canvas: { scale: 2 },
-    //   jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-    // };
-    // html2pdf(tableRef.current, options);
-
-    doc.html(tableRef.current, { callback: (doc) => doc.save() });
-
-    console.log("Printing...");
-    // print(invoice.CustomerName ?? "Invoice", "invoice-table");
+  const printTable = (e) => {
+    window.print();
   };
 
   useEffect(() => {
-    window.html2canvas = html2canvas;
     (async () => {
-      //Add html2pdf
-      // addScript("https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js");
-
       const data = await getMyInvoice({ _id: id });
       if (data && data.status) {
         setInvoice(data.data);
@@ -85,6 +55,22 @@ const Bill = () => {
     <div className="invoice-container" style={{ direction: i18n.language == "ar" ? "rtl" : "ltr" }}>
       <Header />
       <div className="page-container">
+        <div className="invoice-info">
+          <div className="client-info">
+            <p>Hi</p>
+            <h2>{invoice.CustomerName}</h2>
+            {invoice.referenceId && (
+              <>
+                <p>Reference Id</p>
+                <h2>{invoice.referenceId}</h2>
+              </>
+            )}
+          </div>
+          <div className="qrcode-container">
+            <p>Scan & Pay</p>
+            <QRCode value={window.location.href} bgColor={"#ffffff"} size={120} />
+          </div>
+        </div>
         <div className="invoice-container">
           <div className="payment-methods">
             <h2>Payment</h2>

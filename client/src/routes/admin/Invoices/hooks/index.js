@@ -140,6 +140,25 @@ const useInvoiceHook = () => {
     }
   };
 
+  const editInvoice = async (invoiceObj) => {
+    try {
+      setIsLoading(true);
+      let response = await axios.post("/api/invoices/edit", invoiceObj);
+      let data = await response.data;
+
+      if (!data.status) {
+        createNotification(data.message, "error");
+        return false;
+      }
+      createNotification(data.message, "success");
+      return true;
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return {
     getInvoices,
     createInvoice,
@@ -147,6 +166,7 @@ const useInvoiceHook = () => {
     sendInvoice,
     remindClient,
     cancelInvoice,
+    editInvoice,
   };
 };
 

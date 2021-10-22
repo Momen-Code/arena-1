@@ -5,8 +5,9 @@ const InvoiceModel = require("../../models/Invoice.model");
 
 router.post("/", async (req, res) => {
   try {
-    const { CustomerName, email, InvoiceItems, referenceId } = req.body;
+    const { CustomerName, email, InvoiceItems, referenceId, createDate } = req.body;
 
+    console.log("createDate:", createDate);
     if (!CustomerName)
       return res.json({
         status: false,
@@ -32,6 +33,7 @@ router.post("/", async (req, res) => {
       InvoiceItems,
       InvoiceValue,
       referenceId,
+      ...(createDate && { createDate }),
     });
 
     if (email) {

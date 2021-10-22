@@ -11,6 +11,7 @@
   .table-container {
     @include tableContainer;
     margin-top: 70px;
+   
     .copy-link {
       margin-inline-end: 30px;
       display: flex;
@@ -74,5 +75,6 @@
   }
   .floating-box-container {
     @include floatingBoxContainer;
+   
   }
 }
