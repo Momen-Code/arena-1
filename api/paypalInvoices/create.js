@@ -2,6 +2,7 @@ require("dotenv/config");
 const express = require("express");
 const router = express.Router();
 const paypal = require("paypal-rest-sdk");
+const functions = require("firebase-functions");
 const { PAYPAL_EMAIL } = process.env;
 
 router.post("/", async (req, res) => {
@@ -19,7 +20,7 @@ router.post("/", async (req, res) => {
 		paypal.invoice.create(
 			{
 				merchant_info: {
-					email: PAYPAL_EMAIL,
+					email: PAYPAL_EMAIL || functions.config().paypal.url,
 					business_name: "Arena Media",
 					address: {
 						line1: "32 Husayn Channam St, Al-Hamraa Dist",

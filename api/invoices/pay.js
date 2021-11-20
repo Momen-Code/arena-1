@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const InvoiceModel = require("../../models/Invoice.model");
+const functions = require("firebase-functions");
 const { MY_FATOORAH_TOKEN, MY_FATOORAH_API } = process.env;
 const axios = require("axios");
 
@@ -34,7 +35,7 @@ router.post("/", async (req, res) => {
 
     //Call the InitiatePayment to get available payment methods from myfatoorah
     const response = await axios.post(
-      `${MY_FATOORAH_API}/ExecutePayment`,
+      `${MY_FATOORAH_API || functions.config().my_fatoorah.url}/ExecutePayment`,
       {
         InvoiceValue: invoice.InvoiceValue * 1.15,
         PaymentMethodId,
@@ -57,7 +58,7 @@ router.post("/", async (req, res) => {
         ],
       },
 
-      { headers: { Authorization: `Bearer ${MY_FATOORAH_TOKEN}` } }
+      { headers: { Authorization: `Bearer ${MY_FATOORAH_TOKEN || functions.config().my_fatoorah.token}` } }
     );
     const data = await response.data;
 
