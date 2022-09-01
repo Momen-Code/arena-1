@@ -12,6 +12,7 @@
 				transform: rotate(90deg) translateY(60%);
 				transform-origin: 100% 100%;
 				top: 50vh;
+				left: -220px;
 				&.active {
 					transform: rotate(90deg) translateY(40%);
 				}
@@ -47,10 +48,11 @@
 		}
 		@include media(tablet-sm) {
 			.get-quote-container {
-				left: -74vw;
+				left: -80vw;
 				right: unset;
 				.get-quote-btn {
 					font-size: 1.5em;
+					left: -	200px;
 				}
 			}
 		}

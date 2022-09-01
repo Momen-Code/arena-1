@@ -10,7 +10,7 @@
 		display: flex;
 		padding: 0px 20px;
 		&:nth-child(1) {
-			min-height: calc(100vh - 120px);
+			min-height: 400px;
 		}
 	}
 	.header-container {
@@ -31,7 +31,7 @@
 		background-color: $lightGray;
 		display: flex;
 		justify-content: flex-start;
-		height: 500px;
+		height: 400px;
 		align-self: center;
 		align-items: center;
 		.whoweare-big {

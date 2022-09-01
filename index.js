@@ -1,7 +1,6 @@
 require("dotenv/config");
 const express = require("express");
 const app = express();
-const path = require("path");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const paypal = require("paypal-rest-sdk");
@@ -36,4 +35,4 @@ app.use("/api", require("./api"));
 if (process.env.NODE_ENV != "production")
 	app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 
-exports.app = functions.https.onRequest(app);
+module.exports.app = functions.https.onRequest(app);

@@ -20,7 +20,7 @@
     ]
   },
   "functions": {
-    "source": ".",
+    "source": "./",
     "runtime": "nodejs14"
   }
-}
+}   
