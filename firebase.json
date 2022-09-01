@@ -1,0 +1,26 @@
+{
+  "hosting": {
+    "site": "arena-main",
+    "public": "client/build",
+    "predeploy": "npm run build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "!/@(api)/**",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/api/{,/**}",
+        "function": "app"
+      }
+    ]
+  },
+  "functions": {
+    "source": "./",
+    "runtime": "nodejs14"
+  }
+}   

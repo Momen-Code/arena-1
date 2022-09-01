@@ -1,111 +1,113 @@
-@import '../../../assets/style/global';
+@import "../../../assets/style/global";
 
 .careers-container {
-	width: 100%;
-	background-color: $lightGray;
-	position: relative;
-	user-select: none;
-	.page-container {
-		min-height: 95vh;
-		display: flex;
-		padding: 20px;
-		padding-top: 100px;
-	}
-	.header-container {
-		.logo-container {
-			color: $primary;
-		}
-	}
+  width: 100%;
+  background-color: $lightGray;
+  position: relative;
+  user-select: none;
+  .page-container {
+    min-height: 95vh;
+    display: flex;
+    padding: 20px;
+    padding-top: 100px;
+  }
+  .header-container {
+    .logo-container {
+      color: $primary;
+    }
+  }
 
-	.content-container {
-		background-image: url('../../../assets/img/careers-bg.jpg');
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-size: cover;
-		margin: auto;
-		max-width: 100%;
-		width: 80vw;
-		height: 70vh;
-		position: relative;
-		h3 {
-			color: $primary;
-			text-align: right;
-			font-weight: 500;
-			font-size: 30px;
-			text-shadow: 0px 1px 5px rgba($color: $lightGray, $alpha: 0.3);
-			max-width: 80%;
-			float: right;
-		}
-		.circle-img {
-			color: $gray;
-			width: 300px;
-			height: 300px;
-			object-fit: contain;
-			position: absolute;
-			z-index: 1;
-			bottom: calc(50% - 150px);
-			left: -100px;
-			animation: roll 80s ease infinite;
-			opacity: 0.2;
-		}
-	}
-	.all-jobs-btn {
-		@include advBtn;
-		position: absolute;
-		left: -120px;
-		bottom: 55px;
-		transform: rotate(-90deg);
-	}
+  .content-container {
+    position: relative;
+		margin-top: 50px;
+    h3 {
+      color: $primary;
+      text-align: right;
+      font-weight: 500;
+      font-size: 30px;
+      text-shadow: 0px 1px 5px rgba($color: $lightGray, $alpha: 0.3);
+      max-width: 80%;
+    }
+    .bg-image {
+      background-image: url("../../../assets/img/careers-bg.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+			margin: auto;
+			max-width: 100%;
+			width: 80vw;
+			height: 70vh;
+    }
+    .circle-img {
+      color: $gray;
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      position: absolute;
+      z-index: 1;
+      bottom: calc(50% - 150px);
+      left: -100px;
+      animation: roll 80s ease infinite;
+      opacity: 0.2;
+    }
+  }
+  .all-jobs-btn {
+    @include advBtn;
+    position: absolute;
+    left: -120px;
+    bottom: 55px;
+    transform: rotate(-90deg);
+  }
 
-	@include media(desktop-lg) {
-	}
-	@include media(desktop-md) {
-	}
-	@include media(desktop-sm) {
-	}
-	@include media(tablet-lg) {
-	}
-	@include media(tablet-md) {
-		.page-container {
-			padding: 100px 0 50px;
-		}
-		.content-container {
-			h3 {
-				font-size: 1.7em;
-			}
-			.circle-img {
-				width: 200px;
-				height: 200px;
-				bottom: 50%;
-			}
-		}
-	}
-	@include media(tablet-sm) {
-	}
-	@include media(phone-lg) {
-		.content-container {
-			width: 70vw;
-			margin-left: 25px;
-			margin-right: auto;
-			h3 {
-				position: absolute;
-				right: -15vw;
-				font-size: 1.2em;
-			}
-		}
-		.all-jobs-btn {
-			left: unset;
-			right: -120px;
-			transform: rotate(-90deg) scale(-1);
-		}
-	}
-	@include media(phone-md) {
-	}
-	@include media(phone-sm) {
-	}
-	@include media(small-height) {
-		.page-container {
-			min-height: 800px;
-		}
-	}
+  @include media(desktop-lg) {
+  }
+  @include media(desktop-md) {
+  }
+  @include media(desktop-sm) {
+  }
+  @include media(tablet-lg) {
+  }
+  @include media(tablet-md) {
+    .page-container {
+      padding: 100px 0 50px;
+    }
+    .content-container {
+      h3 {
+        font-size: 1.7em;
+      }
+      .circle-img {
+        width: 200px;
+        height: 200px;
+        bottom: 50%;
+      }
+    }
+  }
+  @include media(tablet-sm) {
+  }
+  @include media(phone-lg) {
+    .content-container {
+      width: 70vw;
+      margin-left: 25px;
+      margin-right: auto;
+      h3 {
+        position: absolute;
+        right: -15vw;
+        font-size: 1.2em;
+      }
+    }
+    .all-jobs-btn {
+      left: unset;
+      right: -120px;
+      transform: rotate(-90deg) scale(-1);
+    }
+  }
+  @include media(phone-md) {
+  }
+  @include media(phone-sm) {
+  }
+  @include media(small-height) {
+    .page-container {
+      min-height: 800px;
+    }
+  }
 }

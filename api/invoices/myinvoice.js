@@ -1,18 +1,24 @@
 const express = require("express");
 const router = express.Router();
 const InvoiceModel = require("../../models/Invoice.model");
-const { MY_FATOORAH_TOKEN, MY_FATOORAH_API } = process.env;
+const functions = require("firebase-functions");
+const {
+  MY_FATOORAH_TOKEN,
+  MY_FATOORAH_API
+} = process.env;
+
 const axios = require("axios");
 
 router.post("/", async (req, res) => {
   try {
-    const { _id } = req.body;
+    const {
+      _id
+    } = req.body;
 
     if (!_id || _id.length != 24)
       return res.json({
         status: false,
-        message:
-          "Please open the invoice from the link that was sent to you via email",
+        message: "Please open the invoice from the link that was sent to you via email",
       });
 
     let invoice = await InvoiceModel.findById(_id).lean();
@@ -21,8 +27,7 @@ router.post("/", async (req, res) => {
     if (!invoice)
       return res.json({
         status: false,
-        message:
-          "Please open the invoice from the link that was sent to you via email",
+        message: "Please open the invoice from the link that was sent to you via email",
       });
     if (invoice.status == "paid")
       return res.json({
@@ -38,13 +43,16 @@ router.post("/", async (req, res) => {
 
     //Call the InitiatePayment to get available payment methods from myfatoorah
     const response = await axios.post(
-      `${MY_FATOORAH_API}/InitiatePayment`,
-      {
+      `${MY_FATOORAH_API || functions.config().my_fatoorah.url}/InitiatePayment`, {
         InvoiceAmount: invoice.InvoiceValue * 1.15, //Vat
         CurrencyIso: invoice.DisplayCurrencyIso,
       },
 
-      { headers: { Authorization: `Bearer ${MY_FATOORAH_TOKEN}` } }
+      {
+        headers: {
+          Authorization: `Bearer ${MY_FATOORAH_TOKEN || functions.config().my_fatoorah.access_token}`
+        }
+      }
     );
     const data = await response.data;
 
@@ -64,7 +72,10 @@ router.post("/", async (req, res) => {
   } catch (e) {
     console.log(`Error in /invoices/myinvoice, ${e.message}`, e);
     if (!res.headersSent)
-      return res.json({ status: false, message: "Error occured" });
+      return res.json({
+        status: false,
+        message: "Error occured"
+      });
   }
 });
 

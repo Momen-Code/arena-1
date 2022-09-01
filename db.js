@@ -1,8 +1,10 @@
 require("dotenv/config");
 const mongoose = require("mongoose");
+const functions = require("firebase-functions");
+
 
 //Connect to mongodb
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGO_URI || functions.config().db.uri, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false,

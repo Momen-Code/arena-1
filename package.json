@@ -8,7 +8,8 @@
     "server": "nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
     "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "build": "npm install && cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "ELASHMAWY DEV",
@@ -23,6 +24,8 @@
     "cors": "^2.8.5",
     "dotenv": "^8.5.1",
     "express": "^4.17.1",
+    "firebase-admin": "^10.0.0",
+    "firebase-functions": "^3.20.0",
     "jsonwebtoken": "^8.5.1",
     "localtunnel": "^2.0.1",
     "mongoose": "^5.12.12",
