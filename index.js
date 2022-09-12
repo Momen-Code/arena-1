@@ -33,10 +33,12 @@ app.use("/api", require("./api"));
 /*********************************************************/
 
 if (process.env.NODE_ENV == "production") {
+  app.use(express.static(path.join(__dirname, "client", "build")));
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
-  app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 }
+
+app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 
 module.exports.app = functions.https.onRequest(app);
