@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const paypal = require("paypal-rest-sdk");
+const path = require("path");
 const PORT = process.env.PORT || 5002;
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
@@ -31,7 +32,11 @@ app.use("/api", require("./api"));
 
 /*********************************************************/
 
-if (process.env.NODE_ENV != "production" || process.env.IS_HEROKU)
+if (process.env.NODE_ENV == "production") {
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
   app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
+}
 
 module.exports.app = functions.https.onRequest(app);
