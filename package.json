@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
   "scripts": {
     "client": "cd client && npm start",
     "server": "nodemon index.js",
@@ -13,7 +12,7 @@
     "build": "npm install && cd client && npm install && npm run build"
   },
   "engines": {
-    "node": "14"
+    "node": ">=14.19"
   },
   "keywords": [],
   "author": "ELASHMAWY DEV",
